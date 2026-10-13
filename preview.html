@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASINO G-SHARK 200M - Wear OS Simulator</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --accent-color: #D2F800; /* Volt Lime default */
+            --bezel-outer: #131518;
+            --bezel-inner: #181B20;
+            --screen-bg: #08090C;
+            --text-main: #FFFFFF;
+            --text-dim: #7B8390;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 20px;
+            background: #0f1115;
+            color: #e0e6ed;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            margin: 0 0 24px 0;
+            font-size: 13px;
+            color: #8b949e;
+            letter-spacing: 1px;
+        }
+
+        /* Watch Case & Strap Preview */
+        .watch-case {
+            position: relative;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle at 35% 30%, #2a2e36 0%, #17191d 60%, #0d0e11 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(255, 255, 255, 0.15);
+            border: 4px solid #323742;
+        }
+
+        /* Screen 450x450 */
+        .watch-screen {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--screen-bg);
+            position: relative;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Ambient Mode Filter */
+        .watch-screen.ambient {
+            background-color: #000000 !important;
+        }
+        .watch-screen.ambient .ambient-hide {
+            opacity: 0 !important;
+        }
+        .watch-screen.ambient .ambient-dim {
+            opacity: 0.3 !important;
+        }
+        .watch-screen.ambient .ambient-text-dim {
+            color: #888888 !important;
+        }
+
+        /* SVG overlay for tactile bezel and vector graphics */
+        svg.dial {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Controls Panel */
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            background: #1c2128;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn:hover {
+            background: #30363d;
+            color: #fff;
+        }
+        .btn.active {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        .palette-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .color-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #30363d;
+            transition: transform 0.2s;
+        }
+        .color-dot:hover, .color-dot.active {
+            transform: scale(1.2);
+            border-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CASINO G-SHARK 200M</h1>
+    <div class="subtitle">WEAR OS WATCH FACE FORMAT (WFF) LIVE SIMULATOR</div>
+
+    <div class="watch-case">
+        <div class="watch-screen" id="watchScreen">
+            <svg class="dial" viewBox="0 0 450 450">
+                <!-- ================= 1. BEZEL ================= -->
+                <!-- Outer Bezel Ring -->
+                <circle cx="225" cy="225" r="225" fill="#131518" />
+                <circle cx="225" cy="225" r="209" fill="#181B20" stroke="#22252C" stroke-width="4" />
+                <circle cx="225" cy="225" r="187" fill="#08090C" stroke="#2B303A" stroke-width="2" />
+
+                <!-- Corner Screws -->
+                <g class="ambient-hide">
+                    <!-- Top-Left Screw -->
+                    <circle cx="63" cy="63" r="11" fill="#2C3038" stroke="#48505E" stroke-width="1.5" />
+                    <line x1="57" y1="63" x2="69" y2="63" stroke="#131518" stroke-width="2" />
+                    <line x1="63" y1="57" x2="63" y2="69" stroke="#131518" stroke-width="2" />
+
+                    <!-- Top-Right Screw -->
+                    <circle cx="387" cy="63" r="11" fill="#2C3038" stroke="#48505E" stroke-width="1.5" />
+                    <line x1="381" y1="63" x2="393" y2="63" stroke="#131518" stroke-width="2" />
+                    <line x1="387" y1="57" x2="387" y2="69" stroke="#131518" stroke-width="2" />
+
+                    <!-- Bottom-Left Screw -->
+                    <circle cx="63" cy="387" r="11" fill="#2C3038" stroke="#48505E" stroke-width="1.5" />
+                    <line x1="57" y1="387" x2="69" y2="387" stroke="#131518" stroke-width="2" />
+                    <line x1="63" y1="381" x2="63" y2="393" stroke="#131518" stroke-width="2" />
+
+                    <!-- Bottom-Right Screw -->
+                    <circle cx="387" cy="387" r="11" fill="#2C3038" stroke="#48505E" stroke-width="1.5" />
+                    <line x1="381" y1="387" x2="393" y2="387" stroke="#131518" stroke-width="2" />
+                    <line x1="387" y1="381" x2="387" y2="393" stroke="#131518" stroke-width="2" />
+                </g>
+
+                <!-- Bezel Engraved Lettering -->
+                <text x="225" y="32" fill="#E2E6EC" font-size="16" font-weight="900" text-anchor="middle" letter-spacing="4" font-family="monospace">CASINO</text>
+                <text x="225" y="428" id="bezelSharkText" fill="var(--accent-color)" font-size="15" font-weight="900" text-anchor="middle" letter-spacing="4" font-family="monospace">G-SHARK</text>
+
+                <!-- Bezel Button Guides -->
+                <g class="ambient-hide" fill="#7B8390" font-size="9" font-weight="bold" font-family="monospace" text-anchor="middle">
+                    <text x="42" y="140">ADJUST</text>
+                    <text x="42" y="316">MODE</text>
+                    <text x="408" y="140">START</text>
+                    <text x="408" y="316">RESET</text>
+                </g>
+
+                <!-- ================= 2. PARTITIONS ================= -->
+                <g class="ambient-dim" stroke="#1F242C" stroke-width="1.5">
+                    <line x1="65" y1="132" x2="385" y2="132" />
+                    <line x1="65" y1="280" x2="385" y2="280" />
+                    <line x1="165" y1="80" x2="165" y2="132" />
+                    <line x1="285" y1="80" x2="285" y2="132" />
+                </g>
+
+                <!-- Battery Arc Track (Top Arc) -->
+                <path d="M 120 85 A 150 150 0 0 1 330 85" fill="none" stroke="#1A1E26" stroke-width="4" stroke-linecap="round" class="ambient-hide" />
+                <path id="batteryArc" d="M 120 85 A 150 150 0 0 1 290 85" fill="none" stroke="var(--accent-color)" stroke-width="4" stroke-linecap="round" class="ambient-hide" />
+
+                <!-- ================= 3. TOP HEADER ================= -->
+                <!-- Day of Week (Left Card) -->
+                <text x="115" y="98" fill="#636C7A" font-size="9" font-weight="bold" text-anchor="middle" font-family="monospace">DAY</text>
+                <text x="115" y="125" id="dayText" fill="#FFFFFF" font-size="26" font-weight="900" text-anchor="middle" font-family="monospace">FRI</text>
+
+                <!-- Center Badges -->
+                <text x="225" y="93" id="wrText" fill="var(--accent-color)" font-size="8" font-weight="900" text-anchor="middle" font-family="monospace" letter-spacing="1">WR 20BAR</text>
+                <text x="225" y="107" fill="#7B8390" font-size="8" font-weight="900" text-anchor="middle" font-family="monospace" letter-spacing="1">BLUETOOTH</text>
+                <text x="225" y="125" id="batText" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">BAT 84%</text>
+
+                <!-- Date (Right Card) -->
+                <text x="335" y="98" fill="#636C7A" font-size="9" font-weight="bold" text-anchor="middle" font-family="monospace">DATE</text>
+                <text x="335" y="125" id="dateText" fill="#FFFFFF" font-size="26" font-weight="900" text-anchor="middle" font-family="monospace">10.09</text>
+
+                <!-- ================= 4. MAIN DIGITAL TIME ================= -->
+                <!-- Giant Hours and Minutes -->
+                <text x="290" y="244" id="timeText" fill="#FFFFFF" font-size="98" font-weight="900" text-anchor="end" font-family="Impact, sans-serif" letter-spacing="2">10:08</text>
+
+                <!-- Seconds Inset Card -->
+                <rect x="312" y="162" width="76" height="52" rx="4" fill="#13161C" stroke="#2B303C" stroke-width="1.5" class="ambient-hide" />
+                <text x="350" y="200" id="secText" fill="var(--accent-color)" font-size="32" font-weight="bold" text-anchor="middle" font-family="monospace" class="ambient-hide">32</text>
+                <text x="350" y="232" fill="#808A95" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace" class="ambient-hide">SEC</text>
+                <text x="350" y="248" fill="#525B66" font-size="9" font-weight="bold" text-anchor="middle" font-family="monospace" class="ambient-hide">24H</text>
+
+                <!-- ================= 5. LOWER FITNESS MODULE ================= -->
+                <text x="225" y="306" id="stepHeader" fill="var(--accent-color)" font-size="11" font-weight="900" text-anchor="middle" font-family="monospace" letter-spacing="2">STEP TRACKER</text>
+                <text x="225" y="348" id="stepCount" fill="#FFFFFF" font-size="36" font-weight="900" text-anchor="middle" font-family="Impact, sans-serif" letter-spacing="2">8,452</text>
+                <text x="225" y="370" fill="#7B8390" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">GOAL 10,000</text>
+
+                <!-- Step Progress Arc (Lower Arc Track) -->
+                <path d="M 100 375 A 155 155 0 0 0 350 375" fill="none" stroke="#1A1E26" stroke-width="4" stroke-linecap="round" class="ambient-hide" />
+                <path d="M 100 375 A 155 155 0 0 0 310 375" fill="none" stroke="var(--accent-color)" stroke-width="4" stroke-linecap="round" class="ambient-hide" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Live Controls -->
+    <div class="controls">
+        <button class="btn" id="toggleAmbient">Toggle Ambient Mode (AOD)</button>
+
+        <div class="palette-group">
+            <span style="font-size: 13px; color: #8b949e; margin-right: 4px;">Theme:</span>
+            <!-- Volt Lime -->
+            <div class="color-dot active" style="background: #D2F800;" data-color="#D2F800" title="Volt Lime"></div>
+            <!-- Stealth White -->
+            <div class="color-dot" style="background: #FFFFFF;" data-color="#FFFFFF" title="Stealth White"></div>
+            <!-- Ocean Cyan -->
+            <div class="color-dot" style="background: #00E5FF;" data-color="#00E5FF" title="Ocean Cyan"></div>
+            <!-- Tactical Orange -->
+            <div class="color-dot" style="background: #FF7020;" data-color="#FF7020" title="Tactical Orange"></div>
+        </div>
+    </div>
+
+    <script>
+        // Clock Update
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById('timeText').textContent = `${hours}:${minutes}`;
+            document.getElementById('secText').textContent = seconds;
+
+            const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            document.getElementById('dayText').textContent = days[now.getDay()];
+
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            document.getElementById('dateText').textContent = `${month}.${day}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Ambient Toggle
+        const screen = document.getElementById('watchScreen');
+        const ambientBtn = document.getElementById('toggleAmbient');
+        ambientBtn.addEventListener('click', () => {
+            const isAmbient = screen.classList.toggle('ambient');
+            ambientBtn.classList.toggle('active', isAmbient);
+            ambientBtn.textContent = isAmbient ? 'Return to Interactive Mode' : 'Toggle Ambient Mode (AOD)';
+        });
+
+        // Theme Palette Switcher
+        const dots = document.querySelectorAll('.color-dot');
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                const color = dot.getAttribute('data-color');
+                document.documentElement.style.setProperty('--accent-color', color);
+            });
+        });
+    </script>
+</body>
+</html>

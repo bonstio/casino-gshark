@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">G-Shark Watch Face</string>
+    <string name="watch_face_name">Casino G-Shark</string>
+
+    <!-- Theme Accent Colors (16 Options: High-Contrast Neon + Subtle Greys & Browns) -->
+    <string name="theme_color_label">Theme Color</string>
+    <string name="logo_color_label">Logo Color</string>
+    <string name="seconds_color_label">Seconds Color</string>
+    <string name="sec_color_same_as_clock">Same as clock</string>
+    <string name="color_cyber_lime">Volt Lime</string>
+    <string name="color_bright_lime_green">Bright Lime Green</string>
+    <string name="color_shark_blue">Ocean Shark Cyan</string>
+    <string name="color_tactical_orange">Tactical Orange</string>
+    <string name="color_crimson_red">Crimson Red</string>
+    <string name="color_amber_gold">Amber Gold</string>
+    <string name="color_stealth_white">Stealth White</string>
+    <string name="color_toxic_green">Vibrant Blue</string>
+    <string name="color_deep_violet">Deep Violet</string>
+    <string name="color_hot_pink">Neon Magenta</string>
+    <string name="color_coyote_tan">Coyote Tan</string>
+    <string name="color_earth_khaki">Earth Olive</string>
+    <string name="color_mocha_brown">Saddle Brown</string>
+    <string name="color_steel_grey">Battleship Grey</string>
+    <string name="color_slate_charcoal">Slate Charcoal</string>
+    <string name="color_titanium_silver">Titanium Silver</string>
+
+    <!-- LCD Background Graphics (17 Distinct Tactical & Industrial Options) -->
+    <string name="bg_texture_label">Background Graphic</string>
+    <string name="bg_classic">Classic LCD (Default)</string>
+    <string name="bg_matte_black">Matte Black Stealth</string>
+    <string name="bg_camo">Tactical Woodland Camo</string>
+    <string name="bg_camo_urban">Urban Arctic Camo</string>
+    <string name="bg_camo_desert">Desert Storm Camo</string>
+    <string name="bg_camo_zebra">Subtle Zebra Camo</string>
+    <string name="bg_carbon_fiber">Carbon Fibre Weave</string>
+    <string name="bg_gloss_black">Gloss Black</string>
+    <string name="bg_grid">Micro-Grid Carbon</string>
+    <string name="bg_tactical_mesh">Tactical Raised Mesh</string>
+    <string name="bg_ind_cyan">Industrial Cyan</string>
+    <string name="bg_ind_lime">Industrial Volt Lime</string>
+    <string name="bg_ind_blue">Industrial Vibrant Blue</string>
+    <string name="bg_ind_red">Industrial Red</string>
+    <string name="bg_ind_orange">Industrial Orange</string>
+    <string name="bg_ind_magenta">Industrial Deep Magenta</string>
+    <string name="bg_ind_silver">Industrial Silver</string>
+
+    <!-- Background Border Mode (Bordered vs Full Bleed to screen edge) -->
+    <string name="bg_border_label">Background Border</string>
+    <string name="bg_border_bordered">Bordered</string>
+    <string name="bg_border_full_bleed">Full Bleed</string>
+
+    <!-- Rotating Seconds Hand Orbit Indicator -->
+    <string name="sec_dot_label">Seconds Orbit Indicator</string>
+    <string name="sec_dot_off">Off (Invisible)</string>
+    <string name="sec_dot_white">Circle — White</string>
+    <string name="sec_dot_theme">Circle — Theme Color</string>
+    <string name="sec_square_white">Square — White</string>
+    <string name="sec_square_theme">Square — Theme Color</string>
+    <string name="sec_triangle_white">Triangle — White</string>
+    <string name="sec_triangle_theme">Triangle — Theme Color</string>
+
+    <!-- Screen Texture (Part Behind Main Clock) -->
+    <string name="screen_texture_label">Screen Texture</string>
+    <string name="screen_tex_default">Default</string>
+    <string name="screen_tex_hex_light">Honeycomb Silver</string>
+    <string name="screen_tex_hex_dark">Honeycomb Stealth</string>
+    <string name="screen_tex_moire_light">Solar Moiré Light</string>
+    <string name="screen_tex_moire_dark">Solar Moiré Dark</string>
+
+    <!-- Sub-Dial Indicator Mode (8-Segment Battery, 60-Segment Seconds, or Full 34-Zone Analog World Time) -->
+    <string name="sub_dial_label">Sub-Dial</string>
+    <string name="sub_dial_battery">Battery</string>
+    <string name="sub_dial_seconds">Seconds</string>
+    <string name="sub_dial_m11">-11 / PPG</string>
+    <string name="sub_dial_m10">-10 / HNL</string>
+    <string name="sub_dial_m9">-9 / ANC</string>
+    <string name="sub_dial_m8">-8 / SFO</string>
+    <string name="sub_dial_m7">-7 / DEN</string>
+    <string name="sub_dial_m6">-6 / CHI</string>
+    <string name="sub_dial_m5">-5 / NYC</string>
+    <string name="sub_dial_m4">-4 / SCL</string>
+    <string name="sub_dial_m35">-3.5 / YYT</string>
+    <string name="sub_dial_m3">-3 / GRU</string>
+    <string name="sub_dial_m2">-2 / FEN</string>
+    <string name="sub_dial_m1">-1 / PDL</string>
+    <string name="sub_dial_utc">+0 / UTC</string>
+    <string name="sub_dial_lon">+0 / LON</string>
+    <string name="sub_dial_p1">+1 / PAR</string>
+    <string name="sub_dial_p2">+2 / CAI</string>
+    <string name="sub_dial_p3">+3 / IST</string>
+    <string name="sub_dial_p35">+3.5 / THR</string>
+    <string name="sub_dial_p4">+4 / DXB</string>
+    <string name="sub_dial_p45">+4.5 / KBL</string>
+    <string name="sub_dial_p5">+5 / KHI</string>
+    <string name="sub_dial_p55">+5.5 / DEL</string>
+    <string name="sub_dial_p575">+5.75 / KTM</string>
+    <string name="sub_dial_p6">+6 / DAC</string>
+    <string name="sub_dial_p65">+6.5 / RGN</string>
+    <string name="sub_dial_p7">+7 / BKK</string>
+    <string name="sub_dial_p8">+8 / HKG</string>
+    <string name="sub_dial_p9">+9 / TYO</string>
+    <string name="sub_dial_p95">+9.5 / ADL</string>
+    <string name="sub_dial_p10">+10 / SYD</string>
+    <string name="sub_dial_p11">+11 / NOU</string>
+    <string name="sub_dial_p12">+12 / AKL</string>
+    <string name="sub_dial_p13">+13 / APW</string>
+    <string name="sub_dial_p14">+14 / CXI</string>
+
+    <!-- Outer Bezel Checkmark / Tick-Mark Styles (Default + 6 Alternatives inc. None) -->
+    <string name="tick_style_label">Bezel Checkmarks</string>
+    <string name="tick_style_0">Classic Track (Default)</string>
+    <string name="tick_style_1">12-Hour Indices Only</string>
+    <string name="tick_style_2">Bold Tactical Batons</string>
+    <string name="tick_style_3">Chrono Fine Scale</string>
+    <string name="tick_style_4">Numeric 05–60 Track</string>
+    <string name="tick_style_5">Theme Accent Indices</string>
+    <string name="tick_style_6">None (No Checkmarks)</string>
+
+    <!-- Time Display Color / Polarity (White, Soft White, vs Black with 82% White Overlay) -->
+    <string name="time_color_label">Time Color</string>
+    <string name="time_color_white">White (Default)</string>
+    <string name="time_color_soft_white">Soft White</string>
+    <string name="time_color_black">Black</string>
+
+    <!-- Complications & Clock Sub-Dial Background & Text Style -->
+    <string name="quad_style_label">Top 4 Complications</string>
+    <string name="bottom_style_label">Bottom Row &amp; Sub-Dial</string>
+    <string name="quad_style_match_lcd">Match LCD Screen</string>
+    <string name="quad_style_classic_dark">Classic Dark (Light Text)</string>
+
+    <!-- Bottom Bay Display Mode (Complication vs Date Formats) -->
+    <string name="bottom_bay_mode_label">Bottom Complication / Date</string>
+    <string name="bottom_bay_complication">Next Event (Complication)</string>
+    <string name="bottom_bay_date_jan31">Date: Jan 31</string>
+    <string name="bottom_bay_date_sat_mmdd">Date: Sat 01/31</string>
+    <string name="bottom_bay_date_sat_ddmm">Date: Sat 31/01</string>
+    <string name="bottom_bay_date_ddmmyyyy">Date: 31/01/2026</string>
+
+    <!-- Main Analog Hour & Minute Hands (95% Opacity) -->
+    <string name="analog_hands_label">Analog Hands</string>
+    <string name="analog_hands_off">Off (Default)</string>
+    <string name="analog_hands_sword_theme">Skeleton Sword — Theme Color</string>
+    <string name="analog_hands_sword_white">Skeleton Sword — White Lume</string>
+    <string name="analog_hands_baton_theme">Tactical Baton — Theme Color</string>
+    <string name="analog_hands_baton_white">Tactical Baton — White Lume</string>
+    <string name="analog_hands_ghost_theme">Stealth Outline — Theme Color</string>
+
+    <!-- Top Bezel Wordmark Logo (Default CASINO + 7 Alternates + Blank) -->
+    <string name="top_logo_label">Top Logo</string>
+    <string name="top_logo_casino">CASINO (Default)</string>
+    <string name="top_logo_calypso">CALYPSO</string>
+    <string name="top_logo_critical">CRITICAL</string>
+    <string name="top_logo_charming">CHARMING</string>
+    <string name="top_logo_curious">CURIOUS</string>
+    <string name="top_logo_creative">CREATIVE</string>
+    <string name="top_logo_cautious">CAUTIOUS</string>
+    <string name="top_logo_cheerful">CHEERFUL</string>
+    <string name="top_logo_blank">Blank (None)</string>
+
+    <!-- Bottom Bezel Wordmark Logo (Default G-SHARK + 5 Alternates + Blank) -->
+    <string name="bottom_logo_label">Bottom Logo</string>
+    <string name="bottom_logo_gshark">G-SHARK (Default)</string>
+    <string name="bottom_logo_gspot">G-SPOT</string>
+    <string name="bottom_logo_gsnack">G-SNACK</string>
+    <string name="bottom_logo_gsnooze">G-SNOOZE</string>
+    <string name="bottom_logo_gsquawk">G-SQUAWK</string>
+    <string name="bottom_logo_gsloth">G-SLOTH</string>
+    <string name="bottom_logo_blank">Blank (None)</string>
+</resources>

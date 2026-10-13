@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bezel_outer">#141619</color>
+    <color name="bezel_inner">#1F2227</color>
+    <color name="screen_background">#090A0D</color>
+    <color name="screen_card">#121418</color>
+    <color name="lcd_grid_line">#252930</color>
+    <color name="text_high_contrast">#FFFFFF</color>
+    <color name="text_dimmed">#808A95</color>
+    <color name="accent_lime">#D2F800</color>
+    <color name="accent_cyan">#00E5FF</color>
+    <color name="accent_orange">#FF6500</color>
+    <color name="accent_red">#FF1744</color>
+</resources>

@@ -1,0 +1,57 @@
+# Android / Gradle build outputs
+build/
+app/build/
+.gradle/
+.idea/
+*.iml
+local.properties
+
+# Keystores & Signing (Never commit keys)
+*.keystore
+*.jks
+
+# Compiled artifacts
+*.apk
+*.aab
+*.idsig
+*.ap_
+*.dex
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Scratch / intermediate asset generation workspace files
+/active_over_unlit_*.png
+/bg_lcd_*.png
+/build_balanced_logo.py
+/clean_test_*.png
+/compare_s.png
+/crop_*.png
+/euro_glyph_*.png
+/extract_letters.py
+/extracted_camo_script.py
+/full_step943.py
+/generate_analog_lcd_bars_mock.py
+/generate_hidden_center_panel_mock.py
+/generate_industrial_gradient_mocks.py
+/get_svg.py
+/glyph_*.png
+/gshock_*
+/logo_debug.png
+/logo_gshark_candidate.png
+/make_stager.py
+/official_letters_test.png
+/path28*
+/preview_balanced_*.png
+/render_letters.py
+/s_*.png
+/standalone_test_*.png
+/start_overlay_cache.png
+/step*.py
+/subdial_*.png
+/test_*
+/tex_screen_*.png
+/unlit_test_*.png
+/user_gshark_*.png
+/woodland_camo_script.py
