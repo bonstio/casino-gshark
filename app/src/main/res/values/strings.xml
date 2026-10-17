@@ -147,10 +147,10 @@
     <string name="analog_hands_baton_theme">Tactical Baton — Theme Color</string>
     <string name="analog_hands_baton_white">Tactical Baton — White Lume</string>
     <string name="analog_hands_ghost_theme">Stealth Outline — Theme Color</string>
-    <string name="analog_hands_needle_theme">Ultra-Thin Needle — Theme Color</string>
-    <string name="analog_hands_needle_white">Ultra-Thin Needle — White</string>
-    <string name="analog_hands_arrow_theme">Slim Aviator Arrow — Theme Color</string>
-    <string name="analog_hands_arrow_white">Slim Aviator Arrow — White Lume</string>
+    <string name="analog_hands_needle_theme">Hairline Wire — Theme Color</string>
+    <string name="analog_hands_needle_white">Hairline Wire — White</string>
+    <string name="analog_hands_chisel_theme">Chisel Rectangle — Theme Color</string>
+    <string name="analog_hands_chisel_white">Chisel Rectangle — White Lume</string>
 
     <!-- Top Bezel Wordmark Logo (Default CASINO + 7 Alternates + Blank) -->
     <string name="top_logo_label">Top Logo</string>

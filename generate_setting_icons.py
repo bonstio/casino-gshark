@@ -552,12 +552,12 @@ def render_watchface(
             ring_rgb = (255, 255, 255)
         elif analog_hands == 8:
             canvas.alpha_composite(
-                render_hand_pair("hand_arrow_hr_frame", "hand_arrow_hr_lume", "hand_arrow_mn_frame", "hand_arrow_mn_lume", theme_rgb)
+                render_hand_pair("hand_chisel_hr_frame", "hand_chisel_hr_lume", "hand_chisel_mn_frame", "hand_chisel_mn_lume", theme_rgb)
             )
             ring_rgb = theme_rgb
         elif analog_hands == 9:
             canvas.alpha_composite(
-                render_hand_pair("hand_arrow_hr_frame", "hand_arrow_hr_lume", "hand_arrow_mn_frame", "hand_arrow_mn_lume", (255, 255, 255))
+                render_hand_pair("hand_chisel_hr_frame", "hand_chisel_hr_lume", "hand_chisel_mn_frame", "hand_chisel_mn_lume", (255, 255, 255))
             )
             ring_rgb = (255, 255, 255)
 
@@ -707,7 +707,7 @@ def generate_all_icons():
 
 def build_contact_sheet(generated):
     settings_order = [
-        ("bgTexture", 17),
+        ("bgTexture", 18),
         ("bgBorder", 2),
         ("themeColor", 16),
         ("logoColor", 16),
@@ -720,7 +720,7 @@ def build_contact_sheet(generated):
         ("subDialMode", 36),
         ("tickStyle", 7),
         ("secondsDot", 7),
-        ("analogHands", 6),
+        ("analogHands", 10),
         ("topLogo", 9),
         ("bottomLogo", 7),
     ]

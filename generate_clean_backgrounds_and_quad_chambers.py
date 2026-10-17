@@ -740,13 +740,20 @@ edge_z = np.clip((wave_z - thresh_mod_z) / 0.14, -1.0, 1.0) * 0.5 + 0.5
 shadow_z = np.clip((wave_z - (thresh_mod_z - 0.16)) / 0.18, 0.0, 1.0)
 
 arr_z = np.zeros((H, W, 4), dtype=np.uint8)
+vig_2d = np.array(vig_map).reshape((H, W))
+disc_2d = np.array(inside_disc).reshape((H, W))
+
+base_rgb = (136.0, 142.0, 150.0)
+st_rgb = (16.0, 18.0, 22.0)
+ed_rgb = (36.0, 40.0, 48.0)
+
 for c_idx in range(3):
-    bg_c = 244 if c_idx < 2 else 248
-    st_c = 16 if c_idx == 0 else (18 if c_idx == 1 else 22)
-    edge_c = 42 if c_idx == 0 else (46 if c_idx == 1 else 54)
-    col_z = bg_c * (1.0 - shadow_z) + edge_c * (shadow_z - edge_z) + st_c * edge_z
+    bg_c = base_rgb[c_idx]
+    st_c = st_rgb[c_idx]
+    ed_c = ed_rgb[c_idx]
+    col_z = (bg_c * (1.0 - shadow_z) + ed_c * (shadow_z - edge_z) + st_c * edge_z) * vig_2d
     arr_z[:, :, c_idx] = np.clip(col_z, 0, 255).astype(np.uint8)
-arr_z[:, :, 3] = 255
+arr_z[:, :, 3] = (disc_2d * 255).astype(np.uint8)
 
 img_05 = Image.fromarray(arr_z)
 apply_pods_and_subdial_housing_2x(
