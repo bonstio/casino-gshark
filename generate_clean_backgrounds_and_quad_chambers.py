@@ -597,7 +597,7 @@ if not os.path.exists(src_camo_path):
 
 camo_src = Image.open(src_camo_path).convert("RGB")
 w_src, h_src = camo_src.size
-zoom_factor = 1.8
+zoom_factor = 2.8
 cw, ch = w_src / zoom_factor, h_src / zoom_factor
 x1 = (w_src - cw) / 2.0
 y1 = (h_src - ch) / 2.0
