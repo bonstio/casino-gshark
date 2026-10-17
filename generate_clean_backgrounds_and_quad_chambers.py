@@ -1021,9 +1021,9 @@ for idx_bg, fname, hl, sl, vl, hd, sd, vd, floor_rgb, bev_lit_rgb, sub_base_f, s
 # ==============================================================================
 # GENERATE QUAD ARC OVERLAY & FACE PLATES (DARK, INVERT, & TEXTURES)
 # ==============================================================================
-centers = [(100, 225), (155, 122), (270, 108), (347, 196)]
-r_outer_c = 39.0
-r_inner_c = 31.5
+centers = [(118, 237), (160, 139), (267, 125), (332, 211)]
+r_outer_c = 42.5
+r_inner_c = 35.0
 
 # 1. Bezel overlay with transparent window
 hi_dials = Image.new('RGBA', (W, H), (0, 0, 0, 0))
@@ -1168,11 +1168,11 @@ for src_name, dark_out_name, inv_out_name, inv_polarity, contrast_str, base_dark
         # Pure solar moire sampled from clean interior rows 18..82, cols 10..270
         moire_clean = raw_arr[:, :, 3] / 255.0
         pat_alpha = np.zeros((450, 450), dtype=float)
-        for (cx_d, cy_d), x_off in zip(centers, [10, 70, 140, 200]):
+        for (cx_d, cy_d), x_off in zip(centers, [10, 75, 145, 215]):
             dist = np.sqrt((X_2d - cx_d)**2 + (Y_2d - cy_d)**2)
             mask_dial = dist <= r_inner_c + 1.0
-            y_idx = np.clip(18 + (Y_2d - (cy_d - 32)), 16, 85).astype(int)
-            x_idx = np.clip(x_off + (X_2d - (cx_d - 32)), 10, 275).astype(int)
+            y_idx = np.clip(18 + (Y_2d - (cy_d - 35)), 10, 96).astype(int)
+            x_idx = np.clip(x_off + (X_2d - (cx_d - 35)), 10, 300).astype(int)
             pat_alpha[mask_dial] = moire_clean[y_idx[mask_dial], x_idx[mask_dial]]
 
     dark_pure_op = pat_alpha * dark_scale * arc_mask_450
