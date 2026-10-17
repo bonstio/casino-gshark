@@ -44,6 +44,7 @@
     <string name="bg_ind_orange">Industrial Orange</string>
     <string name="bg_ind_magenta">Industrial Deep Magenta</string>
     <string name="bg_ind_silver">Industrial Silver</string>
+    <string name="bg_ind_black_silver">Industrial Black &amp; Silver</string>
 
     <!-- Background Border Mode (Bordered vs Full Bleed to screen edge) -->
     <string name="bg_border_label">Background Border</string>
@@ -115,7 +116,8 @@
     <string name="tick_style_3">Chrono Fine Scale</string>
     <string name="tick_style_4">Numeric 05–60 Track</string>
     <string name="tick_style_5">Theme Accent Indices</string>
-    <string name="tick_style_6">None (No Checkmarks)</string>
+    <string name="tick_style_6">Bold Tactical Wedges</string>
+    <string name="tick_style_7">None (No Checkmarks)</string>
 
     <!-- Time Display Color / Polarity (White, Soft White, vs Black with 82% White Overlay) -->
     <string name="time_color_label">Time Color</string>
@@ -145,6 +147,10 @@
     <string name="analog_hands_baton_theme">Tactical Baton — Theme Color</string>
     <string name="analog_hands_baton_white">Tactical Baton — White Lume</string>
     <string name="analog_hands_ghost_theme">Stealth Outline — Theme Color</string>
+    <string name="analog_hands_needle_theme">Ultra-Thin Needle — Theme Color</string>
+    <string name="analog_hands_needle_white">Ultra-Thin Needle — White</string>
+    <string name="analog_hands_arrow_theme">Slim Aviator Arrow — Theme Color</string>
+    <string name="analog_hands_arrow_white">Slim Aviator Arrow — White Lume</string>
 
     <!-- Top Bezel Wordmark Logo (Default CASINO + 7 Alternates + Blank) -->
     <string name="top_logo_label">Top Logo</string>

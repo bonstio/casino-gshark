@@ -161,7 +161,113 @@ dgm.polygon(poly([(-3.5, -132), (3.5, -132), (0, -158)]), fill=(255, 255, 255, 2
 save_drawable(ghost_mn, W, H, "hand_ghost_mn.png")
 
 # ==============================================================================
-# 4. CENTER PINION CAP (40x40 at x=205, y=205)
+# 4. ULTRA-THIN NEEDLE HANDS
+# ==============================================================================
+# --- Needle Hour Hand ---
+needle_hr_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dnh = ImageDraw.Draw(needle_hr_frame)
+nh_left = [(0, 22), (-2.0, 22), (-2.4, 12), (-1.8, 0), (-1.2, -112), (0, -115)]
+nh_right = [(0, 22), (2.0, 22), (2.4, 12), (1.8, 0), (1.2, -112), (0, -115)]
+dnh.polygon(poly(nh_left), fill=(210, 222, 236, 255))
+dnh.polygon(poly(nh_right), fill=(128, 140, 158, 255))
+nh_pip_cut = [(0, -91), (-2.2, -85), (0, -79), (2.2, -85)]
+dnh.polygon(poly(nh_pip_cut), fill=(0, 0, 0, 0))
+dnh.polygon(poly([(-0.6, -18), (0.6, -18), (0.6, -77), (-0.6, -77)]), fill=(0, 0, 0, 0))
+dnh.polygon(poly([(-0.5, -93), (0.5, -93), (0.5, -106), (-0.5, -106)]), fill=(0, 0, 0, 0))
+nh_out = [(-2.0, 22), (2.0, 22), (2.4, 12), (1.8, 0), (1.2, -112), (0, -115), (-1.2, -112), (-1.8, 0), (-2.4, 12)]
+dnh.line(poly(nh_out + [nh_out[0]]), fill=(24, 28, 36, 255), width=int(1.0 * S))
+dnh.line(poly(nh_pip_cut + [nh_pip_cut[0]]), fill=(24, 28, 36, 255), width=int(0.8 * S))
+
+needle_hr_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dnh_l = ImageDraw.Draw(needle_hr_lume)
+dnh_l.polygon(poly(nh_pip_cut), fill=(255, 255, 255, 255))
+dnh_l.polygon(poly([(-0.6, -18), (0.6, -18), (0.6, -77), (-0.6, -77)]), fill=(255, 255, 255, 255))
+dnh_l.polygon(poly([(-0.5, -93), (0.5, -93), (0.5, -106), (-0.5, -106)]), fill=(255, 255, 255, 255))
+
+needle_hr_frame_sh = add_drop_shadow(needle_hr_frame, needle_hr_lume, dx=2.2, dy=3.2, blur=2.4, opacity=0.62)
+save_drawable(needle_hr_frame_sh, W, H, "hand_needle_hr_frame.png")
+save_drawable(needle_hr_lume, W, H, "hand_needle_hr_lume.png")
+
+# --- Needle Minute Hand ---
+needle_mn_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dnm = ImageDraw.Draw(needle_mn_frame)
+nm_left = [(0, 28), (-1.8, 28), (-2.2, 16), (-1.5, 0), (-1.0, -168), (0, -171)]
+nm_right = [(0, 28), (1.8, 28), (2.2, 16), (1.5, 0), (1.0, -168), (0, -171)]
+dnm.polygon(poly(nm_left), fill=(210, 222, 236, 255))
+dnm.polygon(poly(nm_right), fill=(128, 140, 158, 255))
+nm_pip_cut = [(0, -141), (-1.8, -135), (0, -129), (1.8, -135)]
+dnm.polygon(poly(nm_pip_cut), fill=(0, 0, 0, 0))
+dnm.polygon(poly([(-0.5, -20), (0.5, -20), (0.5, -127), (-0.5, -127)]), fill=(0, 0, 0, 0))
+dnm.polygon(poly([(-0.4, -143), (0.4, -143), (0.4, -162), (-0.4, -162)]), fill=(0, 0, 0, 0))
+nm_out = [(-1.8, 28), (1.8, 28), (2.2, 16), (1.5, 0), (1.0, -168), (0, -171), (-1.0, -168), (-1.5, 0), (-2.2, 16)]
+dnm.line(poly(nm_out + [nm_out[0]]), fill=(24, 28, 36, 255), width=int(1.0 * S))
+dnm.line(poly(nm_pip_cut + [nm_pip_cut[0]]), fill=(24, 28, 36, 255), width=int(0.8 * S))
+
+needle_mn_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dnm_l = ImageDraw.Draw(needle_mn_lume)
+dnm_l.polygon(poly(nm_pip_cut), fill=(255, 255, 255, 255))
+dnm_l.polygon(poly([(-0.5, -20), (0.5, -20), (0.5, -127), (-0.5, -127)]), fill=(255, 255, 255, 255))
+dnm_l.polygon(poly([(-0.4, -143), (0.4, -143), (0.4, -162), (-0.4, -162)]), fill=(255, 255, 255, 255))
+
+needle_mn_frame_sh = add_drop_shadow(needle_mn_frame, needle_mn_lume, dx=2.5, dy=3.8, blur=2.8, opacity=0.65)
+save_drawable(needle_mn_frame_sh, W, H, "hand_needle_mn_frame.png")
+save_drawable(needle_mn_lume, W, H, "hand_needle_mn_lume.png")
+
+# ==============================================================================
+# 5. SLIM AVIATOR ARROW HANDS
+# ==============================================================================
+# --- Arrow Hour Hand ---
+arrow_hr_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dah = ImageDraw.Draw(arrow_hr_frame)
+ah_left = [(0, 22), (-2.8, 22), (-3.2, 14), (-2.2, 0), (-2.0, -80), (-6.2, -80), (0, -114)]
+ah_right = [(0, 22), (2.8, 22), (3.2, 14), (2.2, 0), (2.0, -80), (6.2, -80), (0, -114)]
+dah.polygon(poly(ah_left), fill=(210, 222, 236, 255))
+dah.polygon(poly(ah_right), fill=(128, 140, 158, 255))
+ah_tri_cut = [(-3.8, -83), (3.8, -83), (0, -107)]
+dah.polygon(poly(ah_tri_cut), fill=(0, 0, 0, 0))
+ah_stem_cut = [(-1.1, -16), (1.1, -16), (1.1, -74), (-1.1, -74)]
+dah.polygon(poly(ah_stem_cut), fill=(0, 0, 0, 0))
+ah_out = [(-2.8, 22), (2.8, 22), (3.2, 14), (2.2, 0), (2.0, -80), (6.2, -80), (0, -114), (-6.2, -80), (-2.0, -80), (-2.2, 0), (-3.2, 14)]
+dah.line(poly(ah_out + [ah_out[0]]), fill=(24, 28, 36, 255), width=int(1.1 * S))
+dah.line(poly(ah_tri_cut + [ah_tri_cut[0]]), fill=(24, 28, 36, 255), width=int(0.9 * S))
+dah.line(poly(ah_stem_cut + [ah_stem_cut[0]]), fill=(24, 28, 36, 255), width=int(0.9 * S))
+
+arrow_hr_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dah_l = ImageDraw.Draw(arrow_hr_lume)
+dah_l.polygon(poly(ah_tri_cut), fill=(255, 255, 255, 255))
+dah_l.polygon(poly(ah_stem_cut), fill=(255, 255, 255, 255))
+
+arrow_hr_frame_sh = add_drop_shadow(arrow_hr_frame, arrow_hr_lume, dx=2.5, dy=3.5, blur=2.8, opacity=0.65)
+save_drawable(arrow_hr_frame_sh, W, H, "hand_arrow_hr_frame.png")
+save_drawable(arrow_hr_lume, W, H, "hand_arrow_hr_lume.png")
+
+# --- Arrow Minute Hand ---
+arrow_mn_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dam = ImageDraw.Draw(arrow_mn_frame)
+am_left = [(0, 28), (-2.2, 28), (-2.6, 18), (-1.7, 0), (-1.5, -132), (-5.2, -132), (0, -168)]
+am_right = [(0, 28), (2.2, 28), (2.6, 18), (1.7, 0), (1.5, -132), (5.2, -132), (0, -168)]
+dam.polygon(poly(am_left), fill=(210, 222, 236, 255))
+dam.polygon(poly(am_right), fill=(128, 140, 158, 255))
+am_tri_cut = [(-3.2, -135), (3.2, -135), (0, -161)]
+dam.polygon(poly(am_tri_cut), fill=(0, 0, 0, 0))
+am_stem_cut = [(-0.9, -18), (0.9, -18), (0.9, -125), (-0.9, -125)]
+dam.polygon(poly(am_stem_cut), fill=(0, 0, 0, 0))
+am_out = [(-2.2, 28), (2.2, 28), (2.6, 18), (1.7, 0), (1.5, -132), (5.2, -132), (0, -168), (-5.2, -132), (-1.5, -132), (-1.7, 0), (-2.6, 18)]
+dam.line(poly(am_out + [am_out[0]]), fill=(24, 28, 36, 255), width=int(1.1 * S))
+dam.line(poly(am_tri_cut + [am_tri_cut[0]]), fill=(24, 28, 36, 255), width=int(0.9 * S))
+dam.line(poly(am_stem_cut + [am_stem_cut[0]]), fill=(24, 28, 36, 255), width=int(0.9 * S))
+
+arrow_mn_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dam_l = ImageDraw.Draw(arrow_mn_lume)
+dam_l.polygon(poly(am_tri_cut), fill=(255, 255, 255, 255))
+dam_l.polygon(poly(am_stem_cut), fill=(255, 255, 255, 255))
+
+arrow_mn_frame_sh = add_drop_shadow(arrow_mn_frame, arrow_mn_lume, dx=3.0, dy=4.2, blur=3.2, opacity=0.68)
+save_drawable(arrow_mn_frame_sh, W, H, "hand_arrow_mn_frame.png")
+save_drawable(arrow_mn_lume, W, H, "hand_arrow_mn_lume.png")
+
+# ==============================================================================
+# 6. CENTER PINION CAP (40x40 at x=205, y=205)
 #    Split into untinted base + tintable accent ring
 # ==============================================================================
 PW, PH = 40, 40

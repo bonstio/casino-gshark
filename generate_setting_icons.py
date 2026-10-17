@@ -19,10 +19,10 @@ ICON_SIZE = 96
 DIGITAL7_PATH = os.path.join(FONT_DIR, "digital7.ttf")
 ROB_BOLD_PATH = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Bold.ttf"
 if not os.path.exists(ROB_BOLD_PATH):
-    ROB_BOLD_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    ROB_BOLD_PATH = "C:/Windows/Fonts/arialbd.ttf" if os.path.exists("C:/Windows/Fonts/arialbd.ttf") else "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 ROB_REG_PATH = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf"
 if not os.path.exists(ROB_REG_PATH):
-    ROB_REG_PATH = ROB_BOLD_PATH
+    ROB_REG_PATH = "C:/Windows/Fonts/arial.ttf" if os.path.exists("C:/Windows/Fonts/arial.ttf") else ROB_BOLD_PATH
 
 # Cache loaded RGBA drawables
 _IMAGE_CACHE = {}
@@ -88,6 +88,7 @@ BG_TEXTURES = [
     "bg_lcd_ind_orange",
     "bg_lcd_ind_magenta",
     "bg_lcd_ind_silver",
+    "bg_lcd_ind_black_silver",
 ]
 
 THEME_COLORS = [
@@ -261,6 +262,9 @@ def render_watchface(
     elif tick_style == 5:
         canvas.alpha_composite(load_drawable("ticks_5_theme_minor"))
         canvas.alpha_composite(solid_tint_alpha(load_drawable("ticks_5_theme_major"), theme_rgb))
+    elif tick_style == 6:
+        canvas.alpha_composite(load_drawable("ticks_6_wedge"))
+    # tick_style 7 is None (no ticks rendered)
 
     # 4. Top Logo
     if top_logo < 8 and TOP_LOGOS[top_logo] is not None:
@@ -536,6 +540,26 @@ def render_watchface(
                 render_hand_pair(None, "hand_ghost_hr", None, "hand_ghost_mn", theme_rgb)
             )
             ring_rgb = theme_rgb
+        elif analog_hands == 6:
+            canvas.alpha_composite(
+                render_hand_pair("hand_needle_hr_frame", "hand_needle_hr_lume", "hand_needle_mn_frame", "hand_needle_mn_lume", theme_rgb)
+            )
+            ring_rgb = theme_rgb
+        elif analog_hands == 7:
+            canvas.alpha_composite(
+                render_hand_pair("hand_needle_hr_frame", "hand_needle_hr_lume", "hand_needle_mn_frame", "hand_needle_mn_lume", (255, 255, 255))
+            )
+            ring_rgb = (255, 255, 255)
+        elif analog_hands == 8:
+            canvas.alpha_composite(
+                render_hand_pair("hand_arrow_hr_frame", "hand_arrow_hr_lume", "hand_arrow_mn_frame", "hand_arrow_mn_lume", theme_rgb)
+            )
+            ring_rgb = theme_rgb
+        elif analog_hands == 9:
+            canvas.alpha_composite(
+                render_hand_pair("hand_arrow_hr_frame", "hand_arrow_hr_lume", "hand_arrow_mn_frame", "hand_arrow_mn_lume", (255, 255, 255))
+            )
+            ring_rgb = (255, 255, 255)
 
         p_base = load_drawable("main_pinion_base").resize((40, 40), Image.Resampling.LANCZOS)
         p_ring = solid_tint_alpha(load_drawable("main_pinion_ring").resize((40, 40), Image.Resampling.LANCZOS), ring_rgb)
@@ -580,9 +604,9 @@ def generate_all_icons():
         icon_img.save(icon_path, optimize=True)
         generated[(setting_id, str(opt_id))] = (res_name, icon_img)
 
-    # 1. bgTexture (17 options: 0..16) - Top-left bezel & textured plate
+    # 1. bgTexture (18 options: 0..17) - Top-left bezel & textured plate
     crop_bg_tex = (28, 28, 178, 178)
-    for i in range(17):
+    for i in range(18):
         wf = render_watchface(bg_texture=i, bg_border=0)
         save_icon("bgTexture", i, wf, crop_bg_tex)
 
@@ -648,9 +672,9 @@ def generate_all_icons():
         wf = render_watchface(sub_dial_mode=i)
         save_icon("subDialMode", i, wf, crop_subdial)
 
-    # 12. tickStyle (7 options: 0..6) - Top-right outer bezel tick arc
+    # 12. tickStyle (8 options: 0..7) - Top-right outer bezel tick arc
     crop_tick_style = (275, 15, 425, 165)
-    for i in range(7):
+    for i in range(8):
         wf = render_watchface(tick_style=i)
         save_icon("tickStyle", i, wf, crop_tick_style)
 
@@ -660,9 +684,9 @@ def generate_all_icons():
         wf = render_watchface(seconds_dot=i)
         save_icon("secondsDot", i, wf, crop_sec_dot)
 
-    # 14. analogHands (6 options: 0..5) - Center analog hands & 3D pinion cap
+    # 14. analogHands (10 options: 0..9) - Center analog hands & 3D pinion cap
     crop_analog_hands = (125, 115, 325, 315)
-    for i in range(6):
+    for i in range(10):
         wf = render_watchface(analog_hands=i)
         save_icon("analogHands", i, wf, crop_analog_hands)
 

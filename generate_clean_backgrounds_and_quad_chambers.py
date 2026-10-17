@@ -676,8 +676,29 @@ except Exception as e:
     print("Icon update error:", e)
 
 # 4. DESERT CAMO (bg_lcd_camo_desert.png)
-camo_desert = [(68, 54, 40), (124, 102, 78), (170, 146, 116), (208, 186, 154)]
-img_04 = build_3d_camo_plate((148, 126, 98), camo_desert, seed_val=88, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
+src_desert_path = os.path.join(EXPORT_DIR, "source_camo_desert.png")
+if not os.path.exists(src_desert_path):
+    alt_desert_path = "C:/Users/bonst/.gemini/antigravity/brain/d3a6c7d4-5613-437a-a72c-e90fec512f25/.user_uploaded/media_1792264733245_56d832ee.png"
+    if os.path.exists(alt_desert_path):
+        raw_crop = Image.open(alt_desert_path).convert("RGB")
+        raw_crop.save(src_desert_path)
+
+camo_desert_src = Image.open(src_desert_path).convert("RGB")
+w_src, h_src = camo_desert_src.size
+zoom_factor = 2.4
+cw, ch = w_src / zoom_factor, h_src / zoom_factor
+x1 = (w_src - cw) / 2.0
+y1 = (h_src - ch) / 2.0
+camo_desert_cropped = camo_desert_src.crop((int(round(x1)), int(round(y1)), int(round(x1 + cw)), int(round(y1 + ch))))
+camo_desert_resized = camo_desert_cropped.resize((W, H), Image.Resampling.LANCZOS)
+arr_desert = np.array(camo_desert_resized, dtype=float)
+vig_desert = np.array(vig_map).reshape((H, W))
+disc_desert = np.array(inside_disc).reshape((H, W))
+
+arr_desert_vig = np.clip(arr_desert * vig_desert[:, :, np.newaxis], 0, 255).astype(np.uint8)
+alpha_desert = (disc_desert * 255).astype(np.uint8)
+img_04 = Image.fromarray(np.dstack([arr_desert_vig, alpha_desert]))
+
 apply_pods_and_subdial_housing_2x(
     img_04,
     floor_rgb=(21, 17, 12),
@@ -977,6 +998,7 @@ ind_specs = [
     (14, "bg_lcd_ind_orange.png",   28.0, 0.86, 0.60,  11.0, 0.92, 0.14, (21, 11, 6),  (220, 128, 66),  (50.0, 34.0, 24.0), (212.0, 165.0, 125.0), (1.0, 0.92, 0.82)),
     (15, "bg_lcd_ind_magenta.png", 320.0, 0.84, 0.56, 296.0, 0.92, 0.14, (19, 7, 19),  (204, 92, 194),  (46.0, 28.0, 46.0), (198.0, 145.0, 196.0), (0.98, 0.86, 1.0)),
     (16, "bg_lcd_ind_silver.png",  200.0, 0.08, 0.60, 218.0, 0.22, 0.15, (13, 16, 20), (168, 186, 210), (38.0, 44.0, 52.0), (182.0, 198.0, 218.0), (0.95, 0.98, 1.0)),
+    (17, "bg_lcd_ind_black_silver.png",  0.0, 0.00, 0.85,   0.0, 0.00, 0.08, (9, 10, 12),  (210, 222, 238), (32.0, 36.0, 42.0), (220.0, 230.0, 245.0), (1.0, 1.0, 1.0)),
 ]
 
 for idx_bg, fname, hl, sl, vl, hd, sd, vd, floor_rgb, bev_lit_rgb, sub_base_f, sub_spec_f, sp_tint in ind_specs:
