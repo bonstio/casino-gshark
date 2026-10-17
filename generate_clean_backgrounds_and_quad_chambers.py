@@ -1,4 +1,5 @@
 import os, math, random, colorsys, time
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageChops
 
 t0 = time.time()
@@ -19,6 +20,7 @@ cx2, cy2 = cx * scale, cy * scale
 scx2, scy2 = scx * scale, scy * scale
 ro2, ri2, rcut2 = r_outer * scale, r_inner * scale, r_cut * scale
 r_c2 = 12.0 * scale
+Y_2d, X_2d = np.ogrid[:H, :W]
 
 light_dir_x, light_dir_y = -0.60, -0.80  # Light source at ~10:30 upper-left
 
@@ -689,21 +691,55 @@ apply_pods_and_subdial_housing_2x(
 save_bg_from_2x(img_04, "bg_lcd_camo_desert.png")
 save_quad_chamber_3d(4, floor_rgb=(21, 17, 12), bev_lit_rgb=(185, 165, 138), bev_sh_rgb=(6, 5, 3), honeycomb_gain=0.18)
 
-# 5. ZEBRA CAMO (bg_lcd_camo_zebra.png)
-camo_zebra = [(18, 20, 24), (45, 48, 54), (160, 165, 175), (215, 220, 228)]
-img_05 = build_3d_camo_plate((88, 92, 102), camo_zebra, seed_val=19, count_inner=28, count_outer=32, rx_range=(12, 34), ry_range=(24, 60))
+# 5. AUTHENTIC ZEBRA STRIPE CAMO (bg_lcd_camo_zebra.png)
+# Inspired by G-Shock Zebra Camouflage Series (DW-6900ZB / GA-110ZB)
+rot_z = math.radians(40.0)
+u_z = (X_2d - 450) * math.cos(rot_z) + (Y_2d - 450) * math.sin(rot_z)
+v_z = -(X_2d - 450) * math.sin(rot_z) + (Y_2d - 450) * math.cos(rot_z)
+
+warp_z = (
+    52.0 * np.sin(v_z * 0.0055 + 0.6) +
+    32.0 * np.cos(u_z * 0.0045 + v_z * 0.011) +
+    18.0 * np.sin(v_z * 0.020 - u_z * 0.007) +
+    9.0 * np.cos(u_z * 0.032 + v_z * 0.014)
+)
+u_warped_z = u_z + warp_z
+
+lam_z = 68.0
+phase_z = 2.0 * math.pi * u_warped_z / lam_z
+fork_field_z = np.sin(u_z * 0.0035 + v_z * 0.013) * np.cos(v_z * 0.0075 + 0.4)
+phase_forked_z = phase_z + 1.25 * fork_field_z * np.sin(phase_z)
+
+wave_z = np.cos(phase_forked_z)
+thresh_mod_z = 0.05 + 0.35 * np.sin(v_z * 0.007 + 1.2) * np.cos(u_z * 0.005)
+pinch_z = 0.45 * np.maximum(0.0, np.sin(u_z * 0.008 + 1.0) * np.sin(v_z * 0.009 - 0.5) - 0.3)
+thresh_mod_z += pinch_z
+
+edge_z = np.clip((wave_z - thresh_mod_z) / 0.14, -1.0, 1.0) * 0.5 + 0.5
+shadow_z = np.clip((wave_z - (thresh_mod_z - 0.16)) / 0.18, 0.0, 1.0)
+
+arr_z = np.zeros((H, W, 4), dtype=np.uint8)
+for c_idx in range(3):
+    bg_c = 244 if c_idx < 2 else 248
+    st_c = 16 if c_idx == 0 else (18 if c_idx == 1 else 22)
+    edge_c = 42 if c_idx == 0 else (46 if c_idx == 1 else 54)
+    col_z = bg_c * (1.0 - shadow_z) + edge_c * (shadow_z - edge_z) + st_c * edge_z
+    arr_z[:, :, c_idx] = np.clip(col_z, 0, 255).astype(np.uint8)
+arr_z[:, :, 3] = 255
+
+img_05 = Image.fromarray(arr_z)
 apply_pods_and_subdial_housing_2x(
     img_05,
     floor_rgb=(12, 15, 20),
-    bev_lit_rgb=(155, 170, 192),
-    bev_sh_rgb=(3, 4, 6),
+    bev_lit_rgb=(175, 185, 200),
+    bev_sh_rgb=(4, 5, 7),
     honeycomb_gain=0.18,
     sub_base_f=(34.0, 38.0, 46.0),
-    sub_spec_f=(165.0, 180.0, 205.0),
+    sub_spec_f=(175.0, 185.0, 205.0),
     well_rgb=(12.0, 15.0, 20.0),
 )
 save_bg_from_2x(img_05, "bg_lcd_camo_zebra.png")
-save_quad_chamber_3d(5, floor_rgb=(12, 15, 20), bev_lit_rgb=(155, 170, 192), bev_sh_rgb=(3, 4, 6), honeycomb_gain=0.18)
+save_quad_chamber_3d(5, floor_rgb=(12, 15, 20), bev_lit_rgb=(175, 185, 200), bev_sh_rgb=(4, 5, 7), honeycomb_gain=0.18)
 
 # 6. CARBON FIBER (bg_lcd_carbon_fiber.png)
 pitch_cf = 12 * scale
@@ -848,21 +884,60 @@ save_bg_from_2x(img_09, "bg_lcd_tactical_mesh.png")
 save_quad_chamber_3d(9, floor_rgb=(13, 17, 22), bev_lit_rgb=(142, 160, 184), bev_sh_rgb=(3, 5, 8), honeycomb_gain=0.18)
 
 # ==============================================================================
-# 10..16. INDUSTRIAL SERIES
+# 10..16. INDUSTRIAL SERIES (AUTHENTIC 4.5px MICRO-WAFFLE KNURL, pitch_a = 9)
 # ==============================================================================
-pitch_a = 12 * scale
-diff_mult_tile = [[1.0] * pitch_a for _ in range(pitch_a)]
-spec_add_tile = [[0.0] * pitch_a for _ in range(pitch_a)]
-spec_tile = [[0.0] * pitch_a for _ in range(pitch_a)]
+pitch_a = 9
+Z_tile = [[0.0]*pitch_a for _ in range(pitch_a)]
+AO_tile = [[0.0]*pitch_a for _ in range(pitch_a)]
+for py in range(pitch_a):
+    v_a = (py / float(pitch_a)) * 2.0 - 1.0
+    for px in range(pitch_a):
+        u_a = (px / float(pitch_a)) * 2.0 - 1.0
+        dist_cheb = max(abs(u_a), abs(v_a))
+        z = 0.5 * (1.0 - math.tanh(6.5 * (dist_cheb - 0.74)))
+        dist_eucl = math.hypot(u_a, v_a)
+        if dist_eucl > 0.85:
+            z *= max(0.0, min(1.0, 1.0 - 0.15 * (dist_eucl - 0.85)))
+        Z_tile[py][px] = z
+        AO_tile[py][px] = 0.44 + 0.56 * (z ** 0.7)
 
+lx_m, ly_m, lz_m = -0.48, -0.62, 0.62
+l_len_m = math.sqrt(lx_m*lx_m + ly_m*ly_m + lz_m*lz_m)
+lx_m, ly_m, lz_m = lx_m/l_len_m, ly_m/l_len_m, lz_m/l_len_m
+
+hx_m, hy_m, hz_m = lx_m, ly_m, lz_m + 1.0
+h_len_m = math.sqrt(hx_m*hx_m + hy_m*hy_m + hz_m*hz_m)
+hx_m, hy_m, hz_m = hx_m/h_len_m, hy_m/h_len_m, hz_m/h_len_m
+
+slope_scale = 2.95
+ndotl_tile = [[0.0]*pitch_a for _ in range(pitch_a)]
+spec_tile = [[0.0]*pitch_a for _ in range(pitch_a)]
+for py in range(pitch_a):
+    py_prev = (py - 1) % pitch_a
+    py_next = (py + 1) % pitch_a
+    for px in range(pitch_a):
+        px_prev = (px - 1) % pitch_a
+        px_next = (px + 1) % pitch_a
+        dZdx = 0.5 * (Z_tile[py][px_next] - Z_tile[py][px_prev])
+        dZdy = 0.5 * (Z_tile[py_next][px] - Z_tile[py_prev][px])
+        nx = -slope_scale * dZdx
+        ny = -slope_scale * dZdy
+        nz = 1.0
+        n_len = math.sqrt(nx*nx + ny*ny + nz*nz)
+        nx, ny, nz = nx/n_len, ny/n_len, nz/n_len
+        nd = max(0.0, min(1.0, nx*lx_m + ny*ly_m + nz*lz_m))
+        nh = max(0.0, min(1.0, nx*hx_m + ny*hy_m + nz*hz_m))
+        ndotl_tile[py][px] = nd
+        spec_tile[py][px] = nh ** 15.0
+
+diff_mult_tile = [[0.0]*pitch_a for _ in range(pitch_a)]
+spec_add_tile = [[0.0]*pitch_a for _ in range(pitch_a)]
 for py in range(pitch_a):
     for px in range(pitch_a):
-        dx_t = (px - pitch_a / 2.0) / (pitch_a / 2.0)
-        dy_t = (py - pitch_a / 2.0) / (pitch_a / 2.0)
-        dist_t = math.hypot(dx_t, dy_t)
-        ao = min(1.0, dist_t * 1.2)
-        diff_mult_tile[py][px] = 0.82 + 0.28 * ao
-        spec_add_tile[py][px] = 42.0 * ao
+        nd = ndotl_tile[py][px]
+        ao = AO_tile[py][px]
+        diff_mult_tile[py][px] = (0.52 + 0.76 * nd) * ao
+        spec_add_tile[py][px] = 42.0 * spec_tile[py][px] * ao
 
 ind_lut_idx = bytearray(W * H)
 ind_mult_map = [0.0] * (W * H)
