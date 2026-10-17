@@ -946,7 +946,7 @@ for idx_bg, fname, hl, sl, vl, hd, sd, vd, floor_rgb, bev_lit_rgb, sub_base_f, s
 # ==============================================================================
 # GENERATE QUAD ARC OVERLAY & FACE PLATES (DARK, INVERT, & TEXTURES)
 # ==============================================================================
-centers = [(103, 199), (170, 114), (280, 114), (347, 199)]
+centers = [(101, 231), (161, 118), (289, 118), (349, 231)]
 r_outer_c = 39.0
 r_inner_c = 31.5
 
