@@ -2259,11 +2259,11 @@
 
         <!-- COMPLICATION SLOT 1 (Left Pod: Step Count) -->
         <ComplicationSlot
-            x="60" y="85" width="85" height="160" slotId="1"
+            x="60" y="85" width="85" height="185" slotId="1"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="85" height="160" />
+            <BoundingBox x="0" y="0" width="85" height="185" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.steps.OffloadableStepsComplicationDataSourceService"
@@ -2275,8 +2275,8 @@
 
             <Complication type="SHORT_TEXT">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 10 : 12" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 75 : 5" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 7 : 12" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 101 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <!-- Complication Icon (White Mode + Ambient) -->
@@ -2348,8 +2348,8 @@
 
             <Complication type="SMALL_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 10 : 12" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 75 : 5" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 7 : 12" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 101 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2373,8 +2373,8 @@
 
             <Complication type="MONOCHROMATIC_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 10 : 12" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 75 : 5" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 7 : 12" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 101 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2401,11 +2401,11 @@
 
         <!-- COMPLICATION SLOT 2 (Mid-Left Pod: Heart Rate) -->
         <ComplicationSlot
-            x="130" y="70" width="95" height="105" slotId="2"
+            x="110" y="70" width="105" height="105" slotId="2"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="95" height="105" />
+            <BoundingBox x="0" y="0" width="105" height="105" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.heartrate.OffloadableHeartRateComplicationDataSourceService"
@@ -2417,8 +2417,8 @@
 
             <Complication type="SHORT_TEXT">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 7 : 22" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 5 : 20" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 12 : 42" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 20" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <!-- Complication Icon (White Mode + Ambient) -->
@@ -2490,8 +2490,8 @@
 
             <Complication type="SMALL_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 7 : 22" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 5 : 20" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 12 : 42" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 20" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2515,8 +2515,8 @@
 
             <Complication type="MONOCHROMATIC_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 7 : 22" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 5 : 20" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 12 : 42" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 20" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2543,11 +2543,11 @@
 
         <!-- COMPLICATION SLOT 3 (Mid-Right Pod: Sunset Time) -->
         <ComplicationSlot
-            x="225" y="70" width="95" height="105" slotId="3"
+            x="225" y="60" width="95" height="115" slotId="3"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="95" height="105" />
+            <BoundingBox x="0" y="0" width="95" height="115" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.google.android.apps.weather/com.google.android.wearable.weather.pixel.ui.complications.solar.SolarComplicationService"
@@ -2559,8 +2559,8 @@
 
             <Complication type="SHORT_TEXT">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 22 : 7" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 5 : 20" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 12 : 7" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 9 : 30" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <!-- Complication Icon (White Mode + Ambient) -->
@@ -2632,8 +2632,8 @@
 
             <Complication type="SMALL_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 22 : 7" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 5 : 20" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 12 : 7" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 9 : 30" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2657,8 +2657,8 @@
 
             <Complication type="MONOCHROMATIC_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
-                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 22 : 7" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 5 : 20" />
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 12 : 7" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 9 : 30" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2702,7 +2702,7 @@
             <Complication type="SHORT_TEXT">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 7" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 75 : 5" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 72 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <!-- Complication Icon (White Mode + Ambient) -->
@@ -2775,7 +2775,7 @@
             <Complication type="SMALL_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 7" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 75 : 5" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 72 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
@@ -2800,7 +2800,7 @@
             <Complication type="MONOCHROMATIC_IMAGE">
                 <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 7" />
-                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 75 : 5" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 72 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
