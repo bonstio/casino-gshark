@@ -463,6 +463,97 @@
 
         <!-- ============================================================== -->
         
+        <!-- Upper 4 Quad Complication Pods Chamber (Only active in Digital Mode: analogHands == 0) -->
+        <Group x="0" y="0" width="450" height="450" name="QuadChamberGroup">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 ? 255 : 0" />
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber0">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 0 ? 255 : 0" />
+                <Image resource="quad_chamber_0" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber1">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 1 ? 255 : 0" />
+                <Image resource="quad_chamber_1" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 2 ? 255 : 0" />
+                <Image resource="quad_chamber_2" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber3">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 3 ? 255 : 0" />
+                <Image resource="quad_chamber_3" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber4">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 4 ? 255 : 0" />
+                <Image resource="quad_chamber_4" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber5">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 5 ? 255 : 0" />
+                <Image resource="quad_chamber_5" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber6">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 6 ? 255 : 0" />
+                <Image resource="quad_chamber_6" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber7">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 7 ? 255 : 0" />
+                <Image resource="quad_chamber_7" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 8 ? 255 : 0" />
+                <Image resource="quad_chamber_8" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber9">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 9 ? 255 : 0" />
+                <Image resource="quad_chamber_9" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber10">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 10 ? 255 : 0" />
+                <Image resource="quad_chamber_10" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber11">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 11 ? 255 : 0" />
+                <Image resource="quad_chamber_11" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber12">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 12 ? 255 : 0" />
+                <Image resource="quad_chamber_12" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber13">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 13 ? 255 : 0" />
+                <Image resource="quad_chamber_13" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 14 ? 255 : 0" />
+                <Image resource="quad_chamber_14" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber15">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 15 ? 255 : 0" />
+                <Image resource="quad_chamber_15" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber16">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 16 ? 255 : 0" />
+                <Image resource="quad_chamber_16" />
+            </PartImage>
+        </Group>
+
         <!-- Arced Quad Complication Pods Overlay (Active when analogHands != 0) -->
         <PartImage x="0" y="0" width="450" height="450" name="QuadArcOverlay">
             <Variant mode="AMBIENT" target="alpha" value="0" />
