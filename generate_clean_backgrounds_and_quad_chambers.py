@@ -593,8 +593,15 @@ if not os.path.exists(src_camo_path):
         raw_crop = Image.open(alt_path).crop((0, 0, 948, 948))
         raw_crop.save(src_camo_path)
 
-camo_src = Image.open(src_camo_path).convert("RGB").resize((W, H), Image.Resampling.LANCZOS)
-arr_camo = np.array(camo_src, dtype=float)
+camo_src = Image.open(src_camo_path).convert("RGB")
+w_src, h_src = camo_src.size
+zoom_factor = 1.8
+cw, ch = w_src / zoom_factor, h_src / zoom_factor
+x1 = (w_src - cw) / 2.0
+y1 = (h_src - ch) / 2.0
+camo_cropped = camo_src.crop((int(round(x1)), int(round(y1)), int(round(x1 + cw)), int(round(y1 + ch))))
+camo_resized = camo_cropped.resize((W, H), Image.Resampling.LANCZOS)
+arr_camo = np.array(camo_resized, dtype=float)
 vig_camo = np.array(vig_map).reshape((H, W))
 disc_camo = np.array(inside_disc).reshape((H, W))
 

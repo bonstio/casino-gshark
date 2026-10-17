@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="net.bonstio.watchface.gshark"
-    android:versionCode="23"
-    android:versionName="2.4">
+    android:versionCode="24"
+    android:versionName="2.5">
     <uses-sdk
         android:minSdkVersion="34"
         android:targetSdkVersion="35" />
