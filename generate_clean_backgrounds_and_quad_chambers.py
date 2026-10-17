@@ -622,21 +622,56 @@ apply_pods_and_subdial_housing_2x(
 save_bg_from_2x(img_02, "bg_lcd_camo.png")
 save_quad_chamber_3d(2, floor_rgb=(17, 23, 16), bev_lit_rgb=(148, 166, 142), bev_sh_rgb=(4, 6, 4), honeycomb_gain=0.18)
 
-# 3. URBAN CAMO (bg_lcd_camo_urban.png)
-camo_urban = [(26, 30, 36), (58, 64, 72), (92, 98, 108), (140, 146, 156)]
-img_03 = build_3d_camo_plate((46, 52, 60), camo_urban, seed_val=42, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
+# 3. URBAN / ARCTIC CAMO (bg_lcd_camo_urban.png)
+src_arctic_path = os.path.join(EXPORT_DIR, "source_camo_arctic.png")
+if not os.path.exists(src_arctic_path):
+    alt_arctic_path = "C:/Users/bonst/.gemini/antigravity/brain/d3a6c7d4-5613-437a-a72c-e90fec512f25/.user_uploaded/media_1792236990592_a7ef715c.png"
+    if os.path.exists(alt_arctic_path):
+        raw_crop = Image.open(alt_arctic_path).crop((0, 0, 1024, 1024))
+        raw_crop.save(src_arctic_path)
+
+camo_arctic_src = Image.open(src_arctic_path).convert("RGB")
+w_src, h_src = camo_arctic_src.size
+zoom_factor = 1.8
+cw, ch = w_src / zoom_factor, h_src / zoom_factor
+x1 = (w_src - cw) / 2.0
+y1 = (h_src - ch) / 2.0
+camo_arctic_cropped = camo_arctic_src.crop((int(round(x1)), int(round(y1)), int(round(x1 + cw)), int(round(y1 + ch))))
+camo_arctic_resized = camo_arctic_cropped.resize((W, H), Image.Resampling.LANCZOS)
+arr_arctic = np.array(camo_arctic_resized, dtype=float)
+vig_arctic = np.array(vig_map).reshape((H, W))
+disc_arctic = np.array(inside_disc).reshape((H, W))
+
+arr_arctic_vig = np.clip(arr_arctic * vig_arctic[:, :, np.newaxis], 0, 255).astype(np.uint8)
+alpha_arctic = (disc_arctic * 255).astype(np.uint8)
+img_03 = Image.fromarray(np.dstack([arr_arctic_vig, alpha_arctic]))
+
 apply_pods_and_subdial_housing_2x(
     img_03,
-    floor_rgb=(17, 23, 16),
-    bev_lit_rgb=(152, 170, 146),
-    bev_sh_rgb=(4, 6, 4),
+    floor_rgb=(16, 18, 22),
+    bev_lit_rgb=(175, 185, 200),
+    bev_sh_rgb=(3, 4, 6),
     honeycomb_gain=0.18,
-    sub_base_f=(36.0, 42.0, 36.0),
-    sub_spec_f=(164.0, 180.0, 162.0),
-    well_rgb=(16.0, 22.0, 15.0),
+    sub_base_f=(38.0, 42.0, 48.0),
+    sub_spec_f=(175.0, 188.0, 205.0),
+    well_rgb=(15.0, 17.0, 21.0),
 )
 save_bg_from_2x(img_03, "bg_lcd_camo_urban.png")
-save_quad_chamber_3d(3, floor_rgb=(17, 23, 16), bev_lit_rgb=(152, 170, 146), bev_sh_rgb=(4, 6, 4), honeycomb_gain=0.18)
+save_quad_chamber_3d(3, floor_rgb=(16, 18, 22), bev_lit_rgb=(175, 185, 200), bev_sh_rgb=(3, 4, 6), honeycomb_gain=0.18)
+
+# Generate ic_cfg_bgtexture_3.png icon via generate_setting_icons
+try:
+    import generate_setting_icons as gsi
+    if os.path.exists("C:/Windows/Fonts/arialbd.ttf"):
+        gsi.ROB_BOLD_PATH = "C:/Windows/Fonts/arialbd.ttf"
+        gsi.ROB_REG_PATH = "C:/Windows/Fonts/arial.ttf"
+    crop_bg_tex = (28, 28, 178, 178)
+    wf3 = gsi.render_watchface(bg_texture=3, bg_border=0)
+    icon_img3 = gsi.make_circular_icon(wf3, crop_bg_tex)
+    icon_img3.save(os.path.join(OUTPUT_DIR, "ic_cfg_bgtexture_3.png"), optimize=True)
+    print("Saved updated ic_cfg_bgtexture_3.png via gsi!")
+except Exception as e:
+    print("Icon update error:", e)
 
 # 4. DESERT CAMO (bg_lcd_camo_desert.png)
 camo_desert = [(68, 54, 40), (124, 102, 78), (170, 146, 116), (208, 186, 154)]
@@ -909,12 +944,13 @@ for idx_bg, fname, hl, sl, vl, hd, sd, vd, floor_rgb, bev_lit_rgb, sub_base_f, s
     save_quad_chamber_3d(idx_bg, floor_rgb=floor_rgb, bev_lit_rgb=bev_lit_rgb, bev_sh_rgb=(3, 5, 8), honeycomb_gain=0.22)
 
 # ==============================================================================
-# GENERATE QUAD ARC OVERLAY (WITHOUT BASE PATCH - PURELY 4 CIRCULAR DIALS!)
+# GENERATE QUAD ARC OVERLAY & FACE PLATES (DARK, INVERT, & TEXTURES)
 # ==============================================================================
 centers = [(103, 199), (170, 114), (280, 114), (347, 199)]
 r_outer_c = 39.0
 r_inner_c = 31.5
 
+# 1. Bezel overlay with transparent window
 hi_dials = Image.new('RGBA', (W, H), (0, 0, 0, 0))
 d_hi = ImageDraw.Draw(hi_dials)
 
@@ -940,12 +976,12 @@ for cx_d, cy_d in centers:
     d_hi.ellipse((c2x - ro2_d, c2y - ro2_d, c2x + ro2_d, c2y + ro2_d), fill=flange_fill, outline=flange_out, width=2*scale)
     d_hi.ellipse((c2x - ro2_d + 3*scale, c2y - ro2_d + 3*scale, c2x + ro2_d - 3*scale, c2y + ro2_d - 3*scale), outline=inner_bevel, width=1*scale)
 
-    # Recessed dark face
-    d_hi.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(12, 15, 20, 255))
+    # Clear window
+    d_hi.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(0, 0, 0, 0))
 
-    # Inner shadow & highlight
-    d_hi.arc((c2x - ri2_d + 1, c2y - ri2_d + 1, c2x + ri2_d - 1, c2y + ri2_d - 1), start=180, end=360, fill=(0, 0, 0, 240), width=2*scale)
-    d_hi.arc((c2x - ri2_d + 1, c2y - ri2_d + 1, c2x + ri2_d - 1, c2y + ri2_d - 1), start=0, end=180, fill=(65, 78, 95, 140), width=1*scale)
+    # Inner shadow & highlight on the inner rim
+    d_hi.arc((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), start=180, end=360, fill=(0, 0, 0, 240), width=2*scale)
+    d_hi.arc((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), start=0, end=180, fill=(65, 78, 95, 140), width=1*scale)
 
     # 4 screws on bezel
     r_screw_pos = (r_inner_c + r_outer_c) / 2.0 * scale
@@ -958,6 +994,108 @@ for cx_d, cy_d in centers:
 
 dials_450 = hi_dials.resize((450, 450), Image.Resampling.LANCZOS)
 dials_450.save(os.path.join(OUTPUT_DIR, "quad_arc_overlay.png"))
-print("Saved clean quad_arc_overlay.png (purely 4 circular dials without base patch)!")
+print("Saved windowed quad_arc_overlay.png")
 
-print(f"All 17 clean full-bleed backgrounds and 17 quad_chamber overlays generated in {time.time() - t0:.1f}s!")
+# 2. Quad Arc Face Dark
+face_dark_hi = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+d_dark = ImageDraw.Draw(face_dark_hi)
+for cx_d, cy_d in centers:
+    c2x, c2y = int(cx_d * scale), int(cy_d * scale)
+    ri2_d = int(r_inner_c * scale) + 2
+    d_dark.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(12, 15, 20, 255))
+face_dark_450 = face_dark_hi.resize((450, 450), Image.Resampling.LANCZOS)
+face_dark_450.save(os.path.join(OUTPUT_DIR, "quad_arc_face_dark.png"))
+print("Saved quad_arc_face_dark.png")
+
+# 3. Quad Arc Invert Default
+face_inv_hi = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+d_inv = ImageDraw.Draw(face_inv_hi)
+for cx_d, cy_d in centers:
+    c2x, c2y = int(cx_d * scale), int(cy_d * scale)
+    ri2_d = int(r_inner_c * scale) + 2
+    d_inv.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(16, 18, 22, 255))
+
+inv_arr = np.zeros((H, W, 4), dtype=np.uint8)
+Y_g, X_g = np.ogrid[:H, :W]
+for cx_d, cy_d in centers:
+    c2x, c2y = int(cx_d * scale), int(cy_d * scale)
+    ri2_d = int(r_inner_c * scale) + 2
+    dist_sq = (X_g - c2x)**2 + (Y_g - c2y)**2
+    mask = dist_sq <= ri2_d**2
+    inv_arr[mask, 0] = 242
+    inv_arr[mask, 1] = 246
+    inv_arr[mask, 2] = 250
+    inv_arr[mask, 3] = 210
+
+scan_rows = (Y_g % (3 * scale) < scale).squeeze()
+inv_arr[scan_rows, :, :3] = (inv_arr[scan_rows, :, :3] * 0.92).astype(np.uint8)
+face_inv_hi.alpha_composite(Image.fromarray(inv_arr))
+
+sh_inv_hi = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+d_sh_inv = ImageDraw.Draw(sh_inv_hi)
+for cx_d, cy_d in centers:
+    c2x, c2y = int(cx_d * scale), int(cy_d * scale)
+    ri2_d = int(r_inner_c * scale)
+    for r_step in range(int(10 * scale)):
+        alpha_step = int(140 * (1.0 - r_step / (10 * scale))**1.5)
+        d_sh_inv.arc((c2x - ri2_d + r_step, c2y - ri2_d + r_step, c2x + ri2_d - r_step, c2y + ri2_d - r_step),
+                     start=180, end=360, fill=(14, 18, 24, alpha_step), width=scale)
+
+face_inv_hi.alpha_composite(sh_inv_hi)
+face_inv_450 = face_inv_hi.resize((450, 450), Image.Resampling.LANCZOS)
+face_inv_450.save(os.path.join(OUTPUT_DIR, "tex_arc_invert_default.png"))
+print("Saved tex_arc_invert_default.png")
+
+# 4. Textures
+tex_configs = [
+    ('tex_screen_hex_light.png',   'tex_arc_hex_light.png',   'tex_arc_invert_hex_light.png',   True,  0.14, 0.00, 1.00),
+    ('tex_screen_hex_dark.png',    'tex_arc_hex_dark.png',    'tex_arc_invert_hex_dark.png',    False, 0.22, 0.07, 0.78),
+    ('tex_screen_moire_light.png', 'tex_arc_moire_light.png', 'tex_arc_invert_moire_light.png', True,  0.15, 0.00, 1.00),
+    ('tex_screen_moire_dark.png',  'tex_arc_moire_dark.png',  'tex_arc_invert_moire_dark.png',  True,  0.30, 0.08, 0.65),
+]
+
+arc_mask_450 = np.zeros((450, 450), dtype=float)
+Y450, X450 = np.ogrid[:450, :450]
+for cx_d, cy_d in centers:
+    dist_sq = (X450 - cx_d)**2 + (Y450 - cy_d)**2
+    m = np.clip((r_inner_c + 0.5 - np.sqrt(dist_sq)), 0.0, 1.0)
+    arc_mask_450 = np.maximum(arc_mask_450, m)
+
+for src_name, dark_out_name, inv_out_name, inv_polarity, contrast_str, base_dark, dark_scale in tex_configs:
+    src_file = os.path.join(OUTPUT_DIR, src_name)
+    if not os.path.exists(src_file):
+        continue
+    raw_tex = Image.open(src_file).convert('RGBA')
+    raw_arr = np.array(raw_tex).astype(float)
+    tw, th = raw_tex.size
+
+    tiled_v = np.zeros((450, 450), dtype=float)
+    tiled_a = np.zeros((450, 450), dtype=float)
+    for y in range(450):
+        for x in range(450):
+            tiled_v[y, x] = raw_arr[y % th, x % tw, 0] / 255.0
+            tiled_a[y, x] = raw_arr[y % th, x % tw, 3] / 255.0
+
+    dark_pure_op = tiled_a * tiled_v * dark_scale * arc_mask_450
+    dark_arr = np.zeros((450, 450, 4), dtype=np.uint8)
+    dark_arr[:, :, 0] = 255
+    dark_arr[:, :, 1] = 255
+    dark_arr[:, :, 2] = 255
+    dark_arr[:, :, 3] = (dark_pure_op * 255.0).clip(0, 255).astype(np.uint8)
+    Image.fromarray(dark_arr).save(os.path.join(OUTPUT_DIR, dark_out_name))
+
+    valid_v = raw_arr[:, :, 0]
+    v_min, v_max = np.percentile(valid_v, 2), np.percentile(valid_v, 98)
+    pat_norm = np.clip((tiled_v - v_min/255.0) / max(0.01, (v_max - v_min)/255.0), 0.0, 1.0)
+    pattern_darkness = (1.0 - pat_norm) if inv_polarity else pat_norm
+    pat_dark_alpha = (base_dark + pattern_darkness * contrast_str) * arc_mask_450
+
+    inv_t_arr = np.zeros((450, 450, 4), dtype=np.uint8)
+    inv_t_arr[:, :, 0] = 14
+    inv_t_arr[:, :, 1] = 18
+    inv_t_arr[:, :, 2] = 24
+    inv_t_arr[:, :, 3] = (pat_dark_alpha * 255.0).clip(0, 255).astype(np.uint8)
+    Image.fromarray(inv_t_arr).save(os.path.join(OUTPUT_DIR, inv_out_name))
+
+print(f"All 17 clean full-bleed backgrounds, quad_chambers, and quad arc assets generated in {time.time() - t0:.1f}s!")
+

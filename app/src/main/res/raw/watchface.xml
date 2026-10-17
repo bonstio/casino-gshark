@@ -554,12 +554,64 @@
             </PartImage>
         </Group>
 
-        <!-- Arced Quad Complication Pods Overlay (Active when analogHands != 0) -->
-        <PartImage x="0" y="0" width="450" height="450" name="QuadArcOverlay">
+        <!-- Arced Quad Complication Pods Background Plates & Overlay (Active when analogHands != 0) -->
+        <Group x="0" y="0" width="450" height="450" name="QuadArcGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.analogHands] != 0 ? 255 : 0" />
-            <Image resource="quad_arc_overlay" />
-        </PartImage>
+
+            <!-- 1. Dark Face Plate (Active when Classic Dark is selected OR when Match LCD is selected in normal dark LCD mode) -->
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcFaceDark">
+                <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                <Image resource="quad_arc_face_dark" />
+            </PartImage>
+
+            <!-- 2. Dark Mode Textures (Active when Match LCD is selected with a texture) -->
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcTexHexLight">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 1 ? 255 : 0" />
+                <Image resource="tex_arc_hex_light" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcTexHexDark">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 2 ? 255 : 0" />
+                <Image resource="tex_arc_hex_dark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcTexMoireLight">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 3 ? 255 : 0" />
+                <Image resource="tex_arc_moire_light" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcTexMoireDark">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 4 ? 255 : 0" />
+                <Image resource="tex_arc_moire_dark" />
+            </PartImage>
+
+            <!-- 3. Inverted / Positive LCD Plate Default (Active when Match LCD is selected in Positive LCD mode) -->
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcInvertDefault">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 0 ? 255 : 0" />
+                <Image resource="tex_arc_invert_default" />
+            </PartImage>
+
+            <!-- 4. Inverted / Positive LCD Textures -->
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcInvertHexLight">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 1 ? 255 : 0" />
+                <Image resource="tex_arc_invert_hex_light" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcInvertHexDark">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 2 ? 255 : 0" />
+                <Image resource="tex_arc_invert_hex_dark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcInvertMoireLight">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 3 ? 255 : 0" />
+                <Image resource="tex_arc_invert_moire_light" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcInvertMoireDark">
+                <Transform target="alpha" value="[CONFIGURATION.bottomStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 4 ? 255 : 0" />
+                <Image resource="tex_arc_invert_moire_dark" />
+            </PartImage>
+
+            <!-- 5. Bezel Rings, Screws & Outer Drop Shadow Overlays -->
+            <PartImage x="0" y="0" width="450" height="450" name="QuadArcOverlay">
+                <Image resource="quad_arc_overlay" />
+            </PartImage>
+        </Group>
 
         <!-- 2. AUTHENTIC ENGRAVED BEZEL BRANDING                           -->
         <!-- ============================================================== -->
@@ -2230,7 +2282,7 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2239,7 +2291,7 @@
                 <!-- Complication Icon (Black Mode) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2249,7 +2301,7 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
@@ -2260,7 +2312,7 @@
                 <!-- Data Readout (Black Mode) -->
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#0A0D10">
@@ -2272,7 +2324,7 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
@@ -2283,7 +2335,7 @@
                 <!-- Label (Black Mode) -->
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#0A0D10">
@@ -2302,7 +2354,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2310,7 +2362,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2327,7 +2379,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2335,7 +2387,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2372,7 +2424,7 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2381,7 +2433,7 @@
                 <!-- Complication Icon (Black Mode) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2391,7 +2443,7 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
@@ -2402,7 +2454,7 @@
                 <!-- Data Readout (Black Mode) -->
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#0A0D10">
@@ -2414,7 +2466,7 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
@@ -2425,7 +2477,7 @@
                 <!-- Label (Black Mode) -->
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#0A0D10">
@@ -2444,7 +2496,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2452,7 +2504,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2469,7 +2521,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2477,7 +2529,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2514,7 +2566,7 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2523,7 +2575,7 @@
                 <!-- Complication Icon (Black Mode) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2533,7 +2585,7 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
@@ -2544,7 +2596,7 @@
                 <!-- Data Readout (Black Mode) -->
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#0A0D10">
@@ -2556,7 +2608,7 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
@@ -2567,7 +2619,7 @@
                 <!-- Label (Black Mode) -->
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#0A0D10">
@@ -2586,7 +2638,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2594,7 +2646,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2611,7 +2663,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2619,7 +2671,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2656,7 +2708,7 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2665,7 +2717,7 @@
                 <!-- Complication Icon (Black Mode) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2675,7 +2727,7 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
@@ -2686,7 +2738,7 @@
                 <!-- Data Readout (Black Mode) -->
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#0A0D10">
@@ -2698,7 +2750,7 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
@@ -2709,7 +2761,7 @@
                 <!-- Label (Black Mode) -->
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#0A0D10">
@@ -2728,7 +2780,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2736,7 +2788,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2753,7 +2805,7 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.96 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
@@ -2761,7 +2813,7 @@
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.quadStyle] == 0 ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
