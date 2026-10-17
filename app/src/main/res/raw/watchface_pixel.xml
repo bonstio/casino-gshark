@@ -1529,6 +1529,17 @@
         <!-- Shifted 26px left when leading hour digit is '1' so visual     -->
         <!-- ink bounds stay centered at cx=225.                            -->
         <!-- ============================================================== -->
+        <!-- Ambient Hours Ghost 88 Background (size=168, alpha=36) -->
+        <PartText x="55" y="126" width="160" height="176" alpha="0" name="AmbientHoursGhost">
+            <Variant mode="INTERACTIVE" target="alpha" value="0" />
+            <Variant mode="AMBIENT" target="alpha" value="36" />
+            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 29 : 55" />
+            <Localization calendar="GREGORIAN" />
+            <Text align="CENTER">
+                <Font family="digital7" size="168" color="#D0D0D0">88</Font>
+            </Text>
+        </PartText>
+
         <PartText x="55" y="126" width="160" height="176" alpha="0" name="AmbientHoursDisplay">
             <Variant mode="INTERACTIVE" target="alpha" value="0" />
             <Variant mode="AMBIENT" target="alpha" value="255" />
@@ -1548,6 +1559,17 @@
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
                 <Font family="digital7" size="168" color="#D0D0D0">:</Font>
+            </Text>
+        </PartText>
+
+        <!-- Ambient Minutes Ghost 88 Background (size=168, alpha=36) -->
+        <PartText x="235" y="126" width="160" height="176" alpha="0" name="AmbientMinutesGhost">
+            <Variant mode="INTERACTIVE" target="alpha" value="0" />
+            <Variant mode="AMBIENT" target="alpha" value="36" />
+            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 209 : 235" />
+            <Localization calendar="GREGORIAN" />
+            <Text align="CENTER">
+                <Font family="digital7" size="168" color="#D0D0D0">88</Font>
             </Text>
         </PartText>
 
