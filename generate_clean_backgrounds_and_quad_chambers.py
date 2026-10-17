@@ -1061,38 +1061,46 @@ print("Saved tex_arc_invert_default.png")
 
 # 4. Textures
 tex_configs = [
-    ('tex_screen_hex_light.png',   'tex_arc_hex_light.png',   'tex_arc_invert_hex_light.png',   True,  0.14, 0.00, 1.00),
-    ('tex_screen_hex_dark.png',    'tex_arc_hex_dark.png',    'tex_arc_invert_hex_dark.png',    False, 0.22, 0.07, 0.78),
-    ('tex_screen_moire_light.png', 'tex_arc_moire_light.png', 'tex_arc_invert_moire_light.png', True,  0.15, 0.00, 1.00),
-    ('tex_screen_moire_dark.png',  'tex_arc_moire_dark.png',  'tex_arc_invert_moire_dark.png',  True,  0.30, 0.08, 0.65),
+    ('tex_screen_hex_light.png',   'tex_arc_hex_light.png',   'tex_arc_invert_hex_light.png',   True,  0.14, 0.00, 1.00, 'hex'),
+    ('tex_screen_hex_dark.png',    'tex_arc_hex_dark.png',    'tex_arc_invert_hex_dark.png',    False, 0.22, 0.07, 0.78, 'hex'),
+    ('tex_screen_moire_light.png', 'tex_arc_moire_light.png', 'tex_arc_invert_moire_light.png', True,  0.15, 0.00, 1.00, 'moire'),
+    ('tex_screen_moire_dark.png',  'tex_arc_moire_dark.png',  'tex_arc_invert_moire_dark.png',  True,  0.30, 0.08, 0.65, 'moire'),
 ]
 
+Y_2d, X_2d = np.meshgrid(range(450), range(450), indexing='ij')
+
 arc_mask_450 = np.zeros((450, 450), dtype=float)
-Y450, X450 = np.ogrid[:450, :450]
 for cx_d, cy_d in centers:
-    dist_sq = (X450 - cx_d)**2 + (Y450 - cy_d)**2
-    m = np.clip((r_inner_c + 0.5 - np.sqrt(dist_sq)), 0.0, 1.0)
+    dist = np.sqrt((X_2d - cx_d)**2 + (Y_2d - cy_d)**2)
+    m = np.clip(r_inner_c + 0.5 - dist, 0.0, 1.0)
     arc_mask_450 = np.maximum(arc_mask_450, m)
 
 sh_alpha_450 = np.array(Image.fromarray((sh_alpha_2x * 255.0).astype(np.uint8)).resize((450, 450), Image.Resampling.LANCZOS)).astype(float) / 255.0
 inv_base_450 = Image.fromarray(inv_arr).resize((450, 450), Image.Resampling.LANCZOS)
 
-for src_name, dark_out_name, inv_out_name, inv_polarity, contrast_str, base_dark, dark_scale in tex_configs:
+for src_name, dark_out_name, inv_out_name, inv_polarity, contrast_str, base_dark, dark_scale, kind in tex_configs:
     src_file = os.path.join(OUTPUT_DIR, src_name)
     if not os.path.exists(src_file):
         continue
     raw_tex = Image.open(src_file).convert('RGBA')
     raw_arr = np.array(raw_tex).astype(float)
-    tw, th = raw_tex.size
 
-    tiled_v = np.zeros((450, 450), dtype=float)
-    tiled_a = np.zeros((450, 450), dtype=float)
-    for y in range(450):
-        for x in range(450):
-            tiled_v[y, x] = raw_arr[y % th, x % tw, 0] / 255.0
-            tiled_a[y, x] = raw_arr[y % th, x % tw, 3] / 255.0
+    if kind == 'hex':
+        # Exact 30x34 mathematical seamless honeycomb tile sampled from clean interior
+        hex_tile = raw_arr[20:54, 30:60, 3] / 255.0
+        pat_alpha = hex_tile[(Y_2d - 198) % 34, (X_2d - 100) % 30]
+    else:
+        # Pure solar moire sampled from clean interior rows 18..82, cols 10..270
+        moire_clean = raw_arr[:, :, 3] / 255.0
+        pat_alpha = np.zeros((450, 450), dtype=float)
+        for (cx_d, cy_d), x_off in zip(centers, [10, 70, 140, 200]):
+            dist = np.sqrt((X_2d - cx_d)**2 + (Y_2d - cy_d)**2)
+            mask_dial = dist <= r_inner_c + 1.0
+            y_idx = np.clip(18 + (Y_2d - (cy_d - 32)), 16, 85).astype(int)
+            x_idx = np.clip(x_off + (X_2d - (cx_d - 32)), 10, 275).astype(int)
+            pat_alpha[mask_dial] = moire_clean[y_idx[mask_dial], x_idx[mask_dial]]
 
-    dark_pure_op = tiled_a * tiled_v * dark_scale * arc_mask_450
+    dark_pure_op = pat_alpha * dark_scale * arc_mask_450
     dark_arr = np.zeros((450, 450, 4), dtype=np.uint8)
     dark_arr[:, :, 0] = 255
     dark_arr[:, :, 1] = 255
@@ -1102,9 +1110,7 @@ for src_name, dark_out_name, inv_out_name, inv_polarity, contrast_str, base_dark
     if os.path.isdir(EXPORT_DIR):
         Image.fromarray(dark_arr).save(os.path.join(EXPORT_DIR, dark_out_name))
 
-    valid_v = raw_arr[:, :, 0]
-    v_min, v_max = np.percentile(valid_v, 2), np.percentile(valid_v, 98)
-    pat_norm = np.clip((tiled_v - v_min/255.0) / max(0.01, (v_max - v_min)/255.0), 0.0, 1.0)
+    pat_norm = pat_alpha
     pattern_darkness = (1.0 - pat_norm) if inv_polarity else pat_norm
     pat_dark_alpha = (base_dark + pattern_darkness * contrast_str) * arc_mask_450
     comb_tex_alpha = np.clip(1.0 - (1.0 - pat_dark_alpha) * (1.0 - sh_alpha_450), 0.0, 1.0)
