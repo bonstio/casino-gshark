@@ -2312,10 +2312,16 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <!-- Complication Icon (Soft White Mode) -->
+                <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2331,10 +2337,21 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Data Readout (Soft White Mode) -->
+                <PartText x="0" y="46" width="66" height="20">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                         </Font>
                     </Text>
@@ -2354,10 +2371,21 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Label (Soft White Mode) -->
+                <PartText x="0" y="62" width="66" height="14">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                         </Font>
                     </Text>
@@ -2384,10 +2412,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2409,10 +2442,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2454,10 +2492,16 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <!-- Complication Icon (Soft White Mode) -->
+                <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2473,10 +2517,21 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Data Readout (Soft White Mode) -->
+                <PartText x="0" y="46" width="66" height="20">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                         </Font>
                     </Text>
@@ -2496,10 +2551,21 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Label (Soft White Mode) -->
+                <PartText x="0" y="62" width="66" height="14">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                         </Font>
                     </Text>
@@ -2526,10 +2592,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2551,10 +2622,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2596,10 +2672,16 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <!-- Complication Icon (Soft White Mode) -->
+                <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2615,10 +2697,21 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Data Readout (Soft White Mode) -->
+                <PartText x="0" y="46" width="66" height="20">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                         </Font>
                     </Text>
@@ -2638,10 +2731,21 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Label (Soft White Mode) -->
+                <PartText x="0" y="62" width="66" height="14">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                         </Font>
                     </Text>
@@ -2668,10 +2772,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2693,10 +2802,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2738,10 +2852,16 @@
                     <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <!-- Complication Icon (Soft White Mode) -->
+                <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2757,10 +2877,21 @@
                 <PartText x="0" y="46" width="66" height="20">
                     <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Data Readout (Soft White Mode) -->
+                <PartText x="0" y="46" width="66" height="20">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                         </Font>
                     </Text>
@@ -2780,10 +2911,21 @@
                 <PartText x="0" y="62" width="66" height="14">
                     <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                     <Variant mode="AMBIENT" target="alpha" value="255" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <Localization calendar="GREGORIAN" />
                     <Text align="CENTER">
                         <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#FFFFFF">
+                            <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+                <!-- Label (Soft White Mode) -->
+                <PartText x="0" y="62" width="66" height="14">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <Localization calendar="GREGORIAN" />
+                    <Text align="CENTER">
+                        <Font family="SYNC_TO_DEVICE" size="10" weight="BOLD" color="#D4D4D4">
                             <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                         </Font>
                     </Text>
@@ -2810,10 +2952,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2835,10 +2982,15 @@
                     <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
                     <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
-                    <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1) ? 255 : 0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
                         <HsbFilter saturate="0.0" brightness="2.5" />
                     </ImageFilters>
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                </PartImage>
+                <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
+                    <Variant mode="AMBIENT" target="alpha" value="0" />
+                    <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2883,10 +3035,16 @@
                     <!-- Monochromatic Icon (White Mode + Ambient, Vertically Centered at y=13) -->
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#FFFFFF">
                         <Variant mode="AMBIENT" target="alpha" value="120" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <ImageFilters>
                             <HsbFilter saturate="0.0" brightness="2.5" />
                         </ImageFilters>
+                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                    </PartImage>
+                    <!-- Monochromatic Icon (Soft White Mode, Vertically Centered at y=13) -->
+                    <PartImage x="8" y="13" width="32" height="32" tintColor="#D4D4D4">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
                     <!-- Monochromatic Icon (Black Mode, Vertically Centered at y=13) -->
@@ -2902,10 +3060,21 @@
                     <PartText x="46" y="5" width="172" height="26">
                         <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
                             <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#FFFFFF">
+                                <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                    <!-- Main Long Content Text (Soft White Mode) -->
+                    <PartText x="46" y="5" width="172" height="26">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <Localization calendar="GREGORIAN" />
+                        <Text align="START">
+                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -2925,10 +3094,21 @@
                     <PartText x="46" y="31" width="172" height="18">
                         <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
                             <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#FFFFFF">
+                                <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                    <!-- Title / Subtitle (Soft White Mode) -->
+                    <PartText x="46" y="31" width="172" height="18">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <Localization calendar="GREGORIAN" />
+                        <Text align="START">
+                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
@@ -2953,10 +3133,15 @@
                     <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 0 ? 255 : 0" />
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#FFFFFF">
                         <Variant mode="AMBIENT" target="alpha" value="120" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <ImageFilters>
                             <HsbFilter saturate="0.0" brightness="2.5" />
                         </ImageFilters>
+                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                    </PartImage>
+                    <PartImage x="8" y="13" width="32" height="32" tintColor="#D4D4D4">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#0A0D10">
@@ -2970,10 +3155,20 @@
                     <PartText x="46" y="6" width="172" height="24">
                         <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
                             <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#FFFFFF">
+                                <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                    <PartText x="46" y="6" width="172" height="24">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <Localization calendar="GREGORIAN" />
+                        <Text align="START">
+                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -2991,10 +3186,20 @@
                     <PartText x="46" y="31" width="172" height="18">
                         <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
                             <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#FFFFFF">
+                                <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                    <PartText x="46" y="31" width="172" height="18">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <Localization calendar="GREGORIAN" />
+                        <Text align="START">
+                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
@@ -3019,10 +3224,20 @@
                     <PartText x="12" y="6" width="202" height="24">
                         <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
                             <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#FFFFFF">
+                                <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                    <PartText x="12" y="6" width="202" height="24">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <Localization calendar="GREGORIAN" />
+                        <Text align="CENTER">
+                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -3040,10 +3255,20 @@
                     <PartText x="12" y="31" width="202" height="18">
                         <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
-                        <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
                             <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#FFFFFF">
+                                <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                    <PartText x="12" y="31" width="202" height="18">
+                        <Variant mode="AMBIENT" target="alpha" value="0" />
+                        <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <Localization calendar="GREGORIAN" />
+                        <Text align="CENTER">
+                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
@@ -3077,11 +3302,18 @@
             <!-- Calendar Icon (White / Classic Dark Mode + Ambient, horizontally centered with date text, vertically centered at y=13) -->
             <PartImage x="23" y="13" width="32" height="32" tintColor="#FFFFFF" name="BottomDateIconWhite">
                 <Variant mode="AMBIENT" target="alpha" value="120" />
-                <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                 <Transform target="x" value="[CONFIGURATION.bottomBayMode] == 1 ? 54 : ([CONFIGURATION.bottomBayMode] == 4 ? 23 : 33)" />
                 <ImageFilters>
                     <HsbFilter saturate="0.0" brightness="2.5" />
                 </ImageFilters>
+                <Image resource="ic_calendar_date" />
+            </PartImage>
+            <!-- Calendar Icon (Soft White Mode, horizontally centered with date text, vertically centered at y=13) -->
+            <PartImage x="23" y="13" width="32" height="32" tintColor="#D4D4D4" name="BottomDateIconSoftWhite">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                <Transform target="x" value="[CONFIGURATION.bottomBayMode] == 1 ? 54 : ([CONFIGURATION.bottomBayMode] == 4 ? 23 : 33)" />
                 <Image resource="ic_calendar_date" />
             </PartImage>
             <!-- Calendar Icon (Black Positive LCD Mode, horizontally centered with date text, vertically centered at y=13) -->
@@ -3098,10 +3330,21 @@
             <!-- Option 2: "Jan 31" (White / Classic Dark Mode + Ambient, Horizontally & Vertically Centered) -->
             <PartText x="92" y="10" width="126" height="38" name="BottomDateJan31White">
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
-                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 1 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 1 &amp;&amp; ([CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1)) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="START">
                     <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#FFFFFF">
+                        <Template>%s %s<Parameter expression="[MONTH_S]" /><Parameter expression="[DAY_Z]" /></Template>
+                    </Font>
+                </Text>
+            </PartText>
+            <!-- Option 2: "Jan 31" (Soft White Mode, Horizontally & Vertically Centered) -->
+            <PartText x="92" y="10" width="126" height="38" name="BottomDateJan31SoftWhite">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 1 &amp;&amp; [CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="START">
+                    <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#D4D4D4">
                         <Template>%s %s<Parameter expression="[MONTH_S]" /><Parameter expression="[DAY_Z]" /></Template>
                     </Font>
                 </Text>
@@ -3121,10 +3364,21 @@
             <!-- Option 3: "Sat 01/31" (White / Classic Dark Mode + Ambient, Horizontally & Vertically Centered) -->
             <PartText x="71" y="10" width="148" height="38" name="BottomDateSatMmDdWhite">
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
-                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 2 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 2 &amp;&amp; ([CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1)) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="START">
                     <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#FFFFFF">
+                        <Template>%s %s/%s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[MONTH_Z]" /><Parameter expression="[DAY_Z]" /></Template>
+                    </Font>
+                </Text>
+            </PartText>
+            <!-- Option 3: "Sat 01/31" (Soft White Mode, Horizontally & Vertically Centered) -->
+            <PartText x="71" y="10" width="148" height="38" name="BottomDateSatMmDdSoftWhite">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 2 &amp;&amp; [CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="START">
+                    <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#D4D4D4">
                         <Template>%s %s/%s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[MONTH_Z]" /><Parameter expression="[DAY_Z]" /></Template>
                     </Font>
                 </Text>
@@ -3144,10 +3398,21 @@
             <!-- Option 4: "Sat 31/01" (White / Classic Dark Mode + Ambient, Horizontally & Vertically Centered) -->
             <PartText x="71" y="10" width="148" height="38" name="BottomDateSatDdMmWhite">
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
-                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 3 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 3 &amp;&amp; ([CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1)) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="START">
                     <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#FFFFFF">
+                        <Template>%s %s/%s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY_Z]" /><Parameter expression="[MONTH_Z]" /></Template>
+                    </Font>
+                </Text>
+            </PartText>
+            <!-- Option 4: "Sat 31/01" (Soft White Mode, Horizontally & Vertically Centered) -->
+            <PartText x="71" y="10" width="148" height="38" name="BottomDateSatDdMmSoftWhite">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 3 &amp;&amp; [CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="START">
+                    <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#D4D4D4">
                         <Template>%s %s/%s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY_Z]" /><Parameter expression="[MONTH_Z]" /></Template>
                     </Font>
                 </Text>
@@ -3167,10 +3432,21 @@
             <!-- Option 5: "31/01/2026" (White / Classic Dark Mode + Ambient, Horizontally & Vertically Centered) -->
             <PartText x="61" y="10" width="158" height="38" name="BottomDateDdMmYyyyWhite">
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
-                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 4 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 4 &amp;&amp; ([CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1)) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="START">
                     <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#FFFFFF">
+                        <Template>%s/%s/%s<Parameter expression="[DAY_Z]" /><Parameter expression="[MONTH_Z]" /><Parameter expression="[YEAR]" /></Template>
+                    </Font>
+                </Text>
+            </PartText>
+            <!-- Option 5: "31/01/2026" (Soft White Mode, Horizontally & Vertically Centered) -->
+            <PartText x="61" y="10" width="158" height="38" name="BottomDateDdMmYyyySoftWhite">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 4 &amp;&amp; [CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="START">
+                    <Font family="SYNC_TO_DEVICE" size="26" weight="NORMAL" color="#D4D4D4">
                         <Template>%s/%s/%s<Parameter expression="[DAY_Z]" /><Parameter expression="[MONTH_Z]" /><Parameter expression="[YEAR]" /></Template>
                     </Font>
                 </Text>

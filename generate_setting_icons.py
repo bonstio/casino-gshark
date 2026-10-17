@@ -362,7 +362,7 @@ def render_watchface(
 
     # 9. Top 4 Quad Complication Pods (x=72, 152, 232, 312; y=90, w=66, h=78)
     quad_black_mode = (time_color == 2 and quad_style == 0)
-    quad_fg = (10, 13, 16) if quad_black_mode else (255, 255, 255)
+    quad_fg = (212, 212, 212) if time_color == 1 else ((10, 13, 16) if quad_black_mode else (255, 255, 255))
     quad_ov = Image.new("RGBA", (450, 450), (0, 0, 0, 0))
     qd = ImageDraw.Draw(quad_ov)
     # Pod 1 (center 105): Battery 100%
@@ -398,7 +398,7 @@ def render_watchface(
 
     # 10. Bottom Bay (x=70, y=302, w=226, h=56)
     bot_black_mode = (time_color == 2 and bottom_style == 0)
-    bot_fg = (10, 13, 16) if bot_black_mode else (255, 255, 255)
+    bot_fg = (212, 212, 212) if time_color == 1 else ((10, 13, 16) if bot_black_mode else (255, 255, 255))
     cal_ic = solid_tint_alpha(load_drawable("ic_calendar_date").resize((32, 32), Image.Resampling.LANCZOS), bot_fg)
 
     if bottom_bay_mode == 0:
