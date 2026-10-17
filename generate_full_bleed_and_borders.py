@@ -125,16 +125,13 @@ print("Precomputing 2x 3D chamber masks & bevel normals (pods vs center chamber)
 QUAD_PODS = [(72, 138), (152, 218), (232, 298), (312, 378)]
 QUAD_Y1, QUAD_Y2 = 90, 168
 
-# 1. Pods (4 top quad pods + bottom slot5 pod) baked into bg_lcd_*.png
+# 1. Pods (ONLY bottom slot5 pod baked into bg_lcd_*.png; quad pods are separate in quad_chamber_*.png for digital mode only!)
 pods_in = Image.new("L", (W, H), 0)
 pods_trench = Image.new("L", (W, H), 0)
 pods_bev_lit = Image.new("L", (W, H), 0)
 pods_bev_sh = Image.new("L", (W, H), 0)
 
-pod_specs = []
-for x1_q, x2_q in QUAD_PODS:
-    pod_specs.append((x1_q * scale, QUAD_Y1 * scale, x2_q * scale, QUAD_Y2 * scale, False))
-pod_specs.append((70 * scale, 302 * scale, 305 * scale, 358 * scale, True))
+pod_specs = [(70 * scale, 302 * scale, 305 * scale, 358 * scale, True)]
 
 for x1, y1, x2, y2, has_cut in pod_specs:
     m_in, m_tr, m_bl, m_bs = compute_chamber_masks_and_bevels(x1, y1, x2, y2, r_c2, has_cut=has_cut)
