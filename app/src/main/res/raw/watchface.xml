@@ -462,6 +462,14 @@
         </PartImage>
 
         <!-- ============================================================== -->
+        
+        <!-- Arced Quad Complication Pods Overlay (Active when analogHands != 0) -->
+        <PartImage x="0" y="0" width="450" height="450" name="QuadArcOverlay">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] != 0 ? 255 : 0" />
+            <Image resource="quad_arc_overlay" />
+        </PartImage>
+
         <!-- 2. AUTHENTIC ENGRAVED BEZEL BRANDING                           -->
         <!-- ============================================================== -->
         <!-- Option 0 (Default): 100% Authentic Casio Logo Letterforms for "CASINO" (y=41, w=170, h=25, x=140, scaled -10% from center-bottom anchor) with thin black outline -->
@@ -1229,55 +1237,55 @@
         <!-- Upper 4 Quad Complication Pods Overlays (Active when quadStyle == 0: Match LCD Screen, x=70, y=90, w=310, h=78) -->
         <PartImage x="70" y="90" width="310" height="78" name="QuadTexHexLight">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 1 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 1 ? 255 : 0" />
             <Image resource="tex_quad_hex_light" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadTexHexDark">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 2 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 2 ? 255 : 0" />
             <Image resource="tex_quad_hex_dark" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadTexMoireLight">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 3 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 3 ? 255 : 0" />
             <Image resource="tex_quad_moire_light" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadTexMoireDark">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 4 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] != 2 &amp;&amp; [CONFIGURATION.screenTexture] == 4 ? 255 : 0" />
             <Image resource="tex_quad_moire_dark" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadInvertDefault">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 0 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 0 ? 255 : 0" />
             <Image resource="tex_quad_invert_default" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadInvertHexLight">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 1 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 1 ? 255 : 0" />
             <Image resource="tex_quad_invert_hex_light" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadInvertHexDark">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 2 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 2 ? 255 : 0" />
             <Image resource="tex_quad_invert_hex_dark" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadInvertMoireLight">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 3 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 3 ? 255 : 0" />
             <Image resource="tex_quad_invert_moire_light" />
         </PartImage>
 
         <PartImage x="70" y="90" width="310" height="78" name="QuadInvertMoireDark">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 4 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.quadStyle] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.screenTexture] == 4 ? 255 : 0" />
             <Image resource="tex_quad_invert_moire_dark" />
         </PartImage>
 
@@ -2103,15 +2111,11 @@
 
         <!-- COMPLICATION SLOT 1 (Left Pod: Step Count) -->
         <ComplicationSlot
-            x="72"
-            y="90"
-            width="66"
-            height="78"
-            slotId="1"
+            x="50" y="90" width="90" height="96" slotId="1"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="66" height="78" />
+            <BoundingBox x="0" y="0" width="90" height="96" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.steps.OffloadableStepsComplicationDataSourceService"
@@ -2122,7 +2126,12 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <!-- Complication Icon (White Mode + Ambient) -->
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 22" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 0" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
@@ -2186,10 +2195,16 @@
                         </Font>
                     </Text>
                 </PartText>
+                </Group>
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 22" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 0" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2205,10 +2220,16 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 22" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 0" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2224,6 +2245,7 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="EMPTY" />
@@ -2231,15 +2253,11 @@
 
         <!-- COMPLICATION SLOT 2 (Mid-Left Pod: Heart Rate) -->
         <ComplicationSlot
-            x="152"
-            y="90"
-            width="66"
-            height="78"
-            slotId="2"
+            x="130" y="45" width="85" height="120" slotId="2"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="66" height="78" />
+            <BoundingBox x="0" y="0" width="85" height="120" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.offloadable.heartrate.OffloadableHeartRateComplicationDataSourceService"
@@ -2250,7 +2268,12 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <!-- Complication Icon (White Mode + Ambient) -->
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 3 : 22" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 12 : 45" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
@@ -2314,10 +2337,16 @@
                         </Font>
                     </Text>
                 </PartText>
+                </Group>
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 3 : 22" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 12 : 45" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2333,10 +2362,16 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 3 : 22" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 12 : 45" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2352,6 +2387,7 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="EMPTY" />
@@ -2359,15 +2395,11 @@
 
         <!-- COMPLICATION SLOT 3 (Mid-Right Pod: Sunset Time) -->
         <ComplicationSlot
-            x="232"
-            y="90"
-            width="66"
-            height="78"
-            slotId="3"
+            x="235" y="45" width="85" height="120" slotId="3"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="66" height="78" />
+            <BoundingBox x="0" y="0" width="85" height="120" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.google.android.apps.weather/com.google.android.wearable.weather.pixel.ui.complications.solar.SolarComplicationService"
@@ -2378,7 +2410,12 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <!-- Complication Icon (White Mode + Ambient) -->
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 16 : -3" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 12 : 45" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
@@ -2442,10 +2479,16 @@
                         </Font>
                     </Text>
                 </PartText>
+                </Group>
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 16 : -3" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 12 : 45" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2461,10 +2504,16 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 16 : -3" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 12 : 45" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2480,6 +2529,7 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="EMPTY" />
@@ -2487,15 +2537,11 @@
 
         <!-- COMPLICATION SLOT 4 (Right Pod: Weather) -->
         <ComplicationSlot
-            x="312"
-            y="90"
-            width="66"
-            height="78"
-            slotId="4"
+            x="310" y="90" width="90" height="96" slotId="4"
             supportedTypes="SHORT_TEXT SMALL_IMAGE MONOCHROMATIC_IMAGE EMPTY"
             isCustomizable="TRUE">
 
-            <BoundingBox x="0" y="0" width="66" height="78" />
+            <BoundingBox x="0" y="0" width="90" height="96" />
 
             <DefaultProviderPolicy
                 primaryProvider="com.google.android.apps.weather/com.google.android.wearable.weather.pixel.ui.complications.currentweather.CWComplicationService"
@@ -2506,7 +2552,12 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <!-- Complication Icon (White Mode + Ambient) -->
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 15 : 2" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 0" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <!-- Complication Icon (White Mode + Ambient) -->
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
@@ -2570,10 +2621,16 @@
                         </Font>
                     </Text>
                 </PartText>
+                </Group>
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 15 : 2" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 0" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2589,10 +2646,16 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                    <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 15 : 2" />
+                    <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 13 : 0" />
+                    <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <Transform target="scaleY" value="[CONFIGURATION.analogHands] != 0 ? 0.85 : 1.0" />
+                    <PartImage x="8" y="16" width="50" height="50" tintColor="#FFFFFF">
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 || [CONFIGURATION.quadStyle] == 1 ? 255 : 0" />
                     <ImageFilters>
@@ -2608,6 +2671,7 @@
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
+                </Group>
             </Complication>
 
             <Complication type="EMPTY" />
