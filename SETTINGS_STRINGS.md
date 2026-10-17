@@ -7,9 +7,9 @@ watch_face_name = Casino G-Shark
 # 1, 2 & 3. Theme Color (themeColor), Logo Color (logoColor), & Seconds Color (secColor)
 theme_color_label = Theme Color
 logo_color_label = Logo Color
-seconds_color_label = Seconds Color
+seconds_color_label = Hint Color
 
-sec_color_same_as_clock = Same as clock
+sec_color_same_as_clock = Default
 color_cyber_lime = Volt Lime
 color_bright_lime_green = Bright Lime Green
 color_shark_blue = Ocean Shark Cyan

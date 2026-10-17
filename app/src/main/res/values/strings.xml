@@ -6,8 +6,8 @@
     <!-- Theme Accent Colors (16 Options: High-Contrast Neon + Subtle Greys & Browns) -->
     <string name="theme_color_label">Theme Color</string>
     <string name="logo_color_label">Logo Color</string>
-    <string name="seconds_color_label">Seconds Color</string>
-    <string name="sec_color_same_as_clock">Same as clock</string>
+    <string name="seconds_color_label">Hint Color</string>
+    <string name="sec_color_same_as_clock">Default</string>
     <string name="color_cyber_lime">Volt Lime</string>
     <string name="color_bright_lime_green">Bright Lime Green</string>
     <string name="color_shark_blue">Ocean Shark Cyan</string>

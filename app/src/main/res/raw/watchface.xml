@@ -4401,52 +4401,368 @@
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.analogHands] != 0 ? 242 : 0" />
 
-            <!-- Option 2: Skeleton Sword — Theme Color (Matches Battery Segments) -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsSwordTheme">
+                        <!-- Option 1 & 2: Skeleton Sword (Highlight controlled by Hint Color) -->
+            <AnalogClock x="0" y="0" width="450" height="450" name="HandsSword">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 1 ? 255 : 0" />
+                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 1 || [CONFIGURATION.analogHands] == 2) ? 255 : 0" />
                 <HourHand resource="hand_sword_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 1) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 2) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                </HourHand>
                 <MinuteHand resource="hand_sword_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 1) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 2) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                </MinuteHand>
             </AnalogClock>
 
-            <!-- Option 3: Skeleton Sword — White Lume -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsSwordWhite">
+            <!-- Option 3 & 4: Tactical Baton (Highlight controlled by Hint Color) -->
+            <AnalogClock x="0" y="0" width="450" height="450" name="HandsBaton">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 2 ? 255 : 0" />
-                <HourHand resource="hand_sword_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
-                <MinuteHand resource="hand_sword_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
-            </AnalogClock>
-
-            <!-- Option 4: Tactical Baton — Theme Color -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsBatonTheme">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 3 ? 255 : 0" />
+                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 3 || [CONFIGURATION.analogHands] == 4) ? 255 : 0" />
                 <HourHand resource="hand_baton_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 3) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 4) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                </HourHand>
                 <MinuteHand resource="hand_baton_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 3) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
+                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 4) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                </MinuteHand>
             </AnalogClock>
 
-            <!-- Option 5: Tactical Baton — White Lume -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsBatonWhite">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 4 ? 255 : 0" />
-                <HourHand resource="hand_baton_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
-                <MinuteHand resource="hand_baton_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
-            </AnalogClock>
-
-            <!-- Option 6: Stealth Outline — Theme Color -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsGhostTheme">
+            <!-- Option 5: Stealth Outline (Tint controlled by Hint Color) -->
+            <AnalogClock x="0" y="0" width="450" height="450" name="HandsGhost">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.analogHands] == 5 ? 255 : 0" />
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
+                    <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 8 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                </HourHand>
+                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                </HourHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
+                    <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 8 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                </MinuteHand>
+                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
+                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                </MinuteHand>
             </AnalogClock>
 
             <!-- Center 3D Machined Pinion Cap (Base + Dynamic Accent Ring) -->
@@ -4454,14 +4770,99 @@
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Image resource="main_pinion_base" />
             </PartImage>
-            <PartImage x="205" y="205" width="40" height="40" tintColor="[CONFIGURATION.themeColor.0]" name="MainPinionRingTheme">
+            <PartImage x="205" y="205" width="40" height="40" tintColor="[CONFIGURATION.themeColor.0]" name="MainPinionRing_Theme">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 1 || [CONFIGURATION.analogHands] == 3 || [CONFIGURATION.analogHands] == 5) ? 255 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; ([CONFIGURATION.analogHands] == 1 || [CONFIGURATION.analogHands] == 3 || [CONFIGURATION.analogHands] == 5)) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
                 <Image resource="main_pinion_ring" />
             </PartImage>
-            <PartImage x="205" y="205" width="40" height="40" tintColor="#FFFFFF" name="MainPinionRingWhite">
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#FFFFFF" name="MainPinionRing_White">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 2 || [CONFIGURATION.analogHands] == 4) ? 255 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; ([CONFIGURATION.analogHands] == 2 || [CONFIGURATION.analogHands] == 4)) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#BAFA08" name="MainPinionRing_VoltLime">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#39FF14" name="MainPinionRing_BrightLime">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#0EDBFF" name="MainPinionRing_SharkCyan">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#FF660A" name="MainPinionRing_Orange">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#FF1E38" name="MainPinionRing_CrimsonRed">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#FFC400" name="MainPinionRing_AmberGold">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#147EFF" name="MainPinionRing_VibrantBlue">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#B040FF" name="MainPinionRing_Violet">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#F514C8" name="MainPinionRing_Magenta">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#D2B48C" name="MainPinionRing_CoyoteTan">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#9A8A62" name="MainPinionRing_EarthOlive">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#A76D43" name="MainPinionRing_SaddleBrown">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#94A3B8" name="MainPinionRing_BattleshipGrey">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#64748B" name="MainPinionRing_SlateCharcoal">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#CED8E2" name="MainPinionRing_TitaniumSilver">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#D4D4D4" name="MainPinionRing_SoftWhite">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#0A0D10" name="MainPinionRing_Black">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
                 <Image resource="main_pinion_ring" />
             </PartImage>
         </Group>
