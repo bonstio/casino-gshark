@@ -641,6 +641,12 @@ y1 = (h_src - ch) / 2.0
 camo_arctic_cropped = camo_arctic_src.crop((int(round(x1)), int(round(y1)), int(round(x1 + cw)), int(round(y1 + ch))))
 camo_arctic_resized = camo_arctic_cropped.resize((W, H), Image.Resampling.LANCZOS)
 arr_arctic = np.array(camo_arctic_resized, dtype=float)
+
+# Tone-map arctic camo to make it darker, especially the brighter hues (compress highlight glare)
+norm_arctic = arr_arctic / 255.0
+darkened_arctic = (0.842 * norm_arctic - 0.168 * (norm_arctic ** 2)) * 255.0
+arr_arctic = np.clip(darkened_arctic, 0, 255)
+
 vig_arctic = np.array(vig_map).reshape((H, W))
 disc_arctic = np.array(inside_disc).reshape((H, W))
 
