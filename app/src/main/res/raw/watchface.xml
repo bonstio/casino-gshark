@@ -121,7 +121,7 @@
         </ListConfiguration>
 
         <!-- XML Pos 7 (TreeMap #14): Main Analog Hour & Minute Hands (0 = Off [Default], 1..5 = 95% Opacity Hand Variants) -->
-        <ListConfiguration id="analogHands" displayName="analog_hands_label" defaultValue="0" icon="ic_cfg_analoghands_0">
+        <ListConfiguration id="analogHands" displayName="analog_hands_label" defaultValue="1" icon="ic_cfg_analoghands_1">
             <ListOption id="0" displayName="analog_hands_off" icon="ic_cfg_analoghands_0" />
             <ListOption id="1" displayName="analog_hands_sword_theme" icon="ic_cfg_analoghands_1" />
             <ListOption id="2" displayName="analog_hands_sword_white" icon="ic_cfg_analoghands_2" />
@@ -155,7 +155,7 @@
         </ListConfiguration>
 
         <!-- XML Pos 10 (TreeMap #1): Main Background Graphics (17 Options: 10 Tactical Classics + 7 Industrial Radial/Linear Hue-Shifted Gradients) -->
-        <ListConfiguration id="bgTexture" displayName="bg_texture_label" defaultValue="0" icon="ic_cfg_bgtexture_0">
+        <ListConfiguration id="bgTexture" displayName="bg_texture_label" defaultValue="2" icon="ic_cfg_bgtexture_2">
             <ListOption id="0" displayName="bg_classic" icon="ic_cfg_bgtexture_0" />
             <ListOption id="1" displayName="bg_matte_black" icon="ic_cfg_bgtexture_1" />
             <ListOption id="2" displayName="bg_camo" icon="ic_cfg_bgtexture_2" />

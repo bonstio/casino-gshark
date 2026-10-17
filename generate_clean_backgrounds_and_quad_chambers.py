@@ -585,11 +585,41 @@ def build_3d_camo_plate(base_col, camo_palette, seed_val, count_inner, count_out
 
 import numpy as np
 
-# 2. URBAN CAMO
-camo_urban = [(26, 30, 36), (58, 64, 72), (92, 98, 108), (140, 146, 156)]
-img_02 = build_3d_camo_plate((46, 52, 60), camo_urban, seed_val=42, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
+# 2. WOODLAND CAMO (bg_lcd_camo.png)
+src_camo_path = os.path.join(EXPORT_DIR, "source_camo_woodland.png")
+if not os.path.exists(src_camo_path):
+    alt_path = "C:/Users/bonst/.gemini/antigravity/brain/d3a6c7d4-5613-437a-a72c-e90fec512f25/.user_uploaded/media_1792233428021_086ed444.png"
+    if os.path.exists(alt_path):
+        raw_crop = Image.open(alt_path).crop((0, 0, 948, 948))
+        raw_crop.save(src_camo_path)
+
+camo_src = Image.open(src_camo_path).convert("RGB").resize((W, H), Image.Resampling.LANCZOS)
+arr_camo = np.array(camo_src, dtype=float)
+vig_camo = np.array(vig_map).reshape((H, W))
+disc_camo = np.array(inside_disc).reshape((H, W))
+
+arr_camo_vig = np.clip(arr_camo * vig_camo[:, :, np.newaxis], 0, 255).astype(np.uint8)
+alpha_camo = (disc_camo * 255).astype(np.uint8)
+img_02 = Image.fromarray(np.dstack([arr_camo_vig, alpha_camo]))
+
 apply_pods_and_subdial_housing_2x(
     img_02,
+    floor_rgb=(17, 23, 16),
+    bev_lit_rgb=(148, 166, 142),
+    bev_sh_rgb=(4, 6, 4),
+    honeycomb_gain=0.18,
+    sub_base_f=(36.0, 42.0, 34.0),
+    sub_spec_f=(160.0, 175.0, 155.0),
+    well_rgb=(16.0, 22.0, 15.0),
+)
+save_bg_from_2x(img_02, "bg_lcd_camo.png")
+save_quad_chamber_3d(2, floor_rgb=(17, 23, 16), bev_lit_rgb=(148, 166, 142), bev_sh_rgb=(4, 6, 4), honeycomb_gain=0.18)
+
+# 3. URBAN CAMO (bg_lcd_camo_urban.png)
+camo_urban = [(26, 30, 36), (58, 64, 72), (92, 98, 108), (140, 146, 156)]
+img_03 = build_3d_camo_plate((46, 52, 60), camo_urban, seed_val=42, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
+apply_pods_and_subdial_housing_2x(
+    img_03,
     floor_rgb=(17, 23, 16),
     bev_lit_rgb=(152, 170, 146),
     bev_sh_rgb=(4, 6, 4),
@@ -598,10 +628,42 @@ apply_pods_and_subdial_housing_2x(
     sub_spec_f=(164.0, 180.0, 162.0),
     well_rgb=(16.0, 22.0, 15.0),
 )
-save_bg_from_2x(img_02, "bg_lcd_camo_urban.png")
-save_quad_chamber_3d(2, floor_rgb=(17, 23, 16), bev_lit_rgb=(152, 170, 146), bev_sh_rgb=(4, 6, 4), honeycomb_gain=0.18)
+save_bg_from_2x(img_03, "bg_lcd_camo_urban.png")
+save_quad_chamber_3d(3, floor_rgb=(17, 23, 16), bev_lit_rgb=(152, 170, 146), bev_sh_rgb=(4, 6, 4), honeycomb_gain=0.18)
 
-# 3. CARBON FIBER (bg_lcd_carbon_fiber.png)
+# 4. DESERT CAMO (bg_lcd_camo_desert.png)
+camo_desert = [(68, 54, 40), (124, 102, 78), (170, 146, 116), (208, 186, 154)]
+img_04 = build_3d_camo_plate((148, 126, 98), camo_desert, seed_val=88, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
+apply_pods_and_subdial_housing_2x(
+    img_04,
+    floor_rgb=(21, 17, 12),
+    bev_lit_rgb=(185, 165, 138),
+    bev_sh_rgb=(6, 5, 3),
+    honeycomb_gain=0.18,
+    sub_base_f=(48.0, 42.0, 32.0),
+    sub_spec_f=(195.0, 180.0, 155.0),
+    well_rgb=(20.0, 16.0, 11.0),
+)
+save_bg_from_2x(img_04, "bg_lcd_camo_desert.png")
+save_quad_chamber_3d(4, floor_rgb=(21, 17, 12), bev_lit_rgb=(185, 165, 138), bev_sh_rgb=(6, 5, 3), honeycomb_gain=0.18)
+
+# 5. ZEBRA CAMO (bg_lcd_camo_zebra.png)
+camo_zebra = [(18, 20, 24), (45, 48, 54), (160, 165, 175), (215, 220, 228)]
+img_05 = build_3d_camo_plate((88, 92, 102), camo_zebra, seed_val=19, count_inner=28, count_outer=32, rx_range=(12, 34), ry_range=(24, 60))
+apply_pods_and_subdial_housing_2x(
+    img_05,
+    floor_rgb=(12, 15, 20),
+    bev_lit_rgb=(155, 170, 192),
+    bev_sh_rgb=(3, 4, 6),
+    honeycomb_gain=0.18,
+    sub_base_f=(34.0, 38.0, 46.0),
+    sub_spec_f=(165.0, 180.0, 205.0),
+    well_rgb=(12.0, 15.0, 20.0),
+)
+save_bg_from_2x(img_05, "bg_lcd_camo_zebra.png")
+save_quad_chamber_3d(5, floor_rgb=(12, 15, 20), bev_lit_rgb=(155, 170, 192), bev_sh_rgb=(3, 4, 6), honeycomb_gain=0.18)
+
+# 6. CARBON FIBER (bg_lcd_carbon_fiber.png)
 pitch_cf = 12 * scale
 twill = bytearray(pitch_cf * pitch_cf)
 for ty in range(pitch_cf):
@@ -632,9 +694,9 @@ for y in range(H):
             cf_bytes[idx+2] = int(max(0, min(255, bv)))
             cf_bytes[idx+3] = 255
 
-img_03 = Image.frombytes("RGBA", (W, H), bytes(cf_bytes))
+img_06 = Image.frombytes("RGBA", (W, H), bytes(cf_bytes))
 apply_pods_and_subdial_housing_2x(
-    img_03,
+    img_06,
     floor_rgb=(13, 16, 21),
     bev_lit_rgb=(145, 162, 185),
     bev_sh_rgb=(3, 5, 8),
@@ -643,56 +705,8 @@ apply_pods_and_subdial_housing_2x(
     sub_spec_f=(160.0, 175.0, 198.0),
     well_rgb=(12.0, 15.0, 20.0),
 )
-save_bg_from_2x(img_03, "bg_lcd_carbon_fiber.png")
-save_quad_chamber_3d(3, floor_rgb=(13, 16, 21), bev_lit_rgb=(145, 162, 185), bev_sh_rgb=(3, 5, 8), honeycomb_gain=0.18)
-
-# 4. DESERT CAMO
-camo_desert = [(68, 54, 40), (124, 102, 78), (170, 146, 116), (208, 186, 154)]
-img_04 = build_3d_camo_plate((148, 126, 98), camo_desert, seed_val=88, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
-apply_pods_and_subdial_housing_2x(
-    img_04,
-    floor_rgb=(21, 17, 12),
-    bev_lit_rgb=(185, 165, 138),
-    bev_sh_rgb=(6, 5, 3),
-    honeycomb_gain=0.18,
-    sub_base_f=(48.0, 42.0, 32.0),
-    sub_spec_f=(195.0, 180.0, 155.0),
-    well_rgb=(20.0, 16.0, 11.0),
-)
-save_bg_from_2x(img_04, "bg_lcd_camo_desert.png")
-save_quad_chamber_3d(4, floor_rgb=(21, 17, 12), bev_lit_rgb=(185, 165, 138), bev_sh_rgb=(6, 5, 3), honeycomb_gain=0.18)
-
-# 5. ZEBRA CAMO
-camo_zebra = [(18, 20, 24), (45, 48, 54), (160, 165, 175), (215, 220, 228)]
-img_05 = build_3d_camo_plate((88, 92, 102), camo_zebra, seed_val=19, count_inner=28, count_outer=32, rx_range=(12, 34), ry_range=(24, 60))
-apply_pods_and_subdial_housing_2x(
-    img_05,
-    floor_rgb=(12, 15, 20),
-    bev_lit_rgb=(155, 170, 192),
-    bev_sh_rgb=(3, 4, 6),
-    honeycomb_gain=0.18,
-    sub_base_f=(34.0, 38.0, 46.0),
-    sub_spec_f=(165.0, 180.0, 205.0),
-    well_rgb=(12.0, 15.0, 20.0),
-)
-save_bg_from_2x(img_05, "bg_lcd_camo_zebra.png")
-save_quad_chamber_3d(5, floor_rgb=(12, 15, 20), bev_lit_rgb=(155, 170, 192), bev_sh_rgb=(3, 4, 6), honeycomb_gain=0.18)
-
-# 6. WOODLAND CAMO
-camo_woodland = [(22, 28, 18), (48, 58, 36), (82, 96, 62), (120, 105, 82)]
-img_06 = build_3d_camo_plate((62, 74, 48), camo_woodland, seed_val=55, count_inner=22, count_outer=26, rx_range=(20, 48), ry_range=(14, 32))
-apply_pods_and_subdial_housing_2x(
-    img_06,
-    floor_rgb=(12, 15, 19),
-    bev_lit_rgb=(148, 166, 188),
-    bev_sh_rgb=(3, 5, 7),
-    honeycomb_gain=0.18,
-    sub_base_f=(32.0, 38.0, 46.0),
-    sub_spec_f=(160.0, 178.0, 204.0),
-    well_rgb=(12.0, 15.0, 19.0),
-)
-save_bg_from_2x(img_06, "bg_lcd_camo.png")
-save_quad_chamber_3d(6, floor_rgb=(12, 15, 19), bev_lit_rgb=(148, 166, 188), bev_sh_rgb=(3, 5, 7), honeycomb_gain=0.18)
+save_bg_from_2x(img_06, "bg_lcd_carbon_fiber.png")
+save_quad_chamber_3d(6, floor_rgb=(13, 16, 21), bev_lit_rgb=(145, 162, 185), bev_sh_rgb=(3, 5, 8), honeycomb_gain=0.18)
 
 # 7. GLOSS PIANO BLACK (bg_lcd_gloss_black.png)
 gp_bytes = bytearray(W * H * 4)
