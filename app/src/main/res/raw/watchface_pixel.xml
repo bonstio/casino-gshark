@@ -88,43 +88,26 @@
                 colors="#CED8E2 #9099A6 #1B1E24" />
         </ColorConfiguration>
 
-        <!-- XML Pos 13 (TreeMap #4): Logo Color (0 = Theme Color [Default], 1..16 = Independent palette colors) -->
-        <ColorConfiguration id="logoColor" displayName="logo_color_label" defaultValue="0" icon="ic_cfg_logocolor_0">
-            <ColorOption id="0" displayName="theme_color_label" icon="ic_cfg_themecolor_0"
-                colors="#BAFA08 #9099A6 #1B1E24" />
-            <ColorOption id="1" displayName="color_cyber_lime" icon="ic_cfg_logocolor_0"
-                colors="#BAFA08 #9099A6 #1B1E24" />
-            <ColorOption id="2" displayName="color_bright_lime_green" icon="ic_cfg_logocolor_1"
-                colors="#39FF14 #9099A6 #1B1E24" />
-            <ColorOption id="3" displayName="color_shark_blue" icon="ic_cfg_logocolor_2"
-                colors="#0EDBFF #9099A6 #1B1E24" />
-            <ColorOption id="4" displayName="color_tactical_orange" icon="ic_cfg_logocolor_3"
-                colors="#FF660A #9099A6 #1B1E24" />
-            <ColorOption id="5" displayName="color_crimson_red" icon="ic_cfg_logocolor_4"
-                colors="#FF1E38 #9099A6 #1B1E24" />
-            <ColorOption id="6" displayName="color_amber_gold" icon="ic_cfg_logocolor_5"
-                colors="#FFC400 #9099A6 #1B1E24" />
-            <ColorOption id="7" displayName="color_stealth_white" icon="ic_cfg_logocolor_6"
-                colors="#FFFFFF #9099A6 #1B1E24" />
-            <ColorOption id="8" displayName="color_toxic_green" icon="ic_cfg_logocolor_7"
-                colors="#147EFF #9099A6 #1B1E24" />
-            <ColorOption id="9" displayName="color_deep_violet" icon="ic_cfg_logocolor_8"
-                colors="#B040FF #9099A6 #1B1E24" />
-            <ColorOption id="10" displayName="color_hot_pink" icon="ic_cfg_logocolor_9"
-                colors="#F514C8 #9099A6 #1B1E24" />
-            <ColorOption id="11" displayName="color_coyote_tan" icon="ic_cfg_logocolor_10"
-                colors="#D2B48C #9099A6 #1B1E24" />
-            <ColorOption id="12" displayName="color_earth_khaki" icon="ic_cfg_logocolor_11"
-                colors="#9A8A62 #9099A6 #1B1E24" />
-            <ColorOption id="13" displayName="color_mocha_brown" icon="ic_cfg_logocolor_12"
-                colors="#A76D43 #9099A6 #1B1E24" />
-            <ColorOption id="14" displayName="color_steel_grey" icon="ic_cfg_logocolor_13"
-                colors="#94A3B8 #9099A6 #1B1E24" />
-            <ColorOption id="15" displayName="color_slate_charcoal" icon="ic_cfg_logocolor_14"
-                colors="#64748B #9099A6 #1B1E24" />
-            <ColorOption id="16" displayName="color_titanium_silver" icon="ic_cfg_logocolor_15"
-                colors="#CED8E2 #9099A6 #1B1E24" />
-        </ColorConfiguration>
+                <!-- XML Pos 13 (TreeMap #4): Logo Color (0 = Theme Color [Default], 1..16 = Independent palette colors) -->
+        <ListConfiguration id="logoColor" displayName="logo_color_label" defaultValue="0" icon="ic_cfg_themecolor_0">
+            <ListOption id="0" displayName="theme_color_label" icon="ic_cfg_themecolor_0" />
+            <ListOption id="1" displayName="color_cyber_lime" icon="ic_cfg_logocolor_0" />
+            <ListOption id="2" displayName="color_bright_lime_green" icon="ic_cfg_logocolor_1" />
+            <ListOption id="3" displayName="color_shark_blue" icon="ic_cfg_logocolor_2" />
+            <ListOption id="4" displayName="color_tactical_orange" icon="ic_cfg_logocolor_3" />
+            <ListOption id="5" displayName="color_crimson_red" icon="ic_cfg_logocolor_4" />
+            <ListOption id="6" displayName="color_amber_gold" icon="ic_cfg_logocolor_5" />
+            <ListOption id="7" displayName="color_stealth_white" icon="ic_cfg_logocolor_6" />
+            <ListOption id="8" displayName="color_toxic_green" icon="ic_cfg_logocolor_7" />
+            <ListOption id="9" displayName="color_deep_violet" icon="ic_cfg_logocolor_8" />
+            <ListOption id="10" displayName="color_hot_pink" icon="ic_cfg_logocolor_9" />
+            <ListOption id="11" displayName="color_coyote_tan" icon="ic_cfg_logocolor_10" />
+            <ListOption id="12" displayName="color_earth_khaki" icon="ic_cfg_logocolor_11" />
+            <ListOption id="13" displayName="color_mocha_brown" icon="ic_cfg_logocolor_12" />
+            <ListOption id="14" displayName="color_steel_grey" icon="ic_cfg_logocolor_13" />
+            <ListOption id="15" displayName="color_slate_charcoal" icon="ic_cfg_logocolor_14" />
+            <ListOption id="16" displayName="color_titanium_silver" icon="ic_cfg_logocolor_15" />
+        </ListConfiguration>
 
         <!-- XML Pos 14 (TreeMap #5): Seconds Color (0 = Same as clock [Default], 1 = Theme Color, 2..19 = Independent palette colors) -->
         <ListConfiguration id="secColor" displayName="seconds_color_label" defaultValue="0" icon="ic_cfg_seccolor_0">
@@ -585,107 +568,582 @@
             <Image resource="logo_cheerful" />
         </PartImage>
 
-        <!-- Option 0 (Default): Authentic G-Shock Curved "G-SHARK" Logo (x=115, y=372, w=220, h=45, Centered at x=225) with thin black outline -->
+                <!-- Option 0: GSHARK -->
         <PartImage x="111" y="368" width="228" height="53" name="GSharkOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 ? 255 : 0" />
             <Image resource="logo_gshark_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSharkLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+        <Group x="115" y="372" width="220" height="45" name="GSharkGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
-            <Image resource="logo_gshark" />
-        </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSharkLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
-            <Image resource="logo_gshark" />
-        </PartImage>
-
-        <!-- Option 1: G-SPOT -->
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 ? 255 : 0" />
+            <!-- 0: Theme Color (Matches subdial dynamic accent) -->
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_1" tintColor="#BAFA08">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 1 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_2" tintColor="#39FF14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 2 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_3" tintColor="#0EDBFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 3 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_4" tintColor="#FF660A">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 4 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_5" tintColor="#FF1E38">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 5 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_6" tintColor="#FFC400">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 6 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_7" tintColor="#FFFFFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 7 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_8" tintColor="#147EFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 8 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_9" tintColor="#B040FF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 9 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_10" tintColor="#F514C8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 10 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_11" tintColor="#D2B48C">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 11 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_12" tintColor="#9A8A62">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 12 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_13" tintColor="#A76D43">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 13 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_14" tintColor="#94A3B8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 14 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_15" tintColor="#64748B">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 15 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_16" tintColor="#CED8E2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
+        </Group>
+        <!-- Option 1: GSPOT -->
         <PartImage x="111" y="368" width="228" height="53" name="GSpotOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 ? 255 : 0" />
             <Image resource="logo_gspot_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSpotLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+        <Group x="115" y="372" width="220" height="45" name="GSpotGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
-            <Image resource="logo_gspot" />
-        </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSpotLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
-            <Image resource="logo_gspot" />
-        </PartImage>
-
-        <!-- Option 2: G-SNACK -->
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 ? 255 : 0" />
+            <!-- 0: Theme Color (Matches subdial dynamic accent) -->
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_1" tintColor="#BAFA08">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 1 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_2" tintColor="#39FF14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 2 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_3" tintColor="#0EDBFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 3 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_4" tintColor="#FF660A">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 4 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_5" tintColor="#FF1E38">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 5 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_6" tintColor="#FFC400">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 6 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_7" tintColor="#FFFFFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 7 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_8" tintColor="#147EFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 8 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_9" tintColor="#B040FF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 9 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_10" tintColor="#F514C8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 10 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_11" tintColor="#D2B48C">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 11 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_12" tintColor="#9A8A62">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 12 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_13" tintColor="#A76D43">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 13 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_14" tintColor="#94A3B8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 14 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_15" tintColor="#64748B">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 15 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_16" tintColor="#CED8E2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+        </Group>
+        <!-- Option 2: GSNACK -->
         <PartImage x="111" y="368" width="228" height="53" name="GSnackOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 ? 255 : 0" />
             <Image resource="logo_gsnack_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSnackLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+        <Group x="115" y="372" width="220" height="45" name="GSnackGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
-            <Image resource="logo_gsnack" />
-        </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSnackLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
-            <Image resource="logo_gsnack" />
-        </PartImage>
-
-        <!-- Option 3: G-SNOOZE -->
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 ? 255 : 0" />
+            <!-- 0: Theme Color (Matches subdial dynamic accent) -->
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_1" tintColor="#BAFA08">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 1 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_2" tintColor="#39FF14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 2 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_3" tintColor="#0EDBFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 3 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_4" tintColor="#FF660A">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 4 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_5" tintColor="#FF1E38">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 5 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_6" tintColor="#FFC400">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 6 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_7" tintColor="#FFFFFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 7 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_8" tintColor="#147EFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 8 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_9" tintColor="#B040FF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 9 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_10" tintColor="#F514C8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 10 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_11" tintColor="#D2B48C">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 11 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_12" tintColor="#9A8A62">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 12 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_13" tintColor="#A76D43">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 13 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_14" tintColor="#94A3B8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 14 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_15" tintColor="#64748B">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 15 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_16" tintColor="#CED8E2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
+        </Group>
+        <!-- Option 3: GSNOOZE -->
         <PartImage x="111" y="368" width="228" height="53" name="GSnoozeOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 ? 255 : 0" />
             <Image resource="logo_gsnooze_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSnoozeLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+        <Group x="115" y="372" width="220" height="45" name="GSnoozeGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
-            <Image resource="logo_gsnooze" />
-        </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSnoozeLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
-            <Image resource="logo_gsnooze" />
-        </PartImage>
-
-        <!-- Option 4: G-SQUAWK -->
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 ? 255 : 0" />
+            <!-- 0: Theme Color (Matches subdial dynamic accent) -->
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_1" tintColor="#BAFA08">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 1 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_2" tintColor="#39FF14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 2 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_3" tintColor="#0EDBFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 3 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_4" tintColor="#FF660A">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 4 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_5" tintColor="#FF1E38">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 5 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_6" tintColor="#FFC400">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 6 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_7" tintColor="#FFFFFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 7 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_8" tintColor="#147EFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 8 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_9" tintColor="#B040FF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 9 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_10" tintColor="#F514C8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 10 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_11" tintColor="#D2B48C">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 11 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_12" tintColor="#9A8A62">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 12 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_13" tintColor="#A76D43">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 13 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_14" tintColor="#94A3B8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 14 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_15" tintColor="#64748B">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 15 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_16" tintColor="#CED8E2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+        </Group>
+        <!-- Option 4: GSQUAWK -->
         <PartImage x="111" y="368" width="228" height="53" name="GSquawkOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 ? 255 : 0" />
             <Image resource="logo_gsquawk_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSquawkLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+        <Group x="115" y="372" width="220" height="45" name="GSquawkGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
-            <Image resource="logo_gsquawk" />
-        </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSquawkLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
-            <Image resource="logo_gsquawk" />
-        </PartImage>
-
-        <!-- Option 5: G-SLOTH -->
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 ? 255 : 0" />
+            <!-- 0: Theme Color (Matches subdial dynamic accent) -->
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_1" tintColor="#BAFA08">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 1 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_2" tintColor="#39FF14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 2 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_3" tintColor="#0EDBFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 3 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_4" tintColor="#FF660A">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 4 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_5" tintColor="#FF1E38">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 5 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_6" tintColor="#FFC400">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 6 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_7" tintColor="#FFFFFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 7 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_8" tintColor="#147EFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 8 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_9" tintColor="#B040FF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 9 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_10" tintColor="#F514C8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 10 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_11" tintColor="#D2B48C">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 11 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_12" tintColor="#9A8A62">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 12 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_13" tintColor="#A76D43">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 13 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_14" tintColor="#94A3B8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 14 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_15" tintColor="#64748B">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 15 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_16" tintColor="#CED8E2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
+        </Group>
+        <!-- Option 5: GSLOTH -->
         <PartImage x="111" y="368" width="228" height="53" name="GSlothOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 ? 255 : 0" />
             <Image resource="logo_gsloth_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSlothLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+        <Group x="115" y="372" width="220" height="45" name="GSlothGroup">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
-            <Image resource="logo_gsloth" />
-        </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSlothLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
-            <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
-            <Image resource="logo_gsloth" />
-        </PartImage>
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 ? 255 : 0" />
+            <!-- 0: Theme Color (Matches subdial dynamic accent) -->
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_1" tintColor="#BAFA08">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 1 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_2" tintColor="#39FF14">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 2 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_3" tintColor="#0EDBFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 3 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_4" tintColor="#FF660A">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 4 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_5" tintColor="#FF1E38">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 5 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_6" tintColor="#FFC400">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 6 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_7" tintColor="#FFFFFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 7 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_8" tintColor="#147EFF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 8 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_9" tintColor="#B040FF">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 9 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_10" tintColor="#F514C8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 10 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_11" tintColor="#D2B48C">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 11 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_12" tintColor="#9A8A62">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 12 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_13" tintColor="#A76D43">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 13 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_14" tintColor="#94A3B8">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 14 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_15" tintColor="#64748B">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 15 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_16" tintColor="#CED8E2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+        </Group>
 
         <!-- ============================================================== -->
         <!-- 3. TOP HEADER STATUS & CALENDAR (y=72 to y=122)                -->
