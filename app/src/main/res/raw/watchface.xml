@@ -1765,15 +1765,15 @@
 
         <!-- Official Wear OS Monochrome Grey Logo -->
         <!-- Flank at 9 o'clock when digital (analogHands == 0), centered in middle above hands pinion when analog (analogHands != 0) -->
-        <PartImage x="34" y="211" width="34" height="28" alpha="255" name="WearOsOutline">
+        <PartImage x="31" y="211" width="34" height="28" alpha="255" name="WearOsOutline">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 208 : 34" />
+            <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 208 : 31" />
             <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 168 : 211" />
             <Image resource="logo_wear_os_outline" />
         </PartImage>
-        <PartImage x="38" y="215" width="26" height="20" alpha="255" name="WearOsLogo">
+        <PartImage x="35" y="215" width="26" height="20" alpha="255" name="WearOsLogo">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 212 : 38" />
+            <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 212 : 35" />
             <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 172 : 215" />
             <Image resource="logo_wear_os" />
         </PartImage>

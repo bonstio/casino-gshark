@@ -322,8 +322,8 @@ def render_watchface(
             canvas.alpha_composite(load_drawable(f"tex_screen_{tex_suffixes[screen_texture]}"), (70, 178))
 
         # Wear OS flank logo
-        canvas.alpha_composite(load_drawable("logo_wear_os_outline").resize((34, 28), Image.Resampling.LANCZOS), (34, 211))
-        canvas.alpha_composite(load_drawable("logo_wear_os").resize((26, 20), Image.Resampling.LANCZOS), (38, 215))
+        canvas.alpha_composite(load_drawable("logo_wear_os_outline").resize((34, 28), Image.Resampling.LANCZOS), (31, 211))
+        canvas.alpha_composite(load_drawable("logo_wear_os").resize((26, 20), Image.Resampling.LANCZOS), (35, 215))
 
         # Digital time HH:MM ("18:30")
         if time_color == 2:
