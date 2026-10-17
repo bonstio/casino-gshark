@@ -2322,6 +2322,9 @@
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2421,6 +2424,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2451,6 +2457,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2502,6 +2511,9 @@
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2601,6 +2613,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2631,6 +2646,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2682,6 +2700,9 @@
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2781,6 +2802,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2811,6 +2835,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2862,6 +2889,9 @@
                 <PartImage x="15" y="8" width="36" height="36" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <!-- Complication Icon (Black Mode) -->
@@ -2961,6 +2991,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -2991,6 +3024,9 @@
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#D4D4D4">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                    <ImageFilters>
+                        <HsbFilter saturate="0.0" brightness="2.5" />
+                    </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
                 <PartImage x="8" y="16" width="50" height="50" tintColor="#0A0D10">
@@ -3045,6 +3081,9 @@
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#D4D4D4">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <ImageFilters>
+                            <HsbFilter saturate="0.0" brightness="2.5" />
+                        </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
                     <!-- Monochromatic Icon (Black Mode, Vertically Centered at y=13) -->
@@ -3142,6 +3181,9 @@
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#D4D4D4">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
+                        <ImageFilters>
+                            <HsbFilter saturate="0.0" brightness="2.5" />
+                        </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#0A0D10">
@@ -3314,6 +3356,9 @@
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                 <Transform target="x" value="[CONFIGURATION.bottomBayMode] == 1 ? 54 : ([CONFIGURATION.bottomBayMode] == 4 ? 23 : 33)" />
+                <ImageFilters>
+                    <HsbFilter saturate="0.0" brightness="2.5" />
+                </ImageFilters>
                 <Image resource="ic_calendar_date" />
             </PartImage>
             <!-- Calendar Icon (Black Positive LCD Mode, horizontally centered with date text, vertically centered at y=13) -->
