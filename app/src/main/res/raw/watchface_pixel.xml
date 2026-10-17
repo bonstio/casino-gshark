@@ -88,63 +88,66 @@
                 colors="#CED8E2 #9099A6 #1B1E24" />
         </ColorConfiguration>
 
-        <!-- XML Pos 13 (TreeMap #4): Logo Color (16 Options: Independent setting for G-SHARK Logo branding) -->
+        <!-- XML Pos 13 (TreeMap #4): Logo Color (0 = Theme Color [Default], 1..16 = Independent palette colors) -->
         <ColorConfiguration id="logoColor" displayName="logo_color_label" defaultValue="0" icon="ic_cfg_logocolor_0">
-            <ColorOption id="0" displayName="color_cyber_lime" icon="ic_cfg_logocolor_0"
+            <ColorOption id="0" displayName="theme_color_label" icon="ic_cfg_themecolor_0"
                 colors="#BAFA08 #9099A6 #1B1E24" />
-            <ColorOption id="1" displayName="color_bright_lime_green" icon="ic_cfg_logocolor_1"
+            <ColorOption id="1" displayName="color_cyber_lime" icon="ic_cfg_logocolor_0"
+                colors="#BAFA08 #9099A6 #1B1E24" />
+            <ColorOption id="2" displayName="color_bright_lime_green" icon="ic_cfg_logocolor_1"
                 colors="#39FF14 #9099A6 #1B1E24" />
-            <ColorOption id="2" displayName="color_shark_blue" icon="ic_cfg_logocolor_2"
+            <ColorOption id="3" displayName="color_shark_blue" icon="ic_cfg_logocolor_2"
                 colors="#0EDBFF #9099A6 #1B1E24" />
-            <ColorOption id="3" displayName="color_tactical_orange" icon="ic_cfg_logocolor_3"
+            <ColorOption id="4" displayName="color_tactical_orange" icon="ic_cfg_logocolor_3"
                 colors="#FF660A #9099A6 #1B1E24" />
-            <ColorOption id="4" displayName="color_crimson_red" icon="ic_cfg_logocolor_4"
+            <ColorOption id="5" displayName="color_crimson_red" icon="ic_cfg_logocolor_4"
                 colors="#FF1E38 #9099A6 #1B1E24" />
-            <ColorOption id="5" displayName="color_amber_gold" icon="ic_cfg_logocolor_5"
+            <ColorOption id="6" displayName="color_amber_gold" icon="ic_cfg_logocolor_5"
                 colors="#FFC400 #9099A6 #1B1E24" />
-            <ColorOption id="6" displayName="color_stealth_white" icon="ic_cfg_logocolor_6"
+            <ColorOption id="7" displayName="color_stealth_white" icon="ic_cfg_logocolor_6"
                 colors="#FFFFFF #9099A6 #1B1E24" />
-            <ColorOption id="7" displayName="color_toxic_green" icon="ic_cfg_logocolor_7"
+            <ColorOption id="8" displayName="color_toxic_green" icon="ic_cfg_logocolor_7"
                 colors="#147EFF #9099A6 #1B1E24" />
-            <ColorOption id="8" displayName="color_deep_violet" icon="ic_cfg_logocolor_8"
+            <ColorOption id="9" displayName="color_deep_violet" icon="ic_cfg_logocolor_8"
                 colors="#B040FF #9099A6 #1B1E24" />
-            <ColorOption id="9" displayName="color_hot_pink" icon="ic_cfg_logocolor_9"
+            <ColorOption id="10" displayName="color_hot_pink" icon="ic_cfg_logocolor_9"
                 colors="#F514C8 #9099A6 #1B1E24" />
-            <ColorOption id="10" displayName="color_coyote_tan" icon="ic_cfg_logocolor_10"
+            <ColorOption id="11" displayName="color_coyote_tan" icon="ic_cfg_logocolor_10"
                 colors="#D2B48C #9099A6 #1B1E24" />
-            <ColorOption id="11" displayName="color_earth_khaki" icon="ic_cfg_logocolor_11"
+            <ColorOption id="12" displayName="color_earth_khaki" icon="ic_cfg_logocolor_11"
                 colors="#9A8A62 #9099A6 #1B1E24" />
-            <ColorOption id="12" displayName="color_mocha_brown" icon="ic_cfg_logocolor_12"
+            <ColorOption id="13" displayName="color_mocha_brown" icon="ic_cfg_logocolor_12"
                 colors="#A76D43 #9099A6 #1B1E24" />
-            <ColorOption id="13" displayName="color_steel_grey" icon="ic_cfg_logocolor_13"
+            <ColorOption id="14" displayName="color_steel_grey" icon="ic_cfg_logocolor_13"
                 colors="#94A3B8 #9099A6 #1B1E24" />
-            <ColorOption id="14" displayName="color_slate_charcoal" icon="ic_cfg_logocolor_14"
+            <ColorOption id="15" displayName="color_slate_charcoal" icon="ic_cfg_logocolor_14"
                 colors="#64748B #9099A6 #1B1E24" />
-            <ColorOption id="15" displayName="color_titanium_silver" icon="ic_cfg_logocolor_15"
+            <ColorOption id="16" displayName="color_titanium_silver" icon="ic_cfg_logocolor_15"
                 colors="#CED8E2 #9099A6 #1B1E24" />
         </ColorConfiguration>
 
-        <!-- XML Pos 14 (TreeMap #5): Seconds Color (0 = Same as clock [Default], 1..18 = Independent palette colors) -->
+        <!-- XML Pos 14 (TreeMap #5): Seconds Color (0 = Same as clock [Default], 1 = Theme Color, 2..19 = Independent palette colors) -->
         <ListConfiguration id="secColor" displayName="seconds_color_label" defaultValue="0" icon="ic_cfg_seccolor_0">
             <ListOption id="0" displayName="sec_color_same_as_clock" icon="ic_cfg_seccolor_0" />
-            <ListOption id="1" displayName="color_cyber_lime" icon="ic_cfg_seccolor_1" />
-            <ListOption id="2" displayName="color_bright_lime_green" icon="ic_cfg_seccolor_2" />
-            <ListOption id="3" displayName="color_shark_blue" icon="ic_cfg_seccolor_3" />
-            <ListOption id="4" displayName="color_tactical_orange" icon="ic_cfg_seccolor_4" />
-            <ListOption id="5" displayName="color_crimson_red" icon="ic_cfg_seccolor_5" />
-            <ListOption id="6" displayName="color_amber_gold" icon="ic_cfg_seccolor_6" />
-            <ListOption id="7" displayName="color_stealth_white" icon="ic_cfg_seccolor_7" />
-            <ListOption id="8" displayName="color_toxic_green" icon="ic_cfg_seccolor_8" />
-            <ListOption id="9" displayName="color_deep_violet" icon="ic_cfg_seccolor_9" />
-            <ListOption id="10" displayName="color_hot_pink" icon="ic_cfg_seccolor_10" />
-            <ListOption id="11" displayName="color_coyote_tan" icon="ic_cfg_seccolor_11" />
-            <ListOption id="12" displayName="color_earth_khaki" icon="ic_cfg_seccolor_12" />
-            <ListOption id="13" displayName="color_mocha_brown" icon="ic_cfg_seccolor_13" />
-            <ListOption id="14" displayName="color_steel_grey" icon="ic_cfg_seccolor_14" />
-            <ListOption id="15" displayName="color_slate_charcoal" icon="ic_cfg_seccolor_15" />
-            <ListOption id="16" displayName="color_titanium_silver" icon="ic_cfg_seccolor_16" />
-            <ListOption id="17" displayName="time_color_soft_white" icon="ic_cfg_seccolor_17" />
-            <ListOption id="18" displayName="time_color_black" icon="ic_cfg_seccolor_18" />
+            <ListOption id="1" displayName="theme_color_label" icon="ic_cfg_themecolor_0" />
+            <ListOption id="2" displayName="color_cyber_lime" icon="ic_cfg_seccolor_1" />
+            <ListOption id="3" displayName="color_bright_lime_green" icon="ic_cfg_seccolor_2" />
+            <ListOption id="4" displayName="color_shark_blue" icon="ic_cfg_seccolor_3" />
+            <ListOption id="5" displayName="color_tactical_orange" icon="ic_cfg_seccolor_4" />
+            <ListOption id="6" displayName="color_crimson_red" icon="ic_cfg_seccolor_5" />
+            <ListOption id="7" displayName="color_amber_gold" icon="ic_cfg_seccolor_6" />
+            <ListOption id="8" displayName="color_stealth_white" icon="ic_cfg_seccolor_7" />
+            <ListOption id="9" displayName="color_toxic_green" icon="ic_cfg_seccolor_8" />
+            <ListOption id="10" displayName="color_deep_violet" icon="ic_cfg_seccolor_9" />
+            <ListOption id="11" displayName="color_hot_pink" icon="ic_cfg_seccolor_10" />
+            <ListOption id="12" displayName="color_coyote_tan" icon="ic_cfg_seccolor_11" />
+            <ListOption id="13" displayName="color_earth_khaki" icon="ic_cfg_seccolor_12" />
+            <ListOption id="14" displayName="color_mocha_brown" icon="ic_cfg_seccolor_13" />
+            <ListOption id="15" displayName="color_steel_grey" icon="ic_cfg_seccolor_14" />
+            <ListOption id="16" displayName="color_slate_charcoal" icon="ic_cfg_seccolor_15" />
+            <ListOption id="17" displayName="color_titanium_silver" icon="ic_cfg_seccolor_16" />
+            <ListOption id="18" displayName="time_color_soft_white" icon="ic_cfg_seccolor_17" />
+            <ListOption id="19" displayName="time_color_black" icon="ic_cfg_seccolor_18" />
         </ListConfiguration>
 
         <!-- XML Pos 15 (TreeMap #6): Time Display Color / Polarity (0 = White Default, 1 = Soft White, 2 = Black on 82% White Overlay) -->
@@ -588,9 +591,14 @@
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 ? 255 : 0" />
             <Image resource="logo_gshark_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSharkLogo" tintColor="[CONFIGURATION.logoColor.0]">
+        <PartImage x="115" y="372" width="220" height="45" name="GSharkLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+            <Image resource="logo_gshark" />
+        </PartImage>
+        <PartImage x="115" y="372" width="220" height="45" name="GSharkLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 0 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
             <Image resource="logo_gshark" />
         </PartImage>
 
@@ -600,9 +608,14 @@
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 ? 255 : 0" />
             <Image resource="logo_gspot_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSpotLogo" tintColor="[CONFIGURATION.logoColor.0]">
+        <PartImage x="115" y="372" width="220" height="45" name="GSpotLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+            <Image resource="logo_gspot" />
+        </PartImage>
+        <PartImage x="115" y="372" width="220" height="45" name="GSpotLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 1 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
             <Image resource="logo_gspot" />
         </PartImage>
 
@@ -612,9 +625,14 @@
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 ? 255 : 0" />
             <Image resource="logo_gsnack_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSnackLogo" tintColor="[CONFIGURATION.logoColor.0]">
+        <PartImage x="115" y="372" width="220" height="45" name="GSnackLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+            <Image resource="logo_gsnack" />
+        </PartImage>
+        <PartImage x="115" y="372" width="220" height="45" name="GSnackLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 2 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
             <Image resource="logo_gsnack" />
         </PartImage>
 
@@ -624,9 +642,14 @@
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 ? 255 : 0" />
             <Image resource="logo_gsnooze_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSnoozeLogo" tintColor="[CONFIGURATION.logoColor.0]">
+        <PartImage x="115" y="372" width="220" height="45" name="GSnoozeLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+            <Image resource="logo_gsnooze" />
+        </PartImage>
+        <PartImage x="115" y="372" width="220" height="45" name="GSnoozeLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 3 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
             <Image resource="logo_gsnooze" />
         </PartImage>
 
@@ -636,9 +659,14 @@
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 ? 255 : 0" />
             <Image resource="logo_gsquawk_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSquawkLogo" tintColor="[CONFIGURATION.logoColor.0]">
+        <PartImage x="115" y="372" width="220" height="45" name="GSquawkLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+            <Image resource="logo_gsquawk" />
+        </PartImage>
+        <PartImage x="115" y="372" width="220" height="45" name="GSquawkLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 4 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
             <Image resource="logo_gsquawk" />
         </PartImage>
 
@@ -648,9 +676,14 @@
             <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 ? 255 : 0" />
             <Image resource="logo_gsloth_outline" />
         </PartImage>
-        <PartImage x="115" y="372" width="220" height="45" name="GSlothLogo" tintColor="[CONFIGURATION.logoColor.0]">
+        <PartImage x="115" y="372" width="220" height="45" name="GSlothLogoTheme" tintColor="[CONFIGURATION.themeColor.0]">
             <Variant mode="AMBIENT" target="alpha" value="0" />
-            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 ? 255 : 0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 &amp;&amp; [CONFIGURATION.logoColor] == 0 ? 255 : 0" />
+            <Image resource="logo_gsloth" />
+        </PartImage>
+        <PartImage x="115" y="372" width="220" height="45" name="GSlothLogoCustom" tintColor="[CONFIGURATION.logoColor.0]">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bottomLogo] == 5 &amp;&amp; [CONFIGURATION.logoColor] != 0 ? 255 : 0" />
             <Image resource="logo_gsloth" />
         </PartImage>
 
@@ -1106,10 +1139,10 @@
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 ? 255 : 0" />
 
-            <!-- White (#FFFFFF): Same as clock (timeColor==0) or Stealth White (secColor==7) -->
+            <!-- White (#FFFFFF): Same as clock (timeColor==0) or Stealth White (secColor==8) -->
             <PartText x="0" y="0" width="42" height="42" alpha="36" name="SecondsGhostWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 0) ? 36 : ([CONFIGURATION.secColor] == 7 ? 43 : 0)" />
+                <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 0) ? 36 : ([CONFIGURATION.secColor] == 8 ? 43 : 0)" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FFFFFF">88</Font>
@@ -1117,7 +1150,7 @@
             </PartText>
             <PartText x="0" y="0" width="42" height="42" name="SecondsDisplayWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 0) || [CONFIGURATION.secColor] == 7) ? 255 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 0) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FFFFFF">
@@ -1126,10 +1159,10 @@
                 </Text>
             </PartText>
 
-            <!-- Black (#0A0D10): Same as clock (timeColor==2) or Black (secColor==18) -->
+            <!-- Black (#0A0D10): Same as clock (timeColor==2) or Black (secColor==19) -->
             <PartText x="0" y="0" width="42" height="42" alpha="28" name="SecondsGhostBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2) || [CONFIGURATION.secColor] == 18) ? 28 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2) || [CONFIGURATION.secColor] == 19) ? 28 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#0A0D10">88</Font>
@@ -1137,7 +1170,7 @@
             </PartText>
             <PartText x="0" y="0" width="42" height="42" name="SecondsDisplayBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2) || [CONFIGURATION.secColor] == 18) ? 255 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2) || [CONFIGURATION.secColor] == 19) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#0A0D10">
@@ -1146,10 +1179,10 @@
                 </Text>
             </PartText>
 
-            <!-- Soft White (#D4D4D4): Same as clock (timeColor==1) or Soft White (secColor==17) -->
+            <!-- Soft White (#D4D4D4): Same as clock (timeColor==1) or Soft White (secColor==18) -->
             <PartText x="0" y="0" width="42" height="42" alpha="36" name="SecondsGhostSoftWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 1) || [CONFIGURATION.secColor] == 17) ? 36 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 1) || [CONFIGURATION.secColor] == 18) ? 36 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#D4D4D4">88</Font>
@@ -1157,7 +1190,7 @@
             </PartText>
             <PartText x="0" y="0" width="42" height="42" name="SecondsDisplaySoftWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 1) || [CONFIGURATION.secColor] == 17) ? 255 : 0" />
+                <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 1) || [CONFIGURATION.secColor] == 18) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#D4D4D4">
@@ -1166,18 +1199,38 @@
                 </Text>
             </PartText>
 
-            <!-- 1: Volt Lime (#BAFA08) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost1">
+            <!-- 1: Theme Color (Matches active themeColor) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhostTheme">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 1 ? 43 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="CENTER">
+                    <Font family="digital7" size="43" color="[CONFIGURATION.themeColor.0]">88</Font>
+                </Text>
+            </PartText>
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplayTheme">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 1 ? 255 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="CENTER">
+                    <Font family="digital7" size="43" color="[CONFIGURATION.themeColor.0]">
+                        <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
+                    </Font>
+                </Text>
+            </PartText>
+
+            <!-- 2: Volt Lime (#BAFA08) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost2">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#BAFA08">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay1">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay2">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 1 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#BAFA08">
@@ -1186,18 +1239,18 @@
                 </Text>
             </PartText>
 
-            <!-- 2: Bright Lime Green (#39FF14) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost2">
+            <!-- 3: Bright Lime Green (#39FF14) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost3">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#39FF14">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay2">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay3">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#39FF14">
@@ -1206,18 +1259,18 @@
                 </Text>
             </PartText>
 
-            <!-- 3: Ocean Shark Cyan (#0EDBFF) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost3">
+            <!-- 4: Ocean Shark Cyan (#0EDBFF) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost4">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#0EDBFF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay3">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay4">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#0EDBFF">
@@ -1226,18 +1279,18 @@
                 </Text>
             </PartText>
 
-            <!-- 4: Tactical Orange (#FF660A) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost4">
+            <!-- 5: Tactical Orange (#FF660A) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost5">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FF660A">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay4">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay5">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FF660A">
@@ -1246,18 +1299,18 @@
                 </Text>
             </PartText>
 
-            <!-- 5: Crimson Red (#FF1E38) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost5">
+            <!-- 6: Crimson Red (#FF1E38) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost6">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FF1E38">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay5">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay6">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FF1E38">
@@ -1266,18 +1319,18 @@
                 </Text>
             </PartText>
 
-            <!-- 6: Amber Gold (#FFC400) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost6">
+            <!-- 7: Amber Gold (#FFC400) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost7">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FFC400">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay6">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay7">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#FFC400">
@@ -1286,18 +1339,18 @@
                 </Text>
             </PartText>
 
-            <!-- 8: Vibrant Blue (#147EFF) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost8">
+            <!-- 9: Vibrant Blue (#147EFF) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost9">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 8 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#147EFF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay8">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay9">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 8 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#147EFF">
@@ -1306,18 +1359,18 @@
                 </Text>
             </PartText>
 
-            <!-- 9: Deep Violet (#B040FF) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost9">
+            <!-- 10: Deep Violet (#B040FF) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost10">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#B040FF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay9">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay10">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#B040FF">
@@ -1326,18 +1379,18 @@
                 </Text>
             </PartText>
 
-            <!-- 10: Neon Magenta (#F514C8) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost10">
+            <!-- 11: Neon Magenta (#F514C8) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost11">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#F514C8">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay10">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay11">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#F514C8">
@@ -1346,18 +1399,18 @@
                 </Text>
             </PartText>
 
-            <!-- 11: Coyote Tan (#D2B48C) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost11">
+            <!-- 12: Coyote Tan (#D2B48C) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost12">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#D2B48C">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay11">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay12">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#D2B48C">
@@ -1366,18 +1419,18 @@
                 </Text>
             </PartText>
 
-            <!-- 12: Earth Khaki (#9A8A62) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost12">
+            <!-- 13: Earth Khaki (#9A8A62) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost13">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#9A8A62">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay12">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay13">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#9A8A62">
@@ -1386,18 +1439,18 @@
                 </Text>
             </PartText>
 
-            <!-- 13: Mocha Brown (#A76D43) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost13">
+            <!-- 14: Mocha Brown (#A76D43) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost14">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#A76D43">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay13">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay14">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#A76D43">
@@ -1406,18 +1459,18 @@
                 </Text>
             </PartText>
 
-            <!-- 14: Steel Grey (#94A3B8) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost14">
+            <!-- 15: Steel Grey (#94A3B8) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost15">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#94A3B8">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay14">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay15">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#94A3B8">
@@ -1426,18 +1479,18 @@
                 </Text>
             </PartText>
 
-            <!-- 15: Slate Charcoal (#64748B) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost15">
+            <!-- 16: Slate Charcoal (#64748B) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost16">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#64748B">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay15">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay16">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#64748B">
@@ -1446,18 +1499,18 @@
                 </Text>
             </PartText>
 
-            <!-- 16: Titanium Silver (#CED8E2) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost16">
+            <!-- 17: Titanium Silver (#CED8E2) -->
+            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost17">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 43 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#CED8E2">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay16">
+            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay17">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="digital7" size="43" color="#CED8E2">
