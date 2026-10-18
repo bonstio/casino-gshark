@@ -35,6 +35,17 @@ def load_drawable(name):
     return _IMAGE_CACHE[name].copy()
 
 
+COMP_DIR = os.path.join(BASE_DIR, "assets_comp")
+
+
+def load_comp_icon(name):
+    key = f"comp_{name}"
+    if key not in _IMAGE_CACHE:
+        path = os.path.join(COMP_DIR, f"{name}.png")
+        _IMAGE_CACHE[key] = Image.open(path).convert("RGBA")
+    return _IMAGE_CACHE[key].copy()
+
+
 def hex_to_rgb(hex_str):
     h = hex_str.lstrip("#")
     return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
@@ -296,16 +307,36 @@ def render_watchface(
         b_img = solid_tint_alpha(load_drawable(b_name).resize((220, 45), Image.Resampling.LANCZOS), logo_rgb)
         canvas.alpha_composite(b_img, (115, 372))
 
-    # 6. Quad Complication Overlays (x=70, y=90, w=310, h=78)
+    # 6. Upper Complication Pods / Overlays:
+    # Digital mode (analog_hands == 0): rectangular quad chamber + textures
+    # Analog mode (analog_hands > 0): arced round complication plates & bezel overlay (QuadArcGroup)
     tex_suffixes = {1: "hex_light", 2: "hex_dark", 3: "moire_light", 4: "moire_dark"}
-    if quad_style == 0:
-        if time_color == 2:
-            if screen_texture == 0:
-                canvas.alpha_composite(load_drawable("tex_quad_invert_default"), (70, 90))
+    if analog_hands == 0:
+        canvas.alpha_composite(load_drawable(f"quad_chamber_{bg_texture}"))
+        if quad_style == 0:
+            if time_color == 2:
+                if screen_texture == 0:
+                    canvas.alpha_composite(load_drawable("tex_quad_invert_default"), (70, 90))
+                else:
+                    canvas.alpha_composite(load_drawable(f"tex_quad_invert_{tex_suffixes[screen_texture]}"), (70, 90))
+            elif screen_texture in tex_suffixes:
+                canvas.alpha_composite(load_drawable(f"tex_quad_{tex_suffixes[screen_texture]}"), (70, 90))
+    else:
+        # 1. Dark Face Plate (Active when Classic Dark is selected OR when Match LCD is selected in normal dark LCD mode)
+        if time_color != 2 or bottom_style == 1:
+            canvas.alpha_composite(load_drawable("quad_arc_face_dark"))
+        # 2. Textures (when Match LCD is selected)
+        if bottom_style == 0:
+            if time_color != 2:
+                if screen_texture in tex_suffixes:
+                    canvas.alpha_composite(load_drawable(f"tex_arc_{tex_suffixes[screen_texture]}"))
             else:
-                canvas.alpha_composite(load_drawable(f"tex_quad_invert_{tex_suffixes[screen_texture]}"), (70, 90))
-        elif screen_texture in tex_suffixes:
-            canvas.alpha_composite(load_drawable(f"tex_quad_{tex_suffixes[screen_texture]}"), (70, 90))
+                if screen_texture == 0:
+                    canvas.alpha_composite(load_drawable("tex_arc_invert_default"))
+                elif screen_texture in tex_suffixes:
+                    canvas.alpha_composite(load_drawable(f"tex_arc_invert_{tex_suffixes[screen_texture]}"))
+        # 3. Outer bezel rings & screws overlay
+        canvas.alpha_composite(load_drawable("quad_arc_overlay"))
 
     # 7. Bottom Complication Overlays (x=70, y=302, w=310, h=56)
     if bottom_style == 0:
@@ -317,7 +348,7 @@ def render_watchface(
         elif screen_texture in tex_suffixes:
             canvas.alpha_composite(load_drawable(f"tex_bottom_{tex_suffixes[screen_texture]}"), (70, 302))
 
-    # 8. Center Digital Time Panel (when analog_hands == 0)
+    # 8. Center Digital Time Panel (when analog_hands == 0) or Centered Wear OS Logo (when analog_hands > 0)
     if analog_hands == 0:
         canvas.alpha_composite(load_drawable(f"center_chamber_{bg_texture}"), (68, 164))
         if time_color == 2:
@@ -367,42 +398,77 @@ def render_watchface(
             sec_ghost_alpha = 28 if sec_color == 18 else (36 if sec_color in (7, 17) else 43)
         draw_centered_text(canvas, (330, 210, 42, 38), "88", DIGITAL7_PATH, 43, sec_rgb, sec_ghost_alpha)
         draw_centered_text(canvas, (330, 210, 42, 38), str(sec_str), DIGITAL7_PATH, 43, sec_rgb, 255)
+    else:
+        # Centered Wear OS logo in middle of dial (watchface.xml lines 1747-1755)
+        canvas.alpha_composite(load_drawable("logo_wear_os_outline").resize((34, 28), Image.Resampling.LANCZOS), (208, 168))
+        canvas.alpha_composite(load_drawable("logo_wear_os").resize((26, 20), Image.Resampling.LANCZOS), (212, 172))
 
-    # 9. Top 4 Quad Complication Pods (x=72, 152, 232, 312; y=90, w=66, h=78)
-    quad_black_mode = (time_color == 2 and quad_style == 0)
+    # 9. Top 4 Complication Pods:
+    # Digital mode (x=72, 152, 232, 312; y=90, w=66, h=78)
+    # Analog mode (round complication centers: (118, 237), (160, 139), (267, 125), (332, 211))
+    quad_black_mode = (time_color == 2 and (bottom_style == 0 if analog_hands > 0 else quad_style == 0))
     quad_fg = (212, 212, 212) if time_color == 1 else ((10, 13, 16) if quad_black_mode else (255, 255, 255))
     quad_ov = Image.new("RGBA", (450, 450), (0, 0, 0, 0))
     qd = ImageDraw.Draw(quad_ov)
-    # Pod 1 (center 105): Battery
-    qd.rounded_rectangle((91, 107, 115, 121), radius=2, outline=(*quad_fg, 255), width=2)
-    qd.rectangle((115, 111, 118, 117), fill=(*quad_fg, 255))
-    qd.rectangle((94, 110, 110, 118), fill=(*quad_fg, 255))
-    draw_centered_text(quad_ov, (72, 134, 66, 20), str(pod1_val), ROB_BOLD_PATH, 16, quad_fg, 255)
-    # Pod 2 (center 185): Steps
-    prev = load_drawable("preview").resize((450, 450), Image.Resampling.LANCZOS)
-    shoe_crop = prev.crop((167, 98, 203, 134))
-    shoe_ic = Image.new("RGBA", shoe_crop.size, (0, 0, 0, 0))
-    for py in range(shoe_crop.height):
-        for px in range(shoe_crop.width):
-            r_p, g_p, b_p, _ = shoe_crop.getpixel((px, py))
-            lum = max(r_p, g_p, b_p)
-            if lum > 45:
-                a_p = min(255, int(round((lum - 35) / 220.0 * 255.0)))
-                shoe_ic.putpixel((px, py), (*quad_fg, a_p))
-    quad_ov.alpha_composite(shoe_ic, (167, 98))
-    draw_centered_text(quad_ov, (152, 134, 66, 20), str(pod2_val), ROB_BOLD_PATH, 16, quad_fg, 255)
-    # Pod 3 (center 265): World Clock
-    qd.ellipse((251, 100, 279, 128), outline=(*quad_fg, 255), width=2)
-    qd.ellipse((258, 100, 272, 128), outline=(*quad_fg, 255), width=2)
-    qd.line([(251, 114), (279, 114)], fill=(*quad_fg, 255), width=2)
-    draw_centered_text(quad_ov, (232, 132, 66, 20), str(pod3_val[0]) if isinstance(pod3_val, (list, tuple)) else str(pod3_val), ROB_BOLD_PATH, 16, quad_fg, 255)
-    if isinstance(pod3_val, (list, tuple)) and len(pod3_val) > 1:
-        draw_centered_text(quad_ov, (232, 149, 66, 14), str(pod3_val[1]), ROB_BOLD_PATH, 10, quad_fg, 255)
-    # Pod 4 (center 345): Alarm / Sunset
-    qd.ellipse((331, 102, 359, 130), outline=(*quad_fg, 255), width=2)
-    qd.line([(345, 116), (345, 108)], fill=(*quad_fg, 255), width=2)
-    qd.line([(345, 116), (352, 120)], fill=(*quad_fg, 255), width=2)
-    draw_centered_text(quad_ov, (312, 134, 66, 20), str(pod4_val), ROB_BOLD_PATH, 16, quad_fg, 255)
+
+    if analog_hands == 0:
+        pod_boxes = [(72, 90), (152, 90), (232, 90), (312, 90)]
+    else:
+        # Centered in the 4 round bezel windows
+        pod_boxes = [(85, 198), (127, 100), (234, 86), (299, 172)]
+
+    # Pod 1: Battery (or steps if no %)
+    p1_x, p1_y = pod_boxes[0]
+    if "%" in str(pod1_val):
+        qd.rounded_rectangle((p1_x + 19, p1_y + 17, p1_x + 43, p1_y + 31), radius=2, outline=(*quad_fg, 255), width=2)
+        qd.rectangle((p1_x + 43, p1_y + 21, p1_x + 46, p1_y + 27), fill=(*quad_fg, 255))
+        qd.rectangle((p1_x + 22, p1_y + 20, p1_x + 38, p1_y + 28), fill=(*quad_fg, 255))
+    else:
+        shoe_ic = solid_tint_alpha(load_comp_icon("comp_shoe"), quad_fg)
+        quad_ov.alpha_composite(shoe_ic, (p1_x + (66 - shoe_ic.width) // 2, p1_y + 12))
+    draw_centered_text(quad_ov, (p1_x, p1_y + 44, 66, 20), str(pod1_val), ROB_BOLD_PATH, 16, quad_fg, 255)
+
+    # Pod 2: Steps (or Heart Rate if < 250)
+    p2_x, p2_y = pod_boxes[1]
+    p2_str = str(pod2_val)
+    if p2_str.isdigit() and int(p2_str) < 250:
+        heart_ic = solid_tint_alpha(load_comp_icon("comp_heart"), quad_fg)
+        quad_ov.alpha_composite(heart_ic, (p2_x + (66 - heart_ic.width) // 2, p2_y + 14))
+    else:
+        shoe_ic = solid_tint_alpha(load_comp_icon("comp_shoe"), quad_fg)
+        quad_ov.alpha_composite(shoe_ic, (p2_x + (66 - shoe_ic.width) // 2, p2_y + 12))
+    draw_centered_text(quad_ov, (p2_x, p2_y + 44, 66, 20), p2_str, ROB_BOLD_PATH, 16, quad_fg, 255)
+
+    # Pod 3: World Clock or Sunset
+    p3_x, p3_y = pod_boxes[2]
+    if isinstance(pod3_val, (list, tuple)):
+        # Globe icon
+        qd.ellipse((p3_x + 19, p3_y + 10, p3_x + 47, p3_y + 38), outline=(*quad_fg, 255), width=2)
+        qd.ellipse((p3_x + 26, p3_y + 10, p3_x + 40, p3_y + 38), outline=(*quad_fg, 255), width=2)
+        qd.line([(p3_x + 19, p3_y + 24), (p3_x + 47, p3_y + 24)], fill=(*quad_fg, 255), width=2)
+        draw_centered_text(quad_ov, (p3_x, p3_y + 42, 66, 20), str(pod3_val[0]), ROB_BOLD_PATH, 16, quad_fg, 255)
+        if len(pod3_val) > 1:
+            draw_centered_text(quad_ov, (p3_x, p3_y + 59, 66, 14), str(pod3_val[1]), ROB_BOLD_PATH, 10, quad_fg, 255)
+    else:
+        # Sunset icon
+        sunset_ic = solid_tint_alpha(load_comp_icon("comp_sunset"), quad_fg)
+        quad_ov.alpha_composite(sunset_ic, (p3_x + (66 - sunset_ic.width) // 2, p3_y + 12))
+        draw_centered_text(quad_ov, (p3_x, p3_y + 44, 66, 20), str(pod3_val), ROB_BOLD_PATH, 16, quad_fg, 255)
+
+    # Pod 4: Weather (Cloud) or Sunset/Alarm
+    p4_x, p4_y = pod_boxes[3]
+    p4_str = str(pod4_val)
+    if "°" in p4_str:
+        cloud_ic = solid_tint_alpha(load_comp_icon("comp_cloud"), quad_fg)
+        quad_ov.alpha_composite(cloud_ic, (p4_x + (66 - cloud_ic.width) // 2, p4_y + 13))
+        draw_centered_text(quad_ov, (p4_x, p4_y + 44, 66, 20), p4_str, ROB_BOLD_PATH, 16, quad_fg, 255)
+    else:
+        # Alarm / Clock icon
+        qd.ellipse((p4_x + 19, p4_y + 12, p4_x + 47, p4_y + 40), outline=(*quad_fg, 255), width=2)
+        qd.line([(p4_x + 33, p4_y + 26), (p4_x + 33, p4_y + 18)], fill=(*quad_fg, 255), width=2)
+        qd.line([(p4_x + 33, p4_y + 26), (p4_x + 40, p4_y + 30)], fill=(*quad_fg, 255), width=2)
+        draw_centered_text(quad_ov, (p4_x, p4_y + 44, 66, 20), p4_str, ROB_BOLD_PATH, 16, quad_fg, 255)
+
     canvas.alpha_composite(quad_ov)
 
     # 10. Bottom Bay (x=70, y=302, w=226, h=56)
