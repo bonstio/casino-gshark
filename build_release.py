@@ -13,9 +13,9 @@ AAPT2 = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\aapt2.exe"
 ZIPALIGN = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\zipalign.exe"
 APKSIGNER = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\apksigner.bat"
 ANDROID_JAR = r"C:\Users\bonst\AppData\Local\Android\Sdk\platforms\android-34\android.jar"
-KEYSTORE = r"C:\Users\bonst\.android\debug.keystore"
-KEY_ALIAS = "androiddebugkey"
-KEY_PASS = "android"
+KEYSTORE = os.path.join(PROJECT_DIR, "gshark-release.keystore")
+KEY_ALIAS = "gshark_release"
+KEY_PASS = "gsharkrelease"
 BUNDLETOOL_JAR = r"C:\Users\bonst\AppData\Local\Programs\WatchFaceStudioBeta\tools\common\tools\bundletool-all-1.13.2.jar"
 JARSIGNER = r"C:\Program Files\Java\jdk-18.0.1.1\bin\jarsigner.exe"
 
