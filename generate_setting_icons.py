@@ -236,6 +236,13 @@ def render_watchface(
     analog_hands=0,
     top_logo=0,
     bottom_logo=0,
+    time_str="18:30",
+    sec_str="04",
+    date_str=None,
+    pod1_val="100%",
+    pod2_val="5328",
+    pod3_val=("15:30", "DUB"),
+    pod4_val="15:22",
 ):
     canvas = Image.new("RGBA", (450, 450), (0, 0, 0, 255))
     theme_rgb = hex_to_rgb(THEME_COLORS[theme_color])
@@ -339,11 +346,12 @@ def render_watchface(
             ghost_rgb = (255, 255, 255)
             ghost_alpha = 36
 
+        hh, mm = time_str.split(":") if ":" in time_str else ("18", "30")
         draw_centered_text(canvas, (82, 165, 110, 108), "88", DIGITAL7_PATH, 120, ghost_rgb, ghost_alpha)
         draw_centered_text(canvas, (211, 165, 110, 108), "88", DIGITAL7_PATH, 120, ghost_rgb, ghost_alpha)
-        draw_centered_text(canvas, (82, 165, 110, 108), "18", DIGITAL7_PATH, 120, main_rgb, 255)
+        draw_centered_text(canvas, (82, 165, 110, 108), hh, DIGITAL7_PATH, 120, main_rgb, 255)
         draw_centered_text(canvas, (194, 165, 15, 108), ":", DIGITAL7_PATH, 120, main_rgb, 255)
-        draw_centered_text(canvas, (211, 165, 110, 108), "30", DIGITAL7_PATH, 120, main_rgb, 255)
+        draw_centered_text(canvas, (211, 165, 110, 108), mm, DIGITAL7_PATH, 120, main_rgb, 255)
 
         # Alarm indicator at (336, 188, 34, 16)
         alarm_rgb = main_rgb
@@ -358,19 +366,19 @@ def render_watchface(
             sec_rgb = hex_to_rgb(SEC_COLORS[sec_color])
             sec_ghost_alpha = 28 if sec_color == 18 else (36 if sec_color in (7, 17) else 43)
         draw_centered_text(canvas, (330, 210, 42, 38), "88", DIGITAL7_PATH, 43, sec_rgb, sec_ghost_alpha)
-        draw_centered_text(canvas, (330, 210, 42, 38), "04", DIGITAL7_PATH, 43, sec_rgb, 255)
+        draw_centered_text(canvas, (330, 210, 42, 38), str(sec_str), DIGITAL7_PATH, 43, sec_rgb, 255)
 
     # 9. Top 4 Quad Complication Pods (x=72, 152, 232, 312; y=90, w=66, h=78)
     quad_black_mode = (time_color == 2 and quad_style == 0)
     quad_fg = (212, 212, 212) if time_color == 1 else ((10, 13, 16) if quad_black_mode else (255, 255, 255))
     quad_ov = Image.new("RGBA", (450, 450), (0, 0, 0, 0))
     qd = ImageDraw.Draw(quad_ov)
-    # Pod 1 (center 105): Battery 100%
+    # Pod 1 (center 105): Battery
     qd.rounded_rectangle((91, 107, 115, 121), radius=2, outline=(*quad_fg, 255), width=2)
     qd.rectangle((115, 111, 118, 117), fill=(*quad_fg, 255))
     qd.rectangle((94, 110, 110, 118), fill=(*quad_fg, 255))
-    draw_centered_text(quad_ov, (72, 134, 66, 20), "100%", ROB_BOLD_PATH, 16, quad_fg, 255)
-    # Pod 2 (center 185): Steps 5328
+    draw_centered_text(quad_ov, (72, 134, 66, 20), str(pod1_val), ROB_BOLD_PATH, 16, quad_fg, 255)
+    # Pod 2 (center 185): Steps
     prev = load_drawable("preview").resize((450, 450), Image.Resampling.LANCZOS)
     shoe_crop = prev.crop((167, 98, 203, 134))
     shoe_ic = Image.new("RGBA", shoe_crop.size, (0, 0, 0, 0))
@@ -382,18 +390,19 @@ def render_watchface(
                 a_p = min(255, int(round((lum - 35) / 220.0 * 255.0)))
                 shoe_ic.putpixel((px, py), (*quad_fg, a_p))
     quad_ov.alpha_composite(shoe_ic, (167, 98))
-    draw_centered_text(quad_ov, (152, 134, 66, 20), "5328", ROB_BOLD_PATH, 16, quad_fg, 255)
-    # Pod 3 (center 265): World Clock 15:30 DUB
+    draw_centered_text(quad_ov, (152, 134, 66, 20), str(pod2_val), ROB_BOLD_PATH, 16, quad_fg, 255)
+    # Pod 3 (center 265): World Clock
     qd.ellipse((251, 100, 279, 128), outline=(*quad_fg, 255), width=2)
     qd.ellipse((258, 100, 272, 128), outline=(*quad_fg, 255), width=2)
     qd.line([(251, 114), (279, 114)], fill=(*quad_fg, 255), width=2)
-    draw_centered_text(quad_ov, (232, 132, 66, 20), "15:30", ROB_BOLD_PATH, 16, quad_fg, 255)
-    draw_centered_text(quad_ov, (232, 149, 66, 14), "DUB", ROB_BOLD_PATH, 10, quad_fg, 255)
-    # Pod 4 (center 345): Alarm / Sunset 15:22
+    draw_centered_text(quad_ov, (232, 132, 66, 20), str(pod3_val[0]) if isinstance(pod3_val, (list, tuple)) else str(pod3_val), ROB_BOLD_PATH, 16, quad_fg, 255)
+    if isinstance(pod3_val, (list, tuple)) and len(pod3_val) > 1:
+        draw_centered_text(quad_ov, (232, 149, 66, 14), str(pod3_val[1]), ROB_BOLD_PATH, 10, quad_fg, 255)
+    # Pod 4 (center 345): Alarm / Sunset
     qd.ellipse((331, 102, 359, 130), outline=(*quad_fg, 255), width=2)
     qd.line([(345, 116), (345, 108)], fill=(*quad_fg, 255), width=2)
     qd.line([(345, 116), (352, 120)], fill=(*quad_fg, 255), width=2)
-    draw_centered_text(quad_ov, (312, 134, 66, 20), "15:22", ROB_BOLD_PATH, 16, quad_fg, 255)
+    draw_centered_text(quad_ov, (312, 134, 66, 20), str(pod4_val), ROB_BOLD_PATH, 16, quad_fg, 255)
     canvas.alpha_composite(quad_ov)
 
     # 10. Bottom Bay (x=70, y=302, w=226, h=56)
@@ -401,7 +410,10 @@ def render_watchface(
     bot_fg = (212, 212, 212) if time_color == 1 else ((10, 13, 16) if bot_black_mode else (255, 255, 255))
     cal_ic = solid_tint_alpha(load_drawable("ic_calendar_date").resize((32, 32), Image.Resampling.LANCZOS), bot_fg)
 
-    if bottom_bay_mode == 0:
+    if date_str is not None:
+        canvas.alpha_composite(cal_ic, (70 + 23, 302 + 13))
+        draw_start_text(canvas, (70 + 61, 302 + 10, 158, 38), date_str, ROB_REG_PATH, 25, bot_fg, 255)
+    elif bottom_bay_mode == 0:
         # Complication / Next Event mode
         canvas.alpha_composite(cal_ic, (70 + 12, 302 + 12))
         draw_start_text(canvas, (70 + 52, 302 + 6, 166, 24), "15:00 Coffee", ROB_BOLD_PATH, 17, bot_fg, 255)
