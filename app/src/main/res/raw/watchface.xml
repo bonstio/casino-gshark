@@ -646,8 +646,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 0 ? 255 : 0" />
             <Image resource="logo_casino_outline" />
         </PartImage>
-        <PartImage x="140" y="41" width="170" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CasinoLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="140" y="41" width="170" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CasinoLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 0 ? 255 : 0" />
             <Image resource="logo_casino" />
@@ -659,8 +658,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 1 ? 255 : 0" />
             <Image resource="logo_calypso_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CalypsoLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CalypsoLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 1 ? 255 : 0" />
             <Image resource="logo_calypso" />
@@ -672,8 +670,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 2 ? 255 : 0" />
             <Image resource="logo_critical_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CriticalLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CriticalLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 2 ? 255 : 0" />
             <Image resource="logo_critical" />
@@ -685,8 +682,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 3 ? 255 : 0" />
             <Image resource="logo_charming_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CharmingLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CharmingLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 3 ? 255 : 0" />
             <Image resource="logo_charming" />
@@ -698,8 +694,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 4 ? 255 : 0" />
             <Image resource="logo_curious_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CuriousLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CuriousLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 4 ? 255 : 0" />
             <Image resource="logo_curious" />
@@ -711,8 +706,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 5 ? 255 : 0" />
             <Image resource="logo_creative_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CreativeLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CreativeLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 5 ? 255 : 0" />
             <Image resource="logo_creative" />
@@ -724,8 +718,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 6 ? 255 : 0" />
             <Image resource="logo_cautious_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CautiousLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CautiousLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 6 ? 255 : 0" />
             <Image resource="logo_cautious" />
@@ -737,8 +730,7 @@
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 7 ? 255 : 0" />
             <Image resource="logo_cheerful_outline" />
         </PartImage>
-        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CheerfulLogo">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
+        <PartImage x="131" y="41" width="188" height="25" pivotX="0.5" pivotY="1.0" scaleX="0.9" scaleY="0.9" name="CheerfulLogo" tintColor="#FFFFFF">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.topLogo] == 7 ? 255 : 0" />
             <Image resource="logo_cheerful" />
@@ -1330,7 +1322,6 @@
         <!--
         <Group x="40" y="72" width="370" height="50" name="HeaderSection">
             <PartText x="45" y="2" width="83" height="14">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#888888" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1338,7 +1329,6 @@
                 </Text>
             </PartText>
             <PartText x="45" y="16" width="83" height="32">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1349,7 +1339,6 @@
             </PartText>
 
             <PartText x="128" y="2" width="114" height="14">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#888888" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1357,7 +1346,6 @@
                 </Text>
             </PartText>
             <PartText x="128" y="16" width="114" height="16">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#666666" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1365,7 +1353,6 @@
                 </Text>
             </PartText>
             <PartText x="128" y="30" width="114" height="18">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1376,7 +1363,6 @@
             </PartText>
 
             <PartText x="242" y="2" width="83" height="14">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#888888" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1384,7 +1370,6 @@
                 </Text>
             </PartText>
             <PartText x="242" y="16" width="83" height="32">
-                <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
                 <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
@@ -1667,7 +1652,6 @@
 
         <!-- Hours Ghost 88 Background (White & Soft White Modes, x=82, y=151, w=110, h=126, size=120) -->
         <PartText x="82" y="151" width="110" height="126" alpha="36" name="HoursGhost">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 ? 36 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1678,7 +1662,6 @@
 
         <!-- Hours Active Digits (White Mode: timeColor == 0, Hidden in Ambient) -->
         <PartText x="82" y="151" width="110" height="126" name="HoursDisplay">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1691,7 +1674,6 @@
 
         <!-- Hours Active Digits (Soft White Mode: timeColor == 1, Hidden in Ambient) -->
         <PartText x="82" y="151" width="110" height="126" name="HoursDisplaySoftWhite">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#D4D4D4" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1704,7 +1686,6 @@
 
         <!-- Active Colon (White Mode: timeColor == 0, Hidden in Ambient) -->
         <PartText x="194" y="151" width="15" height="126" name="TimeColon">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1715,7 +1696,6 @@
 
         <!-- Active Colon (Soft White Mode: timeColor == 1, Hidden in Ambient) -->
         <PartText x="194" y="151" width="15" height="126" name="TimeColonSoftWhite">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#D4D4D4" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1726,7 +1706,6 @@
 
         <!-- Minutes Ghost 88 Background (White & Soft White Modes, x=211, y=151, w=110, h=126, size=120) -->
         <PartText x="211" y="151" width="110" height="126" alpha="36" name="MinutesGhost">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 ? 36 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1737,7 +1716,6 @@
 
         <!-- Minutes Active Digits (White Mode: timeColor == 0, Hidden in Ambient) -->
         <PartText x="211" y="151" width="110" height="126" name="MinutesDisplay">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#FFFFFF" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -1750,7 +1728,6 @@
 
         <!-- Minutes Active Digits (Soft White Mode: timeColor == 1, Hidden in Ambient) -->
         <PartText x="211" y="151" width="110" height="126" name="MinutesDisplaySoftWhite">
-            <Variant mode="INTERACTIVE" target="tintColor" value="#D4D4D4" />
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
@@ -2228,7 +2205,6 @@
         <!-- ============================================================== -->
         <!-- Ambient Hours Ghost 88 Background (size=168, alpha=36) -->
         <PartText x="55" y="126" width="160" height="176" alpha="0" name="AmbientHoursGhost">
-            <Variant mode="INTERACTIVE" target="alpha" value="0" />
             <Variant mode="AMBIENT" target="alpha" value="36" />
             <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 29 : 55" />
             <Localization calendar="GREGORIAN" />
@@ -2238,7 +2214,6 @@
         </PartText>
 
         <PartText x="55" y="126" width="160" height="176" alpha="0" name="AmbientHoursDisplay">
-            <Variant mode="INTERACTIVE" target="alpha" value="0" />
             <Variant mode="AMBIENT" target="alpha" value="255" />
             <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 29 : 55" />
             <Localization calendar="GREGORIAN" />
@@ -2250,7 +2225,6 @@
         </PartText>
 
         <PartText x="212" y="126" width="26" height="176" alpha="0" name="AmbientTimeColon">
-            <Variant mode="INTERACTIVE" target="alpha" value="0" />
             <Variant mode="AMBIENT" target="alpha" value="255" />
             <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 186 : 212" />
             <Localization calendar="GREGORIAN" />
@@ -2261,7 +2235,6 @@
 
         <!-- Ambient Minutes Ghost 88 Background (size=168, alpha=36) -->
         <PartText x="235" y="126" width="160" height="176" alpha="0" name="AmbientMinutesGhost">
-            <Variant mode="INTERACTIVE" target="alpha" value="0" />
             <Variant mode="AMBIENT" target="alpha" value="36" />
             <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 209 : 235" />
             <Localization calendar="GREGORIAN" />
@@ -2271,7 +2244,6 @@
         </PartText>
 
         <PartText x="235" y="126" width="160" height="176" alpha="0" name="AmbientMinutesDisplay">
-            <Variant mode="INTERACTIVE" target="alpha" value="0" />
             <Variant mode="AMBIENT" target="alpha" value="255" />
             <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 209 : 235" />
             <Localization calendar="GREGORIAN" />
@@ -2304,7 +2276,7 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompLeft_ShortText">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 25 : 12" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 113 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2314,7 +2286,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2323,7 +2295,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2332,7 +2304,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2408,7 +2380,7 @@
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompLeft_SmallImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 25 : 12" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 113 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2417,7 +2389,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2425,7 +2397,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2433,7 +2405,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2441,7 +2413,7 @@
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompLeft_MonoImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 25 : 12" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 113 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2450,7 +2422,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2458,7 +2430,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2466,7 +2438,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2493,7 +2465,7 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompRight_ShortText">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 17 : 42" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 30 : 20" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2503,7 +2475,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2512,7 +2484,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2521,7 +2493,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2597,7 +2569,7 @@
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompRight_SmallImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 17 : 42" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 30 : 20" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2606,7 +2578,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2614,7 +2586,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2622,7 +2594,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2630,7 +2602,7 @@
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompRight_MonoImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 17 : 42" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 30 : 20" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2639,7 +2611,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2647,7 +2619,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2655,7 +2627,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2682,7 +2654,7 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompBottomLeft_ShortText">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 7" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 26 : 30" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2692,7 +2664,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2701,7 +2673,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2710,7 +2682,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2786,7 +2758,7 @@
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompBottomLeft_SmallImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 7" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 26 : 30" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2795,7 +2767,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2803,7 +2775,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2811,7 +2783,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2819,7 +2791,7 @@
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompBottomLeft_MonoImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 9 : 7" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 26 : 30" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2828,7 +2800,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2836,7 +2808,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2844,7 +2816,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2871,7 +2843,7 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompBottomRight_ShortText">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 4 : 17" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 87 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2881,7 +2853,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2890,7 +2862,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2899,7 +2871,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -2975,7 +2947,7 @@
             </Complication>
 
             <Complication type="SMALL_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompBottomRight_SmallImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 4 : 17" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 87 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -2984,7 +2956,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -2992,7 +2964,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -3000,7 +2972,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.SMALL_IMAGE]" />
                 </PartImage>
@@ -3008,7 +2980,7 @@
             </Complication>
 
             <Complication type="MONOCHROMATIC_IMAGE">
-                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5">
+                <Group x="0" y="0" width="66" height="78" pivotX="0.5" pivotY="0.5" name="CompBottomRight_MonoImage">
                     <Transform target="x" value="[CONFIGURATION.analogHands] != 0 ? 4 : 17" />
                     <Transform target="y" value="[CONFIGURATION.analogHands] != 0 ? 87 : 5" />
                     <Transform target="scaleX" value="[CONFIGURATION.analogHands] != 0 ? 1.02 : 1.0" />
@@ -3017,7 +2989,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="120" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 1 : [CONFIGURATION.quadStyle] == 1)) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -3025,7 +2997,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -3033,7 +3005,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; ([CONFIGURATION.analogHands] != 0 ? [CONFIGURATION.bottomStyle] == 0 : [CONFIGURATION.quadStyle] == 0) ? 255 : 0" />
                     <ImageFilters>
-                        <HsbFilter saturate="0.0" brightness="2.5" />
+                        <HsbFilter saturate="0.0" brightness="1.0" />
                     </ImageFilters>
                     <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                 </PartImage>
@@ -3066,14 +3038,14 @@
 
             <!-- LONG_TEXT Renderer -->
             <Complication type="LONG_TEXT">
-                <Group x="0" y="0" width="226" height="56">
+                <Group x="0" y="0" width="226" height="56" name="CompCenter_LongText">
                     <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 0 ? 255 : 0" />
                     <!-- Monochromatic Icon (White Mode + Ambient, Vertically Centered at y=13) -->
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#FFFFFF">
                         <Variant mode="AMBIENT" target="alpha" value="120" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <ImageFilters>
-                            <HsbFilter saturate="0.0" brightness="2.5" />
+                            <HsbFilter saturate="0.0" brightness="1.0" />
                         </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
@@ -3082,7 +3054,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <ImageFilters>
-                            <HsbFilter saturate="0.0" brightness="2.5" />
+                            <HsbFilter saturate="0.0" brightness="1.0" />
                         </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
@@ -3091,7 +3063,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <ImageFilters>
-                            <HsbFilter saturate="0.0" brightness="2.5" />
+                            <HsbFilter saturate="0.0" brightness="1.0" />
                         </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
@@ -3168,13 +3140,13 @@
 
             <!-- SHORT_TEXT Fallback (Same Icon Position x=8, y=13, Visible in Ambient) -->
             <Complication type="SHORT_TEXT">
-                <Group x="0" y="0" width="226" height="56">
+                <Group x="0" y="0" width="226" height="56" name="CompCenter_ShortText">
                     <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 0 ? 255 : 0" />
                     <PartImage x="8" y="13" width="32" height="32" tintColor="#FFFFFF">
                         <Variant mode="AMBIENT" target="alpha" value="120" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <ImageFilters>
-                            <HsbFilter saturate="0.0" brightness="2.5" />
+                            <HsbFilter saturate="0.0" brightness="1.0" />
                         </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
@@ -3182,7 +3154,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <ImageFilters>
-                            <HsbFilter saturate="0.0" brightness="2.5" />
+                            <HsbFilter saturate="0.0" brightness="1.0" />
                         </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
@@ -3190,7 +3162,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <ImageFilters>
-                            <HsbFilter saturate="0.0" brightness="2.5" />
+                            <HsbFilter saturate="0.0" brightness="1.0" />
                         </ImageFilters>
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
@@ -3261,7 +3233,7 @@
 
             <!-- RANGED_VALUE Fallback (Visible in Ambient) -->
             <Complication type="RANGED_VALUE">
-                <Group x="0" y="0" width="226" height="56">
+                <Group x="0" y="0" width="226" height="56" name="CompCenter_RangedValue">
                     <Transform target="alpha" value="[CONFIGURATION.bottomBayMode] == 0 ? 255 : 0" />
                     <PartText x="12" y="6" width="202" height="24">
                         <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
@@ -3347,7 +3319,7 @@
                 <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                 <Transform target="x" value="[CONFIGURATION.bottomBayMode] == 1 ? 54 : ([CONFIGURATION.bottomBayMode] == 4 ? 23 : 33)" />
                 <ImageFilters>
-                    <HsbFilter saturate="0.0" brightness="2.5" />
+                    <HsbFilter saturate="0.0" brightness="1.0" />
                 </ImageFilters>
                 <Image resource="ic_calendar_date" />
             </PartImage>
@@ -3357,7 +3329,7 @@
                 <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                 <Transform target="x" value="[CONFIGURATION.bottomBayMode] == 1 ? 54 : ([CONFIGURATION.bottomBayMode] == 4 ? 23 : 33)" />
                 <ImageFilters>
-                    <HsbFilter saturate="0.0" brightness="2.5" />
+                    <HsbFilter saturate="0.0" brightness="1.0" />
                 </ImageFilters>
                 <Image resource="ic_calendar_date" />
             </PartImage>
@@ -3367,7 +3339,7 @@
                 <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                 <Transform target="x" value="[CONFIGURATION.bottomBayMode] == 1 ? 54 : ([CONFIGURATION.bottomBayMode] == 4 ? 23 : 33)" />
                 <ImageFilters>
-                    <HsbFilter saturate="0.0" brightness="2.5" />
+                    <HsbFilter saturate="0.0" brightness="1.0" />
                 </ImageFilters>
                 <Image resource="ic_calendar_date" />
             </PartImage>
@@ -3534,7 +3506,7 @@
                 defaultSystemProviderType="SHORT_TEXT" />
 
             <Complication type="SHORT_TEXT">
-                <Group x="0" y="0" width="34" height="16">
+                <Group x="0" y="0" width="34" height="16" name="CompSubdial_ShortText">
                     <Variant mode="AMBIENT" target="alpha" value="0" />
                     <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 ? 255 : 0" />
                     <!-- Alarm Indicator (White Time Mode: #FFFFFF, visible IFF an alarm is set) -->
@@ -3809,18 +3781,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">PPG</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_2_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 2 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Pago_Pago" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_2_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 2 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Pago_Pago" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 3: -10 / HNL (Pacific/Honolulu) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3835,18 +3811,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">HNL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_3_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 3 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Honolulu" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_3_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 3 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Honolulu" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 4: -9 / ANC (America/Anchorage) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3861,18 +3841,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">ANC</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_4_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 4 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Anchorage" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_4_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 4 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Anchorage" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 5: -8 / SFO (America/Los_Angeles) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3887,18 +3871,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">SFO</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_5_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 5 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Los_Angeles" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_5_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 5 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Los_Angeles" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 6: -7 / DEN (America/Denver) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3913,18 +3901,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">DEN</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_6_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 6 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Denver" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_6_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 6 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Denver" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 7: -6 / CHI (America/Chicago) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3939,18 +3931,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">CHI</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_7_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 7 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Chicago" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_7_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 7 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Chicago" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 8: -5 / NYC (America/New_York) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3965,18 +3961,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">NYC</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_8_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 8 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/New_York" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_8_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 8 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/New_York" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 9: -4 / SCL (America/Santiago) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -3991,18 +3991,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">SCL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_9_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 9 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Santiago" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_9_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 9 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Santiago" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 10: -3.5 / YYT (America/St_Johns) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4017,18 +4021,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">YYT</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_10_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 10 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/St_Johns" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_10_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 10 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/St_Johns" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 11: -3 / GRU (America/Sao_Paulo) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4043,18 +4051,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">GRU</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_11_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 11 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Sao_Paulo" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_11_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 11 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Sao_Paulo" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 12: -2 / FEN (America/Noronha) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4069,18 +4081,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">FEN</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_12_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 12 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Noronha" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_12_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 12 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="America/Noronha" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 13: -1 / PDL (Atlantic/Azores) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4095,18 +4111,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">PDL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_13_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 13 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Atlantic/Azores" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_13_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 13 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Atlantic/Azores" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 14: +0 / UTC (UTC) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4121,18 +4141,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">UTC</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_14_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 14 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="UTC" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_14_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 14 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="UTC" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 15: +0 / LON (Europe/London) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4147,18 +4171,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">LON</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_15_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 15 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/London" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_15_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 15 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/London" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 16: +1 / PAR (Europe/Paris) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4173,18 +4201,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">PAR</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_16_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 16 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/Paris" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_16_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 16 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/Paris" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 17: +2 / CAI (Europe/Athens) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4199,18 +4231,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">CAI</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_17_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 17 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/Athens" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_17_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 17 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/Athens" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 18: +3 / IST (Europe/Istanbul) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4225,18 +4261,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">IST</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_18_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 18 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/Istanbul" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_18_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 18 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Europe/Istanbul" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 19: +3.5 / THR (Asia/Tehran) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4251,18 +4291,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">THR</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_19_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 19 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Tehran" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_19_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 19 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Tehran" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 20: +4 / DXB (Asia/Dubai) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4277,18 +4321,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">DXB</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_20_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 20 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Dubai" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_20_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 20 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Dubai" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 21: +4.5 / KBL (Asia/Kabul) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4303,18 +4351,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">KBL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_21_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 21 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Kabul" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_21_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 21 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Kabul" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 22: +5 / KHI (Asia/Karachi) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4329,18 +4381,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">KHI</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_22_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 22 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Karachi" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_22_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 22 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Karachi" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 23: +5.5 / DEL (Asia/Kolkata) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4355,18 +4411,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">DEL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_23_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 23 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Kolkata" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_23_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 23 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Kolkata" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 24: +5.75 / KTM (Asia/Kathmandu) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4381,18 +4441,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">KTM</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_24_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 24 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Kathmandu" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_24_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 24 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Kathmandu" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 25: +6 / DAC (Asia/Dhaka) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4407,18 +4471,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">DAC</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_25_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 25 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Dhaka" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_25_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 25 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Dhaka" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 26: +6.5 / RGN (Asia/Yangon) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4433,18 +4501,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">RGN</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_26_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 26 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Yangon" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_26_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 26 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Yangon" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 27: +7 / BKK (Asia/Bangkok) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4459,18 +4531,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">BKK</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_27_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 27 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Bangkok" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_27_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 27 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Bangkok" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 28: +8 / HKG (Asia/Hong_Kong) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4485,18 +4561,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">HKG</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_28_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 28 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Hong_Kong" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_28_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 28 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Hong_Kong" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 29: +9 / TYO (Asia/Tokyo) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4511,18 +4591,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">TYO</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_29_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 29 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Tokyo" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_29_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 29 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Asia/Tokyo" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 30: +9.5 / ADL (Australia/Adelaide) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4537,18 +4621,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">ADL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_30_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 30 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Australia/Adelaide" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_30_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 30 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Australia/Adelaide" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 31: +10 / SYD (Australia/Sydney) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4563,18 +4651,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">SYD</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_31_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 31 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Australia/Sydney" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_31_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 31 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Australia/Sydney" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 32: +11 / NOU (Pacific/Noumea) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4589,18 +4681,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">NOU</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_32_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 32 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Noumea" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_32_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 32 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Noumea" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 33: +12 / AKL (Pacific/Auckland) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4615,18 +4711,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">AKL</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_33_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 33 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Auckland" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_33_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 33 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Auckland" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 34: +13 / APW (Pacific/Apia) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4641,18 +4741,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">APW</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_34_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 34 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Apia" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_34_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 34 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Apia" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Option 35: +14 / CXI (Pacific/Kiritimati) -->
             <PartText x="0" y="58" width="100" height="20">
@@ -4667,18 +4771,22 @@
                     <Font family="SYNC_TO_DEVICE" size="13" weight="BOLD" color="#0A0D10">CXI</Font>
                 </Text>
             </PartText>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            <Group name="SubClock_35_Light" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 35 &amp;&amp; ([CONFIGURATION.timeColor] != 2 || [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Kiritimati" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" />
             </AnalogClock>
-            <AnalogClock x="0" y="0" width="100" height="100">
+            </Group>
+            <Group name="SubClock_35_Dark" x="0" y="0" width="100" height="100">
                 <Transform target="alpha" value="[CONFIGURATION.subDialMode] == 35 &amp;&amp; [CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="100" height="100">
                 <Localization timeZone="Pacific/Kiritimati" />
                 <HourHand resource="subdial_hand_hour" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
                 <MinuteHand resource="subdial_hand_min" x="0" y="0" width="100" height="100" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10" />
             </AnalogClock>
+            </Group>
 
             <!-- Center Pivot Cap over Analog Hands -->
             <PartImage x="0" y="0" width="100" height="100">
@@ -4693,10 +4801,11 @@
         <!-- ============================================================== -->
 
         <!-- Option 2: Circle — White -->
-        <AnalogClock x="0" y="0" width="450" height="450" name="ClockWhiteDot">
+                <Group name="ClockWhiteDot" x="0" y="0" width="450" height="450">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.secondsDot] == 1 ? 255 : 0" />
-            <SecondHand
+            <AnalogClock x="0" y="0" width="450" height="450">
+                <SecondHand
                 resource="sec_dot_white"
                 x="215"
                 y="0"
@@ -4706,13 +4815,15 @@
                 pivotY="1.0">
                 <Sweep frequency="15" />
             </SecondHand>
-        </AnalogClock>
+            </AnalogClock>
+        </Group>
 
         <!-- Option 3: Circle — Theme Color -->
-        <AnalogClock x="0" y="0" width="450" height="450" name="ClockThemeDot">
+                <Group name="ClockThemeDot" x="0" y="0" width="450" height="450">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.secondsDot] == 2 ? 255 : 0" />
-            <SecondHand
+            <AnalogClock x="0" y="0" width="450" height="450">
+                <SecondHand
                 resource="sec_dot_theme"
                 x="215"
                 y="0"
@@ -4723,13 +4834,15 @@
                 tintColor="[CONFIGURATION.themeColor.0]">
                 <Sweep frequency="15" />
             </SecondHand>
-        </AnalogClock>
+            </AnalogClock>
+        </Group>
 
         <!-- Option 4: Square — White -->
-        <AnalogClock x="0" y="0" width="450" height="450" name="ClockWhiteSquare">
+                <Group name="ClockWhiteSquare" x="0" y="0" width="450" height="450">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.secondsDot] == 3 ? 255 : 0" />
-            <SecondHand
+            <AnalogClock x="0" y="0" width="450" height="450">
+                <SecondHand
                 resource="sec_square_white"
                 x="215"
                 y="0"
@@ -4739,13 +4852,15 @@
                 pivotY="1.0">
                 <Sweep frequency="15" />
             </SecondHand>
-        </AnalogClock>
+            </AnalogClock>
+        </Group>
 
         <!-- Option 5: Square — Theme Color -->
-        <AnalogClock x="0" y="0" width="450" height="450" name="ClockThemeSquare">
+                <Group name="ClockThemeSquare" x="0" y="0" width="450" height="450">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.secondsDot] == 4 ? 255 : 0" />
-            <SecondHand
+            <AnalogClock x="0" y="0" width="450" height="450">
+                <SecondHand
                 resource="sec_square_theme"
                 x="215"
                 y="0"
@@ -4756,13 +4871,15 @@
                 tintColor="[CONFIGURATION.themeColor.0]">
                 <Sweep frequency="15" />
             </SecondHand>
-        </AnalogClock>
+            </AnalogClock>
+        </Group>
 
         <!-- Option 6: Triangle — White -->
-        <AnalogClock x="0" y="0" width="450" height="450" name="ClockWhiteTriangle">
+                <Group name="ClockWhiteTriangle" x="0" y="0" width="450" height="450">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.secondsDot] == 5 ? 255 : 0" />
-            <SecondHand
+            <AnalogClock x="0" y="0" width="450" height="450">
+                <SecondHand
                 resource="sec_triangle_white"
                 x="215"
                 y="0"
@@ -4772,13 +4889,15 @@
                 pivotY="1.0">
                 <Sweep frequency="15" />
             </SecondHand>
-        </AnalogClock>
+            </AnalogClock>
+        </Group>
 
         <!-- Option 7: Triangle — Theme Color -->
-        <AnalogClock x="0" y="0" width="450" height="450" name="ClockThemeTriangle">
+                <Group name="ClockThemeTriangle" x="0" y="0" width="450" height="450">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.secondsDot] == 6 ? 255 : 0" />
-            <SecondHand
+            <AnalogClock x="0" y="0" width="450" height="450">
+                <SecondHand
                 resource="sec_triangle_theme"
                 x="215"
                 y="0"
@@ -4789,7 +4908,8 @@
                 tintColor="[CONFIGURATION.themeColor.0]">
                 <Sweep frequency="15" />
             </SecondHand>
-        </AnalogClock>
+            </AnalogClock>
+        </Group>
 
         <!-- ============================================================== -->
         <!-- 8. MAIN ANALOG HOUR & MINUTE HANDS (95% Opacity = alpha 242)   -->
@@ -4804,611 +4924,103 @@
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.analogHands] != 0 ? 242 : 0" />
 
-                        <!-- Option 1 & 2: Skeleton Sword (Highlight controlled by Hint Color) -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsSword">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 1 || [CONFIGURATION.analogHands] == 2) ? 255 : 0" />
-                <HourHand resource="hand_sword_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 1) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 2) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </HourHand>
-                <MinuteHand resource="hand_sword_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 1) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 2) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </MinuteHand>
-            </AnalogClock>
+                        
+            <!-- Option 1: Sword — Theme Color -->
+            <Group name="HandsSword_Theme" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 1 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_sword_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                    <MinuteHand resource="hand_sword_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                </AnalogClock>
+            </Group>
 
-            <!-- Option 3 & 4: Tactical Baton (Highlight controlled by Hint Color) -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsBaton">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 3 || [CONFIGURATION.analogHands] == 4) ? 255 : 0" />
-                <HourHand resource="hand_baton_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 3) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 4) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </HourHand>
-                <MinuteHand resource="hand_baton_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 3) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 4) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </MinuteHand>
-            </AnalogClock>
+            <!-- Option 2: Sword — White -->
+            <Group name="HandsSword_White" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 2 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_sword_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_sword_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                    <MinuteHand resource="hand_sword_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_sword_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                </AnalogClock>
+            </Group>
 
-            <!-- Option 5: Stealth Outline (Tint controlled by Hint Color) -->
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsGhost">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
+            <!-- Option 3: Tactical Baton — Theme Color -->
+            <Group name="HandsBaton_Theme" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 3 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_baton_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                    <MinuteHand resource="hand_baton_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                </AnalogClock>
+            </Group>
+
+            <!-- Option 4: Tactical Baton — White -->
+            <Group name="HandsBaton_White" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 4 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_baton_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_baton_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                    <MinuteHand resource="hand_baton_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_baton_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                </AnalogClock>
+            </Group>
+
+            <!-- Option 5: Stealth Outline — Theme Color -->
+            <Group name="HandsGhost_Theme" x="0" y="0" width="450" height="450">
                 <Transform target="alpha" value="[CONFIGURATION.analogHands] == 5 ? 255 : 0" />
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 8 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </HourHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 8 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </MinuteHand>
-            </AnalogClock>
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_ghost_hr" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                    <MinuteHand resource="hand_ghost_mn" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                </AnalogClock>
+            </Group>
 
-<AnalogClock x="0" y="0" width="450" height="450" name="HandsNeedle">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 6 || [CONFIGURATION.analogHands] == 7) ? 255 : 0" />
-                <HourHand resource="hand_needle_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 6) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 7) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </HourHand>
-                <MinuteHand resource="hand_needle_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 6) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 7) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </MinuteHand>
-            </AnalogClock>
+            <!-- Option 6: Precision Needle — Theme Color -->
+            <Group name="HandsNeedle_Theme" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 6 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_needle_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                    <MinuteHand resource="hand_needle_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                </AnalogClock>
+            </Group>
 
-            <AnalogClock x="0" y="0" width="450" height="450" name="HandsChisel">
-                <Variant mode="AMBIENT" target="alpha" value="0" />
-                <Transform target="alpha" value="([CONFIGURATION.analogHands] == 8 || [CONFIGURATION.analogHands] == 9) ? 255 : 0" />
-                <HourHand resource="hand_chisel_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 8) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 9) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </HourHand>
-                <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </HourHand>
-                <MinuteHand resource="hand_chisel_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 8) || [CONFIGURATION.secColor] == 1) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF">
-                    <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.analogHands] == 9) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#BAFA08">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#39FF14">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0EDBFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF660A">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FF1E38">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFC400">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#147EFF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#B040FF">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#F514C8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D2B48C">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#9A8A62">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#A76D43">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#94A3B8">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#64748B">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#CED8E2">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#D4D4D4">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 18 ? 255 : 0" />
-                </MinuteHand>
-                <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#0A0D10">
-                    <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
-                </MinuteHand>
-            </AnalogClock>
+            <!-- Option 7: Precision Needle — White -->
+            <Group name="HandsNeedle_White" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 7 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_needle_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_needle_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                    <MinuteHand resource="hand_needle_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_needle_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                </AnalogClock>
+            </Group>
+
+            <!-- Option 8: Chisel — Theme Color -->
+            <Group name="HandsChisel_Theme" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 8 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_chisel_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                    <MinuteHand resource="hand_chisel_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="[CONFIGURATION.themeColor.0]" />
+                </AnalogClock>
+            </Group>
+
+            <!-- Option 9: Chisel — White -->
+            <Group name="HandsChisel_White" x="0" y="0" width="450" height="450">
+                <Transform target="alpha" value="[CONFIGURATION.analogHands] == 9 ? 255 : 0" />
+                <AnalogClock x="0" y="0" width="450" height="450">
+                    <HourHand resource="hand_chisel_hr_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <HourHand resource="hand_chisel_hr_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                    <MinuteHand resource="hand_chisel_mn_frame" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" />
+                    <MinuteHand resource="hand_chisel_mn_lume" x="195" y="0" width="60" height="450" pivotX="0.5" pivotY="0.5" tintColor="#FFFFFF" />
+                </AnalogClock>
+            </Group>
 
             <!-- Center 3D Machined Pinion Cap (Base + Dynamic Accent Ring) -->
             <PartImage x="205" y="205" width="40" height="40" name="MainPinionBase">
