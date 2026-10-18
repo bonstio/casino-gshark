@@ -55,3 +55,6 @@ __pycache__/
 /unlit_test_*.png
 /user_gshark_*.png
 /woodland_camo_script.py
+*.class
+tmp_watchface/
+origin_assets/
