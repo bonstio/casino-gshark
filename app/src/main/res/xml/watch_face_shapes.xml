@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WatchFaces>
-    <!-- Pixel Watch 41mm (384x384) and 45mm (456x456): Bordered default (bgBorder="0") -->
+    <!-- Pixel Watch 41mm (450x450), Pixel Watch 45mm (456x456), and standard Wear OS devices: Natural XML order (1..16) -->
     <WatchFace shape="CIRCLE" width="384" height="384" file="@raw/watchface_pixel" />
+    <WatchFace shape="CIRCLE" width="396" height="396" file="@raw/watchface_pixel" />
+    <WatchFace shape="CIRCLE" width="432" height="432" file="@raw/watchface_pixel" />
+    <WatchFace shape="CIRCLE" width="450" height="450" file="@raw/watchface_pixel" />
     <WatchFace shape="CIRCLE" width="456" height="456" file="@raw/watchface_pixel" />
-    <!-- All other circular & rectangular/squircle watches: Full Bleed default (bgBorder="1") -->
-    <WatchFace shape="CIRCLE" width="396" height="396" file="@raw/watchface" />
-    <WatchFace shape="CIRCLE" width="432" height="432" file="@raw/watchface" />
-    <WatchFace shape="CIRCLE" width="450" height="450" file="@raw/watchface" />
+    <WatchFace shape="CIRCLE" width="480" height="480" file="@raw/watchface_pixel" />
+    <WatchFace shape="RECTANGLE" width="450" height="450" file="@raw/watchface_pixel" />
+
+    <!-- Oppo Watch X & OnePlus Watch 2 (466x466): HeyTap SysUI TreeMap compensated order -->
     <WatchFace shape="CIRCLE" width="466" height="466" file="@raw/watchface" />
-    <WatchFace shape="CIRCLE" width="480" height="480" file="@raw/watchface" />
-    <WatchFace shape="RECTANGLE" width="450" height="450" file="@raw/watchface" />
     <WatchFace shape="RECTANGLE" width="466" height="466" file="@raw/watchface" />
 </WatchFaces>

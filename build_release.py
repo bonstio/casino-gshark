@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -8,6 +9,15 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 BUILD_DIR = os.path.join(PROJECT_DIR, "build")
 RES_DIR = os.path.join(PROJECT_DIR, "app", "src", "main", "res")
 MANIFEST = os.path.join(PROJECT_DIR, "app", "src", "main", "AndroidManifest.xml")
+
+with open(MANIFEST, "r", encoding="utf-8") as f:
+    manifest_content = f.read()
+vname_match = re.search(r'android:versionName="([^"]+)"', manifest_content)
+version_name = vname_match.group(1) if vname_match else "4.8"
+vcode_match = re.search(r'android:versionCode="([^"]+)"', manifest_content)
+version_code = vcode_match.group(1) if vcode_match else "48"
+
+print(f"Building Casino G-Shark Release v{version_name} (versionCode {version_code})...")
 
 AAPT2 = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\aapt2.exe"
 ZIPALIGN = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\zipalign.exe"
@@ -38,7 +48,7 @@ if os.path.exists(aligned_apk):
 subprocess.run([ZIPALIGN, "-f", "-p", "4", unaligned_apk, aligned_apk], check=True)
 
 print("=== 4. Signing APK with apksigner ===")
-release_apk_v = os.path.join(BUILD_DIR, "gshark-watchface-v4.7.apk")
+release_apk_v = os.path.join(BUILD_DIR, f"gshark-watchface-v{version_name}.apk")
 release_apk = os.path.join(BUILD_DIR, "gshark-watchface.apk")
 for p in [release_apk_v, release_apk, release_apk_v + ".idsig", release_apk + ".idsig"]:
     if os.path.exists(p):
@@ -92,7 +102,7 @@ with zipfile.ZipFile(base_zip, "w", compression=zipfile.ZIP_DEFLATED) as z:
             z.write(full_path, arcname)
 
 print("=== 7. Building bundle with bundletool ===")
-release_aab_v = os.path.join(BUILD_DIR, "gshark-watchface-v4.7.aab")
+release_aab_v = os.path.join(BUILD_DIR, f"gshark-watchface-v{version_name}.aab")
 release_aab = os.path.join(BUILD_DIR, "gshark-watchface.aab")
 for p in [release_aab_v, release_aab]:
     if os.path.exists(p):

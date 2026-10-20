@@ -25,7 +25,19 @@
     <!-- USER CONFIGURATIONS: EXTENSIVE THEMES, GRAPHICS & SECONDS DOT  -->
     <!-- ============================================================== -->
     <UserConfigurations>
-        <!-- XML Pos 10 (TreeMap #1): Main Background Graphics (17 Options: 10 Tactical Classics + 7 Industrial Radial/Linear Hue-Shifted Gradients) -->
+        <!--
+            NOTE ON ORDERING IN watchface_pixel.xml:
+            Pixel Watch and standard Wear OS devices display UserConfigurations in exact
+            sequential XML declaration order.
+            These 16 configurations are declared in natural 1..16 order (matching the exact
+            final displayed order on Oppo Watch after its SysUI TreeMap sorting):
+            1. bgTexture      5. secColor        9. bottomStyle     13. secondsDot
+            2. bgBorder       6. timeColor      10. bottomBayMode   14. analogHands
+            3. themeColor     7. screenTexture  11. subDialMode     15. topLogo
+            4. logoColor      8. quadStyle      12. tickStyle       16. bottomLogo
+        -->
+
+        <!-- Setting 1: Main Background Graphics (17 Options: 10 Tactical Classics + 7 Industrial Radial/Linear Hue-Shifted Gradients) -->
         <ListConfiguration id="bgTexture" displayName="bg_texture_label" defaultValue="0" icon="ic_cfg_bgtexture_0">
             <ListOption id="0" displayName="bg_classic" icon="ic_cfg_bgtexture_0" />
             <ListOption id="1" displayName="bg_matte_black" icon="ic_cfg_bgtexture_1" />
@@ -47,13 +59,13 @@
             <ListOption id="17" displayName="bg_ind_black_silver" icon="ic_cfg_bgtexture_17" />
         </ListConfiguration>
 
-        <!-- XML Pos 11 (TreeMap #2): Background Border Mode (0 = Bordered [Pixel Watch Default], 1 = Full Bleed [Default]) -->
+        <!-- Setting 2: Background Border Mode (0 = Bordered [Pixel Watch Default], 1 = Full Bleed [Default]) -->
         <ListConfiguration id="bgBorder" displayName="bg_border_label" defaultValue="0" icon="ic_cfg_bgborder_0">
             <ListOption id="0" displayName="bg_border_bordered" icon="ic_cfg_bgborder_0" />
             <ListOption id="1" displayName="bg_border_full_bleed" icon="ic_cfg_bgborder_1" />
         </ListConfiguration>
 
-        <!-- XML Pos 12 (TreeMap #3): Theme Accent Colors (16 Options: Matched to Industrial Backgrounds + Tactical Classics) -->
+        <!-- Setting 3: Theme Accent Colors (16 Options: Matched to Industrial Backgrounds + Tactical Classics) -->
         <ColorConfiguration id="themeColor" displayName="theme_color_label" defaultValue="0" icon="ic_cfg_themecolor_0">
             <ColorOption id="0" displayName="color_cyber_lime" icon="ic_cfg_themecolor_0"
                 colors="#BAFA08 #9099A6 #1B1E24" />
@@ -89,7 +101,7 @@
                 colors="#CED8E2 #9099A6 #1B1E24" />
         </ColorConfiguration>
 
-        <!-- XML Pos 13 (TreeMap #4): Logo Color (0 = Theme Color [Default], 1..16 = Independent palette colors) -->
+        <!-- Setting 4: Logo Color (0 = Theme Color [Default], 1..16 = Independent palette colors) -->
         <ListConfiguration id="logoColor" displayName="logo_color_label" defaultValue="0" icon="ic_cfg_themecolor_0">
             <ListOption id="0" displayName="theme_color_label" icon="ic_cfg_themecolor_0" />
             <ListOption id="1" displayName="color_cyber_lime" icon="ic_cfg_logocolor_0" />
@@ -110,7 +122,7 @@
             <ListOption id="16" displayName="color_titanium_silver" icon="ic_cfg_logocolor_15" />
         </ListConfiguration>
 
-        <!-- XML Pos 14 (TreeMap #5): Seconds Color (0 = Same as clock [Default], 1 = Theme Color, 2..19 = Independent palette colors) -->
+        <!-- Setting 5: Seconds Color (0 = Same as clock [Default], 1 = Theme Color, 2..19 = Independent palette colors) -->
         <ListConfiguration id="secColor" displayName="seconds_color_label" defaultValue="0" icon="ic_cfg_seccolor_0">
             <ListOption id="0" displayName="sec_color_same_as_clock" icon="ic_cfg_seccolor_0" />
             <ListOption id="1" displayName="theme_color_label" icon="ic_cfg_themecolor_0" />
@@ -134,14 +146,14 @@
             <ListOption id="19" displayName="time_color_black" icon="ic_cfg_seccolor_18" />
         </ListConfiguration>
 
-        <!-- XML Pos 15 (TreeMap #6): Time Display Color / Polarity (0 = White Default, 1 = Soft White, 2 = Black on 82% White Overlay) -->
+        <!-- Setting 6: Time Display Color / Polarity (0 = White Default, 1 = Soft White, 2 = Black on 82% White Overlay) -->
         <ListConfiguration id="timeColor" displayName="time_color_label" defaultValue="0" icon="ic_cfg_timecolor_0">
             <ListOption id="0" displayName="time_color_white" icon="ic_cfg_timecolor_0" />
             <ListOption id="1" displayName="time_color_soft_white" icon="ic_cfg_timecolor_1" />
             <ListOption id="2" displayName="time_color_black" icon="ic_cfg_timecolor_2" />
         </ListConfiguration>
 
-        <!-- XML Pos 16 (TreeMap #7): LCD Screen Texture (Default, Honeycomb Silver, Honeycomb Stealth, Solar Moiré Light, Solar Moiré Dark) -->
+        <!-- Setting 7: LCD Screen Texture (Default, Honeycomb Silver, Honeycomb Stealth, Solar Moiré Light, Solar Moiré Dark) -->
         <ListConfiguration id="screenTexture" displayName="screen_texture_label" defaultValue="0" icon="ic_cfg_screentexture_0">
             <ListOption id="0" displayName="screen_tex_default" icon="ic_cfg_screentexture_0" />
             <ListOption id="1" displayName="screen_tex_hex_light" icon="ic_cfg_screentexture_1" />
@@ -151,7 +163,6 @@
         </ListConfiguration>
 
         <!--
-            NOTE ON ORDERING IN watchface.xml (Non-Pixel / Oppo Watch TreeMap Compensation):
             Pre-2025 Wear OS SysUI (including Oppo Watch) inserts UserConfigurations into a
             lexicographical TreeMap keyed by String.format("SET_1_LIST_%d_%s", ++index, id).
             Because '0'..'6' (0x30..0x36) < '_' (0x5F), XML positions 10..16 always sort
@@ -162,19 +173,19 @@
             settings are placed in natural 1..16 XML order.
         -->
 
-        <!-- XML Pos 1 (TreeMap #8): Top 4 Quad Complications Background & Text Style (0 = Match LCD Screen, 1 = Classic Dark with Light Text) -->
+        <!-- Setting 8: Top 4 Quad Complications Background & Text Style (0 = Match LCD Screen, 1 = Classic Dark with Light Text) -->
         <ListConfiguration id="quadStyle" displayName="quad_style_label" defaultValue="0" icon="ic_cfg_quadstyle_0">
             <ListOption id="0" displayName="quad_style_match_lcd" icon="ic_cfg_quadstyle_0" />
             <ListOption id="1" displayName="quad_style_classic_dark" icon="ic_cfg_quadstyle_1" />
         </ListConfiguration>
 
-        <!-- XML Pos 2 (TreeMap #9): Bottom Row (Large Complication & Sub-Dial) Background & Text Style (0 = Match LCD Screen, 1 = Classic Dark with Light Text) -->
+        <!-- Setting 9: Bottom Row (Large Complication & Sub-Dial) Background & Text Style (0 = Match LCD Screen, 1 = Classic Dark with Light Text) -->
         <ListConfiguration id="bottomStyle" displayName="bottom_style_label" defaultValue="0" icon="ic_cfg_bottomstyle_0">
             <ListOption id="0" displayName="quad_style_match_lcd" icon="ic_cfg_bottomstyle_0" />
             <ListOption id="1" displayName="quad_style_classic_dark" icon="ic_cfg_bottomstyle_1" />
         </ListConfiguration>
 
-        <!-- XML Pos 3 (TreeMap #10): Bottom Bay Display Mode (0 = Complication / Next Event, 1 = Jan 31, 2 = Sat 01/31, 3 = Sat 31/01, 4 = 31/01/2026) -->
+        <!-- Setting 10: Bottom Bay Display Mode (0 = Complication / Next Event, 1 = Jan 31, 2 = Sat 01/31, 3 = Sat 31/01, 4 = 31/01/2026) -->
         <ListConfiguration id="bottomBayMode" displayName="bottom_bay_mode_label" defaultValue="4" icon="ic_cfg_bottombaymode_4">
             <ListOption id="0" displayName="bottom_bay_complication" icon="ic_cfg_bottombaymode_0" />
             <ListOption id="1" displayName="bottom_bay_date_jan31" icon="ic_cfg_bottombaymode_1" />
@@ -183,7 +194,7 @@
             <ListOption id="4" displayName="bottom_bay_date_ddmmyyyy" icon="ic_cfg_bottombaymode_4" />
         </ListConfiguration>
 
-        <!-- XML Pos 4 (TreeMap #11): Sub-Dial Indicator Mode (0 = 8-Segment Battery Gauge, 1 = 60-Segment Seconds, 2..35 = Full -11 to +14 World Timezone Clock) -->
+        <!-- Setting 11: Sub-Dial Indicator Mode (0 = 8-Segment Battery Gauge, 1 = 60-Segment Seconds, 2..35 = Full -11 to +14 World Timezone Clock) -->
         <ListConfiguration id="subDialMode" displayName="sub_dial_label" defaultValue="0" icon="ic_cfg_subdialmode_0">
             <ListOption id="0" displayName="sub_dial_battery" icon="ic_cfg_subdialmode_0" />
             <ListOption id="1" displayName="sub_dial_seconds" icon="ic_cfg_subdialmode_1" />
@@ -223,7 +234,7 @@
             <ListOption id="35" displayName="sub_dial_p14" icon="ic_cfg_subdialmode_35" />
         </ListConfiguration>
 
-        <!-- XML Pos 5 (TreeMap #12): Outer Bezel Checkmark / Tick-Mark Styles (0 = Classic Default, 1..6 = 6 Alternatives, 7 = None) -->
+        <!-- Setting 12: Outer Bezel Checkmark / Tick-Mark Styles (0 = Classic Default, 1..6 = 6 Alternatives, 7 = None) -->
         <ListConfiguration id="tickStyle" displayName="tick_style_label" defaultValue="0" icon="ic_cfg_tickstyle_0">
             <ListOption id="0" displayName="tick_style_0" icon="ic_cfg_tickstyle_0" />
             <ListOption id="1" displayName="tick_style_1" icon="ic_cfg_tickstyle_1" />
@@ -235,7 +246,7 @@
             <ListOption id="7" displayName="tick_style_7" icon="ic_cfg_tickstyle_7" />
         </ListConfiguration>
 
-        <!-- XML Pos 6 (TreeMap #13): Rotating Seconds Hand Orbit Indicator (Default: Invisible, Circle/Square/Triangle in White or Theme Color) -->
+        <!-- Setting 13: Rotating Seconds Hand Orbit Indicator (Default: Invisible, Circle/Square/Triangle in White or Theme Color) -->
         <ListConfiguration id="secondsDot" displayName="sec_dot_label" defaultValue="0" icon="ic_cfg_secondsdot_0">
             <ListOption id="0" displayName="sec_dot_off" icon="ic_cfg_secondsdot_0" />
             <ListOption id="1" displayName="sec_dot_white" icon="ic_cfg_secondsdot_1" />
@@ -246,7 +257,7 @@
             <ListOption id="6" displayName="sec_triangle_theme" icon="ic_cfg_secondsdot_6" />
         </ListConfiguration>
 
-        <!-- XML Pos 7 (TreeMap #14): Main Analog Hour & Minute Hands (0 = Off [Default], 1..9 = 95% Opacity Hand Variants) -->
+        <!-- Setting 14: Main Analog Hour & Minute Hands (0 = Off [Default], 1..9 = 95% Opacity Hand Variants) -->
         <ListConfiguration id="analogHands" displayName="analog_hands_label" defaultValue="0" icon="ic_cfg_analoghands_0">
             <ListOption id="0" displayName="analog_hands_off" icon="ic_cfg_analoghands_0" />
             <ListOption id="1" displayName="analog_hands_sword_theme" icon="ic_cfg_analoghands_1" />
@@ -260,7 +271,7 @@
             <ListOption id="9" displayName="analog_hands_chisel_white" icon="ic_cfg_analoghands_9" />
         </ListConfiguration>
 
-        <!-- XML Pos 8 (TreeMap #15, Second-to-Last Before Complications): Top Bezel Wordmark Logo (0 = CASINO Default, 1..7 = Alternates, 8 = Blank) -->
+        <!-- Setting 15: Top Bezel Wordmark Logo (0 = CASINO Default, 1..7 = Alternates, 8 = Blank) -->
         <ListConfiguration id="topLogo" displayName="top_logo_label" defaultValue="0" icon="ic_cfg_toplogo_0">
             <ListOption id="0" displayName="top_logo_casino" icon="ic_cfg_toplogo_0" />
             <ListOption id="1" displayName="top_logo_calypso" icon="ic_cfg_toplogo_1" />
@@ -273,7 +284,7 @@
             <ListOption id="8" displayName="top_logo_blank" icon="ic_cfg_toplogo_8" />
         </ListConfiguration>
 
-        <!-- XML Pos 9 (TreeMap #16, Last Before Complications): Bottom Bezel Wordmark Logo (0 = G-SHARK Default, 1..5 = Alternates, 6 = Blank) -->
+        <!-- Setting 16: Bottom Bezel Wordmark Logo (0 = G-SHARK Default, 1..5 = Alternates, 6 = Blank) -->
         <ListConfiguration id="bottomLogo" displayName="bottom_logo_label" defaultValue="0" icon="ic_cfg_bottomlogo_0">
             <ListOption id="0" displayName="bottom_logo_gshark" icon="ic_cfg_bottomlogo_0" />
             <ListOption id="1" displayName="bottom_logo_gspot" icon="ic_cfg_bottomlogo_1" />
