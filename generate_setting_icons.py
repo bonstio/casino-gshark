@@ -378,11 +378,11 @@ def render_watchface(
             ghost_alpha = 36
 
         hh, mm = time_str.split(":") if ":" in time_str else ("18", "30")
-        draw_centered_text(canvas, (82, 165, 110, 108), "88", DIGITAL7_PATH, 120, ghost_rgb, ghost_alpha)
-        draw_centered_text(canvas, (211, 165, 110, 108), "88", DIGITAL7_PATH, 120, ghost_rgb, ghost_alpha)
-        draw_centered_text(canvas, (82, 165, 110, 108), hh, DIGITAL7_PATH, 120, main_rgb, 255)
-        draw_centered_text(canvas, (194, 165, 15, 108), ":", DIGITAL7_PATH, 120, main_rgb, 255)
-        draw_centered_text(canvas, (211, 165, 110, 108), mm, DIGITAL7_PATH, 120, main_rgb, 255)
+        draw_centered_text(canvas, (82, 175, 110, 108), "88", DIGITAL7_PATH, 120, ghost_rgb, ghost_alpha)
+        draw_centered_text(canvas, (211, 175, 110, 108), "88", DIGITAL7_PATH, 120, ghost_rgb, ghost_alpha)
+        draw_centered_text(canvas, (82, 175, 110, 108), hh, DIGITAL7_PATH, 120, main_rgb, 255)
+        draw_centered_text(canvas, (194, 175, 15, 108), ":", DIGITAL7_PATH, 120, main_rgb, 255)
+        draw_centered_text(canvas, (211, 175, 110, 108), mm, DIGITAL7_PATH, 120, main_rgb, 255)
 
         # Alarm indicator at (336, 188, 34, 16)
         alarm_rgb = main_rgb
@@ -396,8 +396,8 @@ def render_watchface(
         else:
             sec_rgb = hex_to_rgb(SEC_COLORS[sec_color])
             sec_ghost_alpha = 28 if sec_color == 18 else (36 if sec_color in (7, 17) else 43)
-        draw_centered_text(canvas, (330, 210, 42, 38), "88", DIGITAL7_PATH, 43, sec_rgb, sec_ghost_alpha)
-        draw_centered_text(canvas, (330, 210, 42, 38), str(sec_str), DIGITAL7_PATH, 43, sec_rgb, 255)
+        draw_centered_text(canvas, (330, 214, 42, 37), "88", DIGITAL7_PATH, 43, sec_rgb, sec_ghost_alpha)
+        draw_centered_text(canvas, (330, 214, 42, 37), str(sec_str), DIGITAL7_PATH, 43, sec_rgb, 255)
     else:
         # Centered Wear OS logo in middle of dial (watchface.xml lines 1747-1755)
         canvas.alpha_composite(load_drawable("logo_wear_os_outline").resize((34, 28), Image.Resampling.LANCZOS), (208, 168))
