@@ -3068,69 +3068,69 @@
                         <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
                     </PartImage>
                     <!-- Main Long Content Text (White Mode + Ambient) -->
-                    <PartText x="46" y="5" width="172" height="26">
+                    <PartText x="46" y="6" width="172" height="24">
                         <Variant mode="AMBIENT" target="tintColor" value="#CCCCCC" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#FFFFFF">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#FFFFFF">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
                     <!-- Main Long Content Text (Soft White Mode) -->
-                    <PartText x="46" y="5" width="172" height="26">
+                    <PartText x="46" y="6" width="172" height="24">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#D4D4D4">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
                     <!-- Main Long Content Text (Black Mode) -->
-                    <PartText x="46" y="5" width="172" height="26">
+                    <PartText x="46" y="6" width="172" height="24">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#0A0D10">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#0A0D10">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
                     <!-- Title / Subtitle (White Mode + Ambient) -->
-                    <PartText x="46" y="31" width="172" height="18">
+                    <PartText x="46" y="30" width="172" height="20">
                         <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#FFFFFF">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#FFFFFF">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
                     <!-- Title / Subtitle (Soft White Mode) -->
-                    <PartText x="46" y="31" width="172" height="18">
+                    <PartText x="46" y="30" width="172" height="20">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#D4D4D4">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
                     <!-- Title / Subtitle (Black Mode) -->
-                    <PartText x="46" y="31" width="172" height="18">
+                    <PartText x="46" y="30" width="172" height="20">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#0A0D10">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#0A0D10">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
@@ -3172,7 +3172,7 @@
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#FFFFFF">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#FFFFFF">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -3182,7 +3182,7 @@
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#D4D4D4">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -3192,38 +3192,38 @@
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#0A0D10">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#0A0D10">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
-                    <PartText x="46" y="31" width="172" height="18">
+                    <PartText x="46" y="30" width="172" height="20">
                         <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#FFFFFF">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#FFFFFF">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
-                    <PartText x="46" y="31" width="172" height="18">
+                    <PartText x="46" y="30" width="172" height="20">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#D4D4D4">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
-                    <PartText x="46" y="31" width="172" height="18">
+                    <PartText x="46" y="30" width="172" height="20">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="START">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#0A0D10">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#0A0D10">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
@@ -3241,7 +3241,7 @@
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#FFFFFF">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#FFFFFF">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -3251,7 +3251,7 @@
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#D4D4D4">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
@@ -3261,38 +3261,38 @@
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
-                            <Font family="SYNC_TO_DEVICE" size="17" weight="NORMAL" color="#0A0D10">
+                            <Font family="SYNC_TO_DEVICE" size="18" weight="NORMAL" color="#0A0D10">
                                 <Template>%s<Parameter expression="[COMPLICATION.TEXT]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
-                    <PartText x="12" y="31" width="202" height="18">
+                    <PartText x="12" y="30" width="202" height="20">
                         <Variant mode="AMBIENT" target="tintColor" value="#777777" />
                         <Variant mode="AMBIENT" target="alpha" value="255" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 || ([CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 1) ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#FFFFFF">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#FFFFFF">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
-                    <PartText x="12" y="31" width="202" height="18">
+                    <PartText x="12" y="30" width="202" height="20">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#D4D4D4">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#D4D4D4">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
                     </PartText>
-                    <PartText x="12" y="31" width="202" height="18">
+                    <PartText x="12" y="30" width="202" height="20">
                         <Variant mode="AMBIENT" target="alpha" value="0" />
                         <Transform target="alpha" value="[CONFIGURATION.timeColor] == 2 &amp;&amp; [CONFIGURATION.bottomStyle] == 0 ? 255 : 0" />
                         <Localization calendar="GREGORIAN" />
                         <Text align="CENTER">
-                            <Font family="SYNC_TO_DEVICE" size="11" weight="NORMAL" color="#0A0D10">
+                            <Font family="SYNC_TO_DEVICE" size="14" weight="NORMAL" color="#0A0D10">
                                 <Template>%s<Parameter expression="[COMPLICATION.TITLE]" /></Template>
                             </Font>
                         </Text>
