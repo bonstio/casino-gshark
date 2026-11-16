@@ -604,6 +604,13 @@ y1 = (h_src - ch) / 2.0
 camo_cropped = camo_src.crop((int(round(x1)), int(round(y1)), int(round(x1 + cw)), int(round(y1 + ch))))
 camo_resized = camo_cropped.resize((W, H), Image.Resampling.LANCZOS)
 arr_camo = np.array(camo_resized, dtype=float)
+# Keep current woodland camo pattern while restoring v5.1 dark tactical olive/forest palette
+src_pal = np.array([[43.8, 43.9, 41.7], [71.4, 73.1, 49.7], [94.8, 87.1, 65.4], [168.7, 153.9, 112.3]])
+dst_pal = np.array([[19.0, 25.0, 20.0], [27.0, 35.0, 26.0], [39.0, 49.0, 37.0], [67.0, 74.0, 53.0]])
+d2 = np.sum((arr_camo[:, :, np.newaxis, :] - src_pal[np.newaxis, np.newaxis, :, :]) ** 2, axis=-1)
+w_pal = np.exp(-d2 / (2.0 * 14.0 ** 2))
+w_pal /= np.maximum(w_pal.sum(axis=-1, keepdims=True), 1e-6)
+arr_camo = np.sum(w_pal[:, :, :, np.newaxis] * dst_pal[np.newaxis, np.newaxis, :, :], axis=2)
 vig_camo = np.array(vig_map).reshape((H, W))
 disc_camo = np.array(inside_disc).reshape((H, W))
 
@@ -795,7 +802,7 @@ for y in range(H):
             cf_val = twill[py + px] / 255.0
             con = conical_map[i]
             t = t_rad_map[i]
-            base = 18.0 + 16.0 * cf_val + 14.0 * con - 8.0 * t
+            base = (18.0 + 16.0 * cf_val + 14.0 * con - 8.0 * t) * 1.52
             vg = vig_map[i]
             rv = (base * 0.95) * vg
             gv = (base * 1.00) * vg
@@ -896,7 +903,7 @@ for y in range(H):
             d_hole = math.hypot(mx - m_pitch/2.0, my - m_pitch/2.0)
             hole_factor = max(0.0, min(1.0, (d_hole - 1.8 * scale) / 1.2))
             con = conical_map[i]
-            base = (14.0 + 18.0 * con) * (0.4 + 0.6 * hole_factor)
+            base = (16.0 + 24.0 * con) * (0.28 + 0.72 * hole_factor) * 1.48
             vg = vig_map[i]
             idx = i * 4
             mesh_bytes[idx]   = int(base * 0.92 * vg)
