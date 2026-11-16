@@ -250,6 +250,152 @@ save_drawable(chisel_mn_frame_sh, W, H, "hand_chisel_mn_frame.png")
 save_drawable(chisel_mn_lume, W, H, "hand_chisel_mn_lume.png")
 
 # ==============================================================================
+# 5B. LONG CENTER-PIVOT HANDS (Longer reach, square ends, uniform minute thickness)
+# ==============================================================================
+# --- Long Hour Hand (y=0 to -128, square tip, same thickness as minute hand) ---
+long_hr_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dlh = ImageDraw.Draw(long_hr_frame)
+lh_left = [(0, 0), (-4.6, 0), (-5.2, -22), (-4.0, -128), (0, -128)]
+lh_right = [(0, 0), (4.6, 0), (5.2, -22), (4.0, -128), (0, -128)]
+dlh.polygon(poly(lh_left), fill=(215, 225, 238, 255))
+dlh.polygon(poly(lh_right), fill=(125, 138, 156, 255))
+lh_lume_pts = [(-2.4, -20), (2.4, -20), (2.0, -122), (-2.0, -122)]
+dlh.polygon(poly(lh_lume_pts), fill=(0, 0, 0, 0))
+lh_out = [(-4.6, 0), (4.6, 0), (5.2, -22), (4.0, -128), (-4.0, -128), (-5.2, -22)]
+dlh.line(poly(lh_out + [lh_out[0]]), fill=(20, 24, 32, 255), width=int(1.1 * S))
+dlh.line(poly(lh_lume_pts + [lh_lume_pts[0]]), fill=(24, 28, 36, 255), width=int(0.9 * S))
+
+long_hr_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+ImageDraw.Draw(long_hr_lume).polygon(poly(lh_lume_pts), fill=(255, 255, 255, 255))
+
+long_hr_frame_sh = add_drop_shadow(long_hr_frame, long_hr_lume, dx=2.5, dy=3.5, blur=2.8, opacity=0.65)
+save_drawable(long_hr_frame_sh, W, H, "hand_long_hr_frame.png")
+save_drawable(long_hr_lume, W, H, "hand_long_hr_lume.png")
+
+# --- Long Minute Hand (y=0 to -188, square tip) ---
+long_mn_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dlm = ImageDraw.Draw(long_mn_frame)
+lm_left = [(0, 0), (-4.6, 0), (-5.2, -22), (-4.0, -188), (0, -188)]
+lm_right = [(0, 0), (4.6, 0), (5.2, -22), (4.0, -188), (0, -188)]
+dlm.polygon(poly(lm_left), fill=(215, 225, 238, 255))
+dlm.polygon(poly(lm_right), fill=(125, 138, 156, 255))
+lm_lume_pts = [(-2.4, -20), (2.4, -20), (2.0, -182), (-2.0, -182)]
+dlm.polygon(poly(lm_lume_pts), fill=(0, 0, 0, 0))
+lm_out = [(-4.6, 0), (4.6, 0), (5.2, -22), (4.0, -188), (-4.0, -188), (-5.2, -22)]
+dlm.line(poly(lm_out + [lm_out[0]]), fill=(20, 24, 32, 255), width=int(1.1 * S))
+dlm.line(poly(lm_lume_pts + [lm_lume_pts[0]]), fill=(24, 28, 36, 255), width=int(0.9 * S))
+
+long_mn_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+ImageDraw.Draw(long_mn_lume).polygon(poly(lm_lume_pts), fill=(255, 255, 255, 255))
+
+long_mn_frame_sh = add_drop_shadow(long_mn_frame, long_mn_lume, dx=3.0, dy=4.2, blur=3.2, opacity=0.68)
+save_drawable(long_mn_frame_sh, W, H, "hand_long_mn_frame.png")
+save_drawable(long_mn_lume, W, H, "hand_long_mn_lume.png")
+
+# ==============================================================================
+# 5C. BOLD DIVER HANDS (Wider Hour Hand + Narrower Minute Hand, rounded ends)
+# ==============================================================================
+def rounded_cap_pts(yc, rx, ry, start_deg, end_deg, steps=16):
+    pts = []
+    for k in range(steps + 1):
+        a = math.radians(start_deg + (end_deg - start_deg) * (k / steps))
+        pts.append((rx * math.cos(a), yc + ry * math.sin(a)))
+    return pts
+
+# --- Wide Rounded Hour Hand ---
+diver_hr_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+ddh = ImageDraw.Draw(diver_hr_frame)
+# Top cap centered at y=-104.5 (radius 11.5 -> tip at -116), bottom cap centered at y=14.5 (radius 7.5 -> tail at +22)
+hr_top_l = rounded_cap_pts(-104.5, 11.5, 11.5, 270, 180, 12)   # (0,-116) -> (-11.5,-104.5)
+hr_bot_l = rounded_cap_pts(14.5, 7.5, 7.5, 180, 90, 10)       # (-7.5,14.5) -> (0,22)
+hr_top_r = rounded_cap_pts(-104.5, 11.5, 11.5, 270, 360, 12)  # (0,-116) -> (11.5,-104.5)
+hr_bot_r = rounded_cap_pts(14.5, 7.5, 7.5, 0, 90, 10)         # (7.5,14.5) -> (0,22)
+
+dh_left = [(0, 22)] + list(reversed(hr_bot_l)) + [(-11.5, -14)] + list(reversed(hr_top_l)) + [(0, -116)]
+dh_right = [(0, -116)] + hr_top_r + [(11.5, -14)] + hr_bot_r + [(0, 22)]
+ddh.polygon(poly(dh_left), fill=(215, 226, 240, 255))
+ddh.polygon(poly(dh_right), fill=(122, 136, 155, 255))
+
+dh_lume_top = rounded_cap_pts(-100.0, 6.8, 6.8, 180, 360, 16)
+dh_lume_bot = rounded_cap_pts(-20.0, 6.8, 6.8, 0, 180, 16)
+dh_lume_pts = dh_lume_top + dh_lume_bot
+ddh.polygon(poly(dh_lume_pts), fill=(0, 0, 0, 0))
+
+dh_out = hr_bot_r + list(reversed(hr_bot_l)) + [(-11.5, -14)] + list(reversed(hr_top_l)) + hr_top_r + [(11.5, -14)]
+ddh.line(poly(dh_out + [dh_out[0]]), fill=(20, 24, 32, 255), width=int(1.2 * S))
+ddh.line(poly(dh_lume_pts + [dh_lume_pts[0]]), fill=(24, 28, 36, 255), width=int(1.0 * S))
+
+diver_hr_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+ImageDraw.Draw(diver_hr_lume).polygon(poly(dh_lume_pts), fill=(255, 255, 255, 255))
+
+diver_hr_frame_sh = add_drop_shadow(diver_hr_frame, diver_hr_lume, dx=2.5, dy=3.5, blur=2.8, opacity=0.65)
+save_drawable(diver_hr_frame_sh, W, H, "hand_diver_hr_frame.png")
+save_drawable(diver_hr_lume, W, H, "hand_diver_hr_lume.png")
+
+# --- Narrower Rounded Minute Hand ---
+diver_mn_frame = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+ddm = ImageDraw.Draw(diver_mn_frame)
+# Top cap centered at y=-170 (radius 1.8 -> tip at -171.8), bottom cap centered at y=23.8 (radius 2.2 -> tail at +26)
+mn_top_l = rounded_cap_pts(-170.0, 1.8, 1.8, 270, 180, 10)
+mn_bot_l = rounded_cap_pts(23.8, 2.2, 2.2, 180, 90, 10)
+mn_top_r = rounded_cap_pts(-170.0, 1.8, 1.8, 270, 360, 10)
+mn_bot_r = rounded_cap_pts(23.8, 2.2, 2.2, 0, 90, 10)
+
+dm_left = [(0, 26)] + list(reversed(mn_bot_l)) + [(-2.4, -14)] + list(reversed(mn_top_l)) + [(0, -171.8)]
+dm_right = [(0, -171.8)] + mn_top_r + [(2.4, -14)] + mn_bot_r + [(0, 26)]
+ddm.polygon(poly(dm_left), fill=(215, 226, 240, 255))
+ddm.polygon(poly(dm_right), fill=(122, 136, 155, 255))
+
+dm_lume_pts = rounded_cap_pts(-165.0, 0.9, 0.9, 180, 360, 10) + rounded_cap_pts(-18.0, 1.0, 1.0, 0, 180, 10)
+ddm.polygon(poly(dm_lume_pts), fill=(0, 0, 0, 0))
+dm_out = mn_bot_r + list(reversed(mn_bot_l)) + [(-2.4, -14)] + list(reversed(mn_top_l)) + mn_top_r + [(2.4, -14)]
+ddm.line(poly(dm_out + [dm_out[0]]), fill=(20, 24, 32, 255), width=int(1.0 * S))
+
+diver_mn_lume = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+ImageDraw.Draw(diver_mn_lume).polygon(poly(dm_lume_pts), fill=(255, 255, 255, 255))
+
+diver_mn_frame_sh = add_drop_shadow(diver_mn_frame, diver_mn_lume, dx=2.8, dy=3.8, blur=2.8, opacity=0.65)
+save_drawable(diver_mn_frame_sh, W, H, "hand_diver_mn_frame.png")
+save_drawable(diver_mn_lume, W, H, "hand_diver_mn_lume.png")
+
+# ==============================================================================
+# 5D. HOLLOW THEME HANDS (Theme-colored frame, completely transparent middle)
+# ==============================================================================
+# --- Hollow Hour Hand ---
+hollow_hr = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dhh = ImageDraw.Draw(hollow_hr)
+hh_outer = [(-5.5, 20), (5.5, 20), (8.2, -14), (8.2, -84), (0, -114), (-8.2, -84), (-8.2, -14)]
+hh_inner = [(-4.8, -18), (4.8, -18), (4.8, -81), (0, -104), (-4.8, -81)]
+dhh.polygon(poly(hh_outer), fill=(255, 255, 255, 255))
+dhh.polygon(poly(hh_inner), fill=(0, 0, 0, 0))
+
+hollow_hr_sh = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+hh_a = hollow_hr.split()[3].point(lambda p: int(p * 0.65))
+hh_sh_mask = Image.new("L", (W2, H2), 0)
+hh_sh_mask.paste(hh_a, (int(2.5 * S), int(3.5 * S)))
+hh_sh_mask = hh_sh_mask.filter(ImageFilter.GaussianBlur(2.6 * S))
+hollow_hr_sh.putalpha(hh_sh_mask)
+save_drawable(hollow_hr_sh, W, H, "hand_hollow_hr_sh.png")
+save_drawable(hollow_hr, W, H, "hand_hollow_hr.png")
+
+# --- Hollow Minute Hand ---
+hollow_mn = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+dhm = ImageDraw.Draw(hollow_mn)
+hm_outer = [(-4.4, 26), (4.4, 26), (6.2, -16), (5.8, -140), (0, -170), (-5.8, -140), (-6.2, -16)]
+hm_inner = [(-3.2, -20), (3.2, -20), (3.0, -137), (0, -160), (-3.0, -137)]
+dhm.polygon(poly(hm_outer), fill=(255, 255, 255, 255))
+dhm.polygon(poly(hm_inner), fill=(0, 0, 0, 0))
+
+hollow_mn_sh = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+hm_a = hollow_mn.split()[3].point(lambda p: int(p * 0.68))
+hm_sh_mask = Image.new("L", (W2, H2), 0)
+hm_sh_mask.paste(hm_a, (int(3.0 * S), int(4.2 * S)))
+hm_sh_mask = hm_sh_mask.filter(ImageFilter.GaussianBlur(3.0 * S))
+hollow_mn_sh.putalpha(hm_sh_mask)
+save_drawable(hollow_mn_sh, W, H, "hand_hollow_mn_sh.png")
+save_drawable(hollow_mn, W, H, "hand_hollow_mn.png")
+
+# ==============================================================================
 # 6. CENTER PINION CAP (40x40 at x=205, y=205)
 #    Split into untinted base + tintable accent ring
 # ==============================================================================

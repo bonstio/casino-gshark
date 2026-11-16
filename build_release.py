@@ -19,15 +19,24 @@ version_code = vcode_match.group(1) if vcode_match else "48"
 
 print(f"Building Casino G-Shark Release v{version_name} (versionCode {version_code})...")
 
-AAPT2 = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\aapt2.exe"
-ZIPALIGN = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\zipalign.exe"
-APKSIGNER = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\apksigner.bat"
-ANDROID_JAR = r"C:\Users\bonst\AppData\Local\Android\Sdk\platforms\android-34\android.jar"
+if os.name == "nt":
+    AAPT2 = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\aapt2.exe"
+    ZIPALIGN = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\zipalign.exe"
+    APKSIGNER = r"C:\Users\bonst\AppData\Local\Android\Sdk\build-tools\35.0.0\apksigner.bat"
+    ANDROID_JAR = r"C:\Users\bonst\AppData\Local\Android\Sdk\platforms\android-34\android.jar"
+    BUNDLETOOL_JAR = r"C:\Users\bonst\AppData\Local\Programs\WatchFaceStudioBeta\tools\common\tools\bundletool-all-1.13.2.jar"
+    JARSIGNER = r"C:\Program Files\Java\jdk-18.0.1.1\bin\jarsigner.exe"
+else:
+    SDK_ROOT = os.environ.get("ANDROID_HOME") or os.environ.get("ANDROID_SDK_ROOT") or "/opt/android-sdk"
+    AAPT2 = os.path.join(SDK_ROOT, "build-tools", "36.0.0", "aapt2")
+    ZIPALIGN = os.path.join(SDK_ROOT, "build-tools", "36.0.0", "zipalign")
+    APKSIGNER = os.path.join(SDK_ROOT, "build-tools", "36.0.0", "apksigner")
+    ANDROID_JAR = os.path.join(SDK_ROOT, "platforms", "android-36", "android.jar")
+    BUNDLETOOL_JAR = os.environ.get("BUNDLETOOL_JAR", "/tmp/bundletool-all.jar")
+    JARSIGNER = shutil.which("jarsigner") or "jarsigner"
 KEYSTORE = os.path.join(PROJECT_DIR, "gshark-release.keystore")
 KEY_ALIAS = "gshark_release"
 KEY_PASS = "gsharkrelease"
-BUNDLETOOL_JAR = r"C:\Users\bonst\AppData\Local\Programs\WatchFaceStudioBeta\tools\common\tools\bundletool-all-1.13.2.jar"
-JARSIGNER = r"C:\Program Files\Java\jdk-18.0.1.1\bin\jarsigner.exe"
 
 os.makedirs(BUILD_DIR, exist_ok=True)
 

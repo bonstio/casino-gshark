@@ -17,12 +17,26 @@ ICON_SIZE = 96
 
 # Fonts
 DIGITAL7_PATH = os.path.join(FONT_DIR, "digital7.ttf")
-ROB_BOLD_PATH = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Bold.ttf"
-if not os.path.exists(ROB_BOLD_PATH):
-    ROB_BOLD_PATH = "C:/Windows/Fonts/arialbd.ttf" if os.path.exists("C:/Windows/Fonts/arialbd.ttf") else "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-ROB_REG_PATH = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf"
-if not os.path.exists(ROB_REG_PATH):
-    ROB_REG_PATH = "C:/Windows/Fonts/arial.ttf" if os.path.exists("C:/Windows/Fonts/arial.ttf") else ROB_BOLD_PATH
+WEAR_GS_PATH = os.path.join(BASE_DIR, "tools_fonts", "Wear-GoogleSans-Regular.ttf")
+if os.path.exists(WEAR_GS_PATH):
+    ROB_BOLD_PATH = (WEAR_GS_PATH, 700)
+    ROB_REG_PATH = (WEAR_GS_PATH, 400)
+else:
+    ROB_BOLD_PATH = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Bold.ttf"
+    if not os.path.exists(ROB_BOLD_PATH):
+        ROB_BOLD_PATH = "C:/Windows/Fonts/arialbd.ttf" if os.path.exists("C:/Windows/Fonts/arialbd.ttf") else "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    ROB_REG_PATH = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Regular.ttf"
+    if not os.path.exists(ROB_REG_PATH):
+        ROB_REG_PATH = "C:/Windows/Fonts/arial.ttf" if os.path.exists("C:/Windows/Fonts/arial.ttf") else ROB_BOLD_PATH
+
+
+def load_font(font_spec, size):
+    if isinstance(font_spec, tuple):
+        path, weight = font_spec
+        f = ImageFont.truetype(path, size)
+        f.set_variation_by_axes([18, weight, 0])
+        return f
+    return ImageFont.truetype(font_spec, size)
 
 # Cache loaded RGBA drawables
 _IMAGE_CACHE = {}
@@ -205,7 +219,7 @@ SUBDIAL_TIMEZONES = {
 
 def draw_centered_text(canvas, box, text, font_path, size, color_rgb, alpha=255):
     x, y, w, h = box
-    font = ImageFont.truetype(font_path, size)
+    font = load_font(font_path, size)
     layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     bbox = d.textbbox((0, 0), text, font=font)
@@ -219,7 +233,7 @@ def draw_centered_text(canvas, box, text, font_path, size, color_rgb, alpha=255)
 
 def draw_start_text(canvas, box, text, font_path, size, color_rgb, alpha=255):
     x, y, w, h = box
-    font = ImageFont.truetype(font_path, size)
+    font = load_font(font_path, size)
     layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     bbox = d.textbbox((0, 0), text, font=font)
@@ -260,7 +274,11 @@ def render_watchface(
     logo_rgb = hex_to_rgb(THEME_COLORS[logo_color])
 
     # 1. Background texture
-    canvas.alpha_composite(load_drawable(BG_TEXTURES[bg_texture]))
+    if bg_texture == 18:
+        canvas.alpha_composite(solid_tint_alpha(load_drawable("bg_lcd_grid_theme_lines"), theme_rgb))
+        canvas.alpha_composite(load_drawable("bg_lcd_grid_theme_housing"))
+    else:
+        canvas.alpha_composite(load_drawable(BG_TEXTURES[bg_texture]))
 
     # 2. Border
     if bg_border == 0:
@@ -284,20 +302,21 @@ def render_watchface(
         canvas.alpha_composite(load_drawable("ticks_6_wedge"))
     # tick_style 7 is None (no ticks rendered)
 
-    # 4. Top Logo
+    # 4. Top Logo (Original y=41 / outline y=36 in Full Bleed; y=45 / outline y=40 centered in Bordered)
     if top_logo < 8 and TOP_LOGOS[top_logo] is not None:
         logo_name = TOP_LOGOS[top_logo]
         outline_name = f"{logo_name}_outline"
+        top_y_off = 4 if bg_border == 0 else 0
         if top_logo == 0:
-            canvas.alpha_composite(load_drawable(outline_name).resize((180, 35), Image.Resampling.LANCZOS), (135, 36))
+            canvas.alpha_composite(load_drawable(outline_name).resize((180, 35), Image.Resampling.LANCZOS), (135, 36 + top_y_off))
             lw, lh = int(round(170 * 0.9)), int(round(25 * 0.9))
             l_img = solid_tint_alpha(load_drawable(logo_name).resize((lw, lh), Image.Resampling.LANCZOS), (255, 255, 255))
-            canvas.alpha_composite(l_img, (140 + (170 - lw) // 2, 41 + (25 - lh)))
+            canvas.alpha_composite(l_img, (140 + (170 - lw) // 2, 41 + top_y_off + (25 - lh)))
         else:
-            canvas.alpha_composite(load_drawable(outline_name).resize((198, 35), Image.Resampling.LANCZOS), (126, 36))
+            canvas.alpha_composite(load_drawable(outline_name).resize((198, 35), Image.Resampling.LANCZOS), (126, 36 + top_y_off))
             lw, lh = int(round(188 * 0.9)), int(round(25 * 0.9))
             l_img = solid_tint_alpha(load_drawable(logo_name).resize((lw, lh), Image.Resampling.LANCZOS), (255, 255, 255))
-            canvas.alpha_composite(l_img, (131 + (188 - lw) // 2, 41 + (25 - lh)))
+            canvas.alpha_composite(l_img, (131 + (188 - lw) // 2, 41 + top_y_off + (25 - lh)))
 
     # 5. Bottom Logo
     if bottom_logo < 6 and BOTTOM_LOGOS[bottom_logo] is not None:
@@ -310,21 +329,32 @@ def render_watchface(
     # 6. Upper Complication Pods / Overlays:
     # Digital mode (analog_hands == 0): rectangular quad chamber + textures
     # Analog mode (analog_hands > 0): arced round complication plates & bezel overlay (QuadArcGroup)
-    tex_suffixes = {1: "hex_light", 2: "hex_dark", 3: "moire_light", 4: "moire_dark"}
+    tex_suffixes = {2: "hex_light", 3: "hex_dark", 4: "moire_light", 5: "moire_dark"}
+    chamber_idx = 1 if bg_texture == 18 else bg_texture
     if analog_hands == 0:
-        canvas.alpha_composite(load_drawable(f"quad_chamber_{bg_texture}"))
+        qc_img = load_drawable(f"quad_chamber_{chamber_idx}")
+        if screen_texture == 1:
+            r, g, b, a = qc_img.split()
+            a = a.point(lambda p: int(p * (153 / 255.0)))
+            qc_img = Image.merge("RGBA", (r, g, b, a))
+        canvas.alpha_composite(qc_img)
         if quad_style == 0:
             if time_color == 2:
                 if screen_texture == 0:
                     canvas.alpha_composite(load_drawable("tex_quad_invert_default"), (70, 90))
-                else:
+                elif screen_texture in tex_suffixes:
                     canvas.alpha_composite(load_drawable(f"tex_quad_invert_{tex_suffixes[screen_texture]}"), (70, 90))
             elif screen_texture in tex_suffixes:
                 canvas.alpha_composite(load_drawable(f"tex_quad_{tex_suffixes[screen_texture]}"), (70, 90))
     else:
         # 1. Dark Face Plate (Active when Classic Dark is selected OR when Match LCD is selected in normal dark LCD mode)
         if time_color != 2 or bottom_style == 1:
-            canvas.alpha_composite(load_drawable("quad_arc_face_dark"))
+            arc_img = load_drawable("quad_arc_face_dark")
+            if screen_texture == 1:
+                r, g, b, a = arc_img.split()
+                a = a.point(lambda p: int(p * (153 / 255.0)))
+                arc_img = Image.merge("RGBA", (r, g, b, a))
+            canvas.alpha_composite(arc_img)
         # 2. Textures (when Match LCD is selected)
         if bottom_style == 0:
             if time_color != 2:
@@ -343,18 +373,29 @@ def render_watchface(
         if time_color == 2:
             if screen_texture == 0:
                 canvas.alpha_composite(load_drawable("tex_bottom_invert_default"), (70, 302))
-            else:
+            elif screen_texture in tex_suffixes:
                 canvas.alpha_composite(load_drawable(f"tex_bottom_invert_{tex_suffixes[screen_texture]}"), (70, 302))
         elif screen_texture in tex_suffixes:
+            if analog_hands > 0:
+                # Match quad_arc_face_dark neutral slate (12, 15, 20) inside slot 5 under texture overlay
+                tex_ov = load_drawable(f"tex_bottom_{tex_suffixes[screen_texture]}")
+                slate_fill = Image.new("RGBA", tex_ov.size, (12, 15, 20, 0))
+                slate_fill.putalpha(tex_ov.split()[3].point(lambda p: 255 if p > 0 else 0))
+                canvas.alpha_composite(slate_fill, (70, 302))
             canvas.alpha_composite(load_drawable(f"tex_bottom_{tex_suffixes[screen_texture]}"), (70, 302))
 
     # 8. Center Digital Time Panel (when analog_hands == 0) or Centered Wear OS Logo (when analog_hands > 0)
     if analog_hands == 0:
-        canvas.alpha_composite(load_drawable(f"center_chamber_{bg_texture}"), (68, 164))
+        cc_img = load_drawable(f"center_chamber_{chamber_idx}")
+        if screen_texture == 1:
+            r, g, b, a = cc_img.split()
+            a = a.point(lambda p: int(p * (153 / 255.0)))
+            cc_img = Image.merge("RGBA", (r, g, b, a))
+        canvas.alpha_composite(cc_img, (68, 164))
         if time_color == 2:
             if screen_texture == 0:
                 canvas.alpha_composite(load_drawable("tex_invert_default"), (70, 178))
-            else:
+            elif screen_texture in tex_suffixes:
                 canvas.alpha_composite(load_drawable(f"tex_invert_{tex_suffixes[screen_texture]}"), (70, 178))
         elif screen_texture in tex_suffixes:
             canvas.alpha_composite(load_drawable(f"tex_screen_{tex_suffixes[screen_texture]}"), (70, 178))
@@ -370,6 +411,10 @@ def render_watchface(
             ghost_alpha = 28
         elif time_color == 1:
             main_rgb = (212, 212, 212)
+            ghost_rgb = (255, 255, 255)
+            ghost_alpha = 36
+        elif time_color == 3:
+            main_rgb = theme_rgb
             ghost_rgb = (255, 255, 255)
             ghost_alpha = 36
         else:
@@ -415,7 +460,7 @@ def render_watchface(
         pod_boxes = [(72, 90), (152, 90), (232, 90), (312, 90)]
     else:
         # Centered in the 4 round bezel windows
-        pod_boxes = [(85, 198), (127, 100), (234, 86), (299, 172)]
+        pod_boxes = [(85, 196), (127, 98), (234, 85), (299, 170)]
 
     # Pod 1: Battery (or steps if no %)
     p1_x, p1_y = pod_boxes[0]
@@ -496,9 +541,15 @@ def render_watchface(
     elif bottom_bay_mode == 4:
         canvas.alpha_composite(cal_ic, (70 + 23, 302 + 13))
         draw_start_text(canvas, (70 + 61, 302 + 10, 158, 38), "31/01/2026", ROB_REG_PATH, 25, bot_fg, 255)
+    elif bottom_bay_mode == 5:
+        canvas.alpha_composite(cal_ic, (70 + 19, 302 + 13))
+        draw_start_text(canvas, (70 + 56, 302 + 12, 164, 36), "16 Nov 2026", ROB_REG_PATH, 24, bot_fg, 255)
+    elif bottom_bay_mode == 6:
+        canvas.alpha_composite(cal_ic, (70 + 14, 302 + 13))
+        draw_start_text(canvas, (70 + 48, 302 + 16, 174, 28), "Mon 16th June", ROB_REG_PATH, 18, bot_fg, 255)
 
-    # 11. Sub-Dial (x=302, y=273, w=100, h=100)
-    sub_group = Image.new("RGBA", (100, 100), (0, 0, 0, 0))
+    # 11. Sub-Dial (x=302, y=271, w=102, h=102)
+    sub_group = Image.new("RGBA", (102, 102), (0, 0, 0, 0))
     if sub_dial_mode == 0:
         # 8-Segment Battery Gauge
         sub_group.alpha_composite(solid_tint_alpha(load_drawable("subdial_seg_ghost"), theme_rgb, 43 / 255.0))
@@ -517,9 +568,9 @@ def render_watchface(
         # Analog Dual-Timezone Clock (2..35)
         if bottom_style == 0:
             if time_color == 2:
-                if screen_texture == 0:
+                if screen_texture in (0, 1):
                     sub_group.alpha_composite(load_drawable("tex_subdial_invert_default"))
-                else:
+                elif screen_texture in tex_suffixes:
                     sub_group.alpha_composite(load_drawable(f"tex_subdial_invert_{tex_suffixes[screen_texture]}"))
             elif screen_texture in tex_suffixes:
                 sub_group.alpha_composite(load_drawable(f"tex_subdial_{tex_suffixes[screen_texture]}"))
@@ -532,7 +583,7 @@ def render_watchface(
             city_col = (196, 210, 228)
 
         city_code, tz_name = SUBDIAL_TIMEZONES[sub_dial_mode]
-        draw_centered_text(sub_group, (0, 58, 100, 20), city_code, ROB_BOLD_PATH, 13, city_col, 255)
+        draw_centered_text(sub_group, (0, 59, 102, 20), city_code, ROB_BOLD_PATH, 13, city_col, 255)
 
         # Compute timezone hour & minute angles for a fixed reference UTC time (2026-01-31 10:25 UTC)
         utc_dt = datetime.datetime(2026, 1, 31, 10, 25, 0, tzinfo=datetime.timezone.utc)
@@ -541,18 +592,18 @@ def render_watchface(
         mn_angle = loc_dt.minute * 6.0
 
         hr_hand = solid_tint_alpha(load_drawable("subdial_hand_hour"), theme_rgb)
-        hr_rot = hr_hand.rotate(-hr_angle, resample=Image.Resampling.BICUBIC, center=(50, 50))
+        hr_rot = hr_hand.rotate(-hr_angle, resample=Image.Resampling.BICUBIC, center=(51, 51))
         sub_group.alpha_composite(hr_rot)
 
         mn_hand = load_drawable("subdial_hand_min")
         if bot_black_mode:
             mn_hand = solid_tint_alpha(mn_hand, (10, 13, 16))
-        mn_rot = mn_hand.rotate(-mn_angle, resample=Image.Resampling.BICUBIC, center=(50, 50))
+        mn_rot = mn_hand.rotate(-mn_angle, resample=Image.Resampling.BICUBIC, center=(51, 51))
         sub_group.alpha_composite(mn_rot)
 
         sub_group.alpha_composite(load_drawable("subdial_analog_cap"))
 
-    canvas.alpha_composite(sub_group, (302, 273))
+    canvas.alpha_composite(sub_group, (302, 271))
 
     # 12. Rotating Seconds Hand Orbit Indicator (at 5-second mark = 30 degrees)
     if seconds_dot > 0:
@@ -590,54 +641,30 @@ def render_watchface(
                 rot = single.rotate(-ang, resample=Image.Resampling.BICUBIC, center=(225, 225))
                 hands_layer.alpha_composite(rot)
             r_h, g_h, b_h, a_h = hands_layer.split()
-            a_h = a_h.point(lambda p: (p * 242) // 255)
+            eff_a = 165 if time_color == 1 else (230 if analog_hands == 10 else 242)
+            a_h = a_h.point(lambda p: (p * eff_a) // 255)
             return Image.merge("RGBA", (r_h, g_h, b_h, a_h))
 
-        if analog_hands == 1:
-            canvas.alpha_composite(
-                render_hand_pair("hand_sword_hr_frame", "hand_sword_hr_lume", "hand_sword_mn_frame", "hand_sword_mn_lume", theme_rgb)
-            )
-            ring_rgb = theme_rgb
-        elif analog_hands == 2:
-            canvas.alpha_composite(
-                render_hand_pair("hand_sword_hr_frame", "hand_sword_hr_lume", "hand_sword_mn_frame", "hand_sword_mn_lume", (255, 255, 255))
-            )
-            ring_rgb = (255, 255, 255)
-        elif analog_hands == 3:
-            canvas.alpha_composite(
-                render_hand_pair("hand_baton_hr_frame", "hand_baton_hr_lume", "hand_baton_mn_frame", "hand_baton_mn_lume", theme_rgb)
-            )
-            ring_rgb = theme_rgb
-        elif analog_hands == 4:
-            canvas.alpha_composite(
-                render_hand_pair("hand_baton_hr_frame", "hand_baton_hr_lume", "hand_baton_mn_frame", "hand_baton_mn_lume", (255, 255, 255))
-            )
-            ring_rgb = (255, 255, 255)
-        elif analog_hands == 5:
-            canvas.alpha_composite(
-                render_hand_pair(None, "hand_ghost_hr", None, "hand_ghost_mn", theme_rgb)
-            )
-            ring_rgb = theme_rgb
-        elif analog_hands == 6:
-            canvas.alpha_composite(
-                render_hand_pair("hand_needle_hr_frame", "hand_needle_hr_lume", "hand_needle_mn_frame", "hand_needle_mn_lume", theme_rgb)
-            )
-            ring_rgb = theme_rgb
-        elif analog_hands == 7:
-            canvas.alpha_composite(
-                render_hand_pair("hand_needle_hr_frame", "hand_needle_hr_lume", "hand_needle_mn_frame", "hand_needle_mn_lume", (255, 255, 255))
-            )
-            ring_rgb = (255, 255, 255)
-        elif analog_hands == 8:
-            canvas.alpha_composite(
-                render_hand_pair("hand_chisel_hr_frame", "hand_chisel_hr_lume", "hand_chisel_mn_frame", "hand_chisel_mn_lume", theme_rgb)
-            )
-            ring_rgb = theme_rgb
-        elif analog_hands == 9:
-            canvas.alpha_composite(
-                render_hand_pair("hand_chisel_hr_frame", "hand_chisel_hr_lume", "hand_chisel_mn_frame", "hand_chisel_mn_lume", (255, 255, 255))
-            )
-            ring_rgb = (255, 255, 255)
+        hand_lume_rgb = (10, 13, 16) if time_color == 2 else (theme_rgb if time_color == 3 else (255, 255, 255))
+        ring_rgb = theme_rgb
+        hand_specs = {
+            1: ("hand_sword_hr_frame", "hand_sword_hr_lume", "hand_sword_mn_frame", "hand_sword_mn_lume"),
+            2: ("hand_sword_hr_frame", "hand_sword_hr_lume", "hand_sword_mn_frame", "hand_sword_mn_lume"),
+            3: ("hand_baton_hr_frame", "hand_baton_hr_lume", "hand_baton_mn_frame", "hand_baton_mn_lume"),
+            4: ("hand_baton_hr_frame", "hand_baton_hr_lume", "hand_baton_mn_frame", "hand_baton_mn_lume"),
+            5: (None, "hand_ghost_hr", None, "hand_ghost_mn"),
+            6: ("hand_needle_hr_frame", "hand_needle_hr_lume", "hand_needle_mn_frame", "hand_needle_mn_lume"),
+            7: ("hand_needle_hr_frame", "hand_needle_hr_lume", "hand_needle_mn_frame", "hand_needle_mn_lume"),
+            8: ("hand_chisel_hr_frame", "hand_chisel_hr_lume", "hand_chisel_mn_frame", "hand_chisel_mn_lume"),
+            9: ("hand_chisel_hr_frame", "hand_chisel_hr_lume", "hand_chisel_mn_frame", "hand_chisel_mn_lume"),
+            10: ("hand_long_hr_frame", "hand_long_hr_lume", "hand_long_mn_frame", "hand_long_mn_lume"),
+            11: ("hand_diver_hr_frame", "hand_diver_hr_lume", "hand_diver_mn_frame", "hand_diver_mn_lume"),
+            12: ("hand_hollow_hr_sh", "hand_hollow_hr", "hand_hollow_mn_sh", "hand_hollow_mn"),
+        }
+        if analog_hands in hand_specs:
+            hr_fr, hr_lu, mn_fr, mn_lu = hand_specs[analog_hands]
+            lume_c = (10, 13, 16) if time_color == 2 else (theme_rgb if analog_hands == 11 else hand_lume_rgb)
+            canvas.alpha_composite(render_hand_pair(hr_fr, hr_lu, mn_fr, mn_lu, lume_c))
 
         p_base = load_drawable("main_pinion_base").resize((40, 40), Image.Resampling.LANCZOS)
         p_ring = solid_tint_alpha(load_drawable("main_pinion_ring").resize((40, 40), Image.Resampling.LANCZOS), ring_rgb)
@@ -682,9 +709,9 @@ def generate_all_icons():
         icon_img.save(icon_path, optimize=True)
         generated[(setting_id, str(opt_id))] = (res_name, icon_img)
 
-    # 1. bgTexture (18 options: 0..17) - Top-left bezel & textured plate
+    # 1. bgTexture (19 options: 0..18) - Top-left bezel & textured plate
     crop_bg_tex = (28, 28, 178, 178)
-    for i in range(18):
+    for i in range(19):
         wf = render_watchface(bg_texture=i, bg_border=0)
         save_icon("bgTexture", i, wf, crop_bg_tex)
 
@@ -695,7 +722,7 @@ def generate_all_icons():
         save_icon("bgBorder", i, wf, crop_bg_border)
 
     # 3. themeColor (16 options: 0..15) - GA-100 circular sub-dial with theme-tinted battery segments
-    crop_theme_color = (298, 269, 406, 377)
+    crop_theme_color = (299, 268, 407, 376)
     for i in range(16):
         wf = render_watchface(theme_color=i, sub_dial_mode=0)
         save_icon("themeColor", i, wf, crop_theme_color)
@@ -714,15 +741,15 @@ def generate_all_icons():
         wf = render_watchface(sec_color=i, time_color=tc)
         save_icon("secColor", i, wf, crop_sec_color)
 
-    # 6. timeColor (3 options: 0..2) - Center digital clock digits "18:30"
+    # 6. timeColor (4 options: 0..3) - Center digital clock digits "18:30"
     crop_time_color = (80, 110, 320, 350)
-    for i in range(3):
+    for i in range(4):
         wf = render_watchface(time_color=i)
         save_icon("timeColor", i, wf, crop_time_color)
 
-    # 7. screenTexture (5 options: 0..4) - Center LCD chamber texture behind digits
+    # 7. screenTexture (6 options: 0..5) - Center LCD chamber texture behind digits
     crop_screen_tex = (80, 110, 320, 350)
-    for i in range(5):
+    for i in range(6):
         wf = render_watchface(screen_texture=i, time_color=0)
         save_icon("screenTexture", i, wf, crop_screen_tex)
 
@@ -738,14 +765,14 @@ def generate_all_icons():
         wf = render_watchface(bottom_style=i, time_color=2)
         save_icon("bottomStyle", i, wf, crop_bottom_style)
 
-    # 10. bottomBayMode (5 options: 0..4) - Bottom rectangular bay content (Next Event vs 4 Date formats)
+    # 10. bottomBayMode (7 options: 0..6) - Bottom rectangular bay content (Next Event vs 6 Date formats)
     crop_bottom_bay = (93, 240, 273, 420)
-    for i in range(5):
+    for i in range(7):
         wf = render_watchface(bottom_bay_mode=i)
         save_icon("bottomBayMode", i, wf, crop_bottom_bay)
 
     # 11. subDialMode (36 options: 0..35) - GA-100 circular sub-dial (Battery, Seconds, 34 World Timezones)
-    crop_subdial = (298, 269, 406, 377)
+    crop_subdial = (299, 268, 407, 376)
     for i in range(36):
         wf = render_watchface(sub_dial_mode=i)
         save_icon("subDialMode", i, wf, crop_subdial)
@@ -762,9 +789,9 @@ def generate_all_icons():
         wf = render_watchface(seconds_dot=i)
         save_icon("secondsDot", i, wf, crop_sec_dot)
 
-    # 14. analogHands (10 options: 0..9) - Center analog hands & 3D pinion cap
+    # 14. analogHands (13 options: 0..12) - Center analog hands & 3D pinion cap
     crop_analog_hands = (125, 115, 325, 315)
-    for i in range(10):
+    for i in range(13):
         wf = render_watchface(analog_hands=i)
         save_icon("analogHands", i, wf, crop_analog_hands)
 
@@ -785,20 +812,20 @@ def generate_all_icons():
 
 def build_contact_sheet(generated):
     settings_order = [
-        ("bgTexture", 18),
+        ("bgTexture", 19),
         ("bgBorder", 2),
         ("themeColor", 16),
         ("logoColor", 16),
         ("secColor", 19),
-        ("timeColor", 3),
-        ("screenTexture", 5),
+        ("timeColor", 4),
+        ("screenTexture", 6),
         ("quadStyle", 2),
         ("bottomStyle", 2),
         ("bottomBayMode", 5),
         ("subDialMode", 36),
         ("tickStyle", 7),
         ("secondsDot", 7),
-        ("analogHands", 10),
+        ("analogHands", 13),
         ("topLogo", 9),
         ("bottomLogo", 7),
     ]
@@ -812,8 +839,8 @@ def build_contact_sheet(generated):
     sheet_h = rows * cell_h + 40
     sheet = Image.new("RGBA", (sheet_w, sheet_h), (18, 22, 28, 255))
     d = ImageDraw.Draw(sheet)
-    font_lbl = ImageFont.truetype(ROB_BOLD_PATH, 15)
-    font_sub = ImageFont.truetype(ROB_REG_PATH, 11)
+    font_lbl = load_font(ROB_BOLD_PATH, 15)
+    font_sub = load_font(ROB_REG_PATH, 11)
 
     cur_row = 0
     for s_id, count in settings_order:

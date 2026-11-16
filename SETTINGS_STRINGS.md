@@ -42,7 +42,8 @@ bg_camo_urban = Urban Arctic Camo
 bg_camo_desert = Desert Storm Camo
 bg_camo_zebra = Subtle Zebra Camo
 bg_carbon_fiber = Carbon Fibre Weave
-bg_gloss_black = Gloss Black
+bg_gloss_black = Vanta Black
+bg_vanta_black = Vanta Black
 bg_grid = Micro-Grid Carbon
 bg_tactical_mesh = Tactical Raised Mesh
 bg_ind_cyan = Industrial Cyan
@@ -53,9 +54,10 @@ bg_ind_orange = Industrial Orange
 bg_ind_magenta = Industrial Deep Magenta
 bg_ind_silver = Industrial Silver
 
-# 6. Screen Texture (screenTexture) — 5 Options
+# 6. Screen Texture (screenTexture) — 6 Options
 screen_texture_label = Screen Texture
 screen_tex_default = Default
+screen_tex_transparent = Transparent
 screen_tex_hex_light = Honeycomb Silver
 screen_tex_hex_dark = Honeycomb Stealth
 screen_tex_moire_light = Solar Moiré Light

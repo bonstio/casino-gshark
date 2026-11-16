@@ -1057,49 +1057,68 @@ for idx_bg, fname, hl, sl, vl, hd, sd, vd, floor_rgb, bev_lit_rgb, sub_base_f, s
 # GENERATE QUAD ARC OVERLAY & FACE PLATES (DARK, INVERT, & TEXTURES)
 # ==============================================================================
 centers = [(118, 237), (160, 139), (267, 125), (332, 211)]
-r_outer_c = 42.5
-r_inner_c = 35.0
+r_outer_c = 48.5
+r_inner_c = 41.0
 
-# 1. Bezel overlay with transparent window
+# 1. Recessed chamfered bezel overlay (matching bottom complication pod style, no screws/flange)
 hi_dials = Image.new('RGBA', (W, H), (0, 0, 0, 0))
-d_hi = ImageDraw.Draw(hi_dials)
+Y_q, X_q = np.ogrid[:H, :W]
 
-sh_layer = Image.new('RGBA', (W, H), (0, 0, 0, 0))
-d_sh = ImageDraw.Draw(sh_layer)
+# Build union mask of the 4 circular wells at 2x
+well_mask_2x = Image.new('L', (W, H), 0)
+d_wm = ImageDraw.Draw(well_mask_2x)
+inv_well_2x = Image.new('L', (W, H), 255)
+d_iw = ImageDraw.Draw(inv_well_2x)
 for cx_d, cy_d in centers:
     c2x, c2y = int(cx_d * scale), int(cy_d * scale)
-    ro2_d = int(r_outer_c * scale)
-    d_sh.ellipse((c2x - ro2_d - 4, c2y - ro2_d + 4, c2x + ro2_d + 4, c2y + ro2_d + 10), fill=(0, 0, 0, 160))
-sh_layer = sh_layer.filter(ImageFilter.GaussianBlur(3.5 * scale))
-hi_dials.alpha_composite(sh_layer)
-
-flange_fill = (34, 41, 50, 255)
-flange_out = (82, 95, 112, 255)
-inner_bevel = (56, 66, 80, 255)
-
-for cx_d, cy_d in centers:
-    c2x, c2y = int(cx_d * scale), int(cy_d * scale)
-    ro2_d = int(r_outer_c * scale)
     ri2_d = int(r_inner_c * scale)
+    d_wm.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=255)
+    d_iw.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=0)
 
-    # Outer ring
-    d_hi.ellipse((c2x - ro2_d, c2y - ro2_d, c2x + ro2_d, c2y + ro2_d), fill=flange_fill, outline=flange_out, width=2*scale)
-    d_hi.ellipse((c2x - ro2_d + 3*scale, c2y - ro2_d + 3*scale, c2x + ro2_d - 3*scale, c2y + ro2_d - 3*scale), outline=inner_bevel, width=1*scale)
+# Inner drop shadow cast from top-left rim into each recessed circular well
+sh_shift_2x = Image.new('L', (W, H), 255)
+sh_shift_2x.paste(inv_well_2x, (int(1.5 * scale), int(2.5 * scale)))
+sh_blur_2x = sh_shift_2x.filter(ImageFilter.GaussianBlur(3.2 * scale))
+wm_arr = np.array(well_mask_2x, dtype=float) / 255.0
+sb_arr = np.array(sh_blur_2x, dtype=float) / 255.0
+inner_sh_alpha = wm_arr * sb_arr * 0.72
 
-    # Inner chamfer ring on the bezel (just outside the clear window: ri2_d to ri2_d + 1*scale)
-    d_hi.ellipse((c2x - ri2_d - 1*scale, c2y - ri2_d - 1*scale, c2x + ri2_d + 1*scale, c2y + ri2_d + 1*scale), outline=(24, 28, 36, 255), width=1*scale)
+overlay_arr = np.zeros((H, W, 4), dtype=np.float32)
+overlay_arr[:, :, 3] = inner_sh_alpha * 255.0
 
-    # Clear window
-    d_hi.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(0, 0, 0, 0))
+# Outer trench + directional chamfered rim around each pod
+lx, ly = -0.7071, -0.7071  # Top-left light source
+for cx_d, cy_d in centers:
+    c2x, c2y = cx_d * scale, cy_d * scale
+    ri2 = r_inner_c * scale
+    dx = X_q - c2x
+    dy = Y_q - c2y
+    dist = np.sqrt(dx * dx + dy * dy)
+    safe_dist = np.maximum(dist, 1e-6)
+    # Normal pointing outward; bottom-right rim faces top-left light -> dot > 0
+    ndotl = (dx / safe_dist) * lx + (dy / safe_dist) * ly
+    lit_w = np.clip(-ndotl, 0.0, 1.0)
+    sh_w = np.clip(ndotl, 0.0, 1.0)
 
-    # 4 screws on bezel
-    r_screw_pos = (r_inner_c + r_outer_c) / 2.0 * scale
-    r_screw = 2.2 * scale
-    for deg in (45, 135, 225, 315):
-        s_rad = math.radians(deg)
-        sx = c2x + r_screw_pos * math.cos(s_rad)
-        sy = c2y + r_screw_pos * math.sin(s_rad)
-        d_hi.ellipse((sx - r_screw, sy - r_screw, sx + r_screw, sy + r_screw), fill=(20, 25, 32, 255), outline=(95, 112, 135, 255), width=1)
+    # Outer seam trench: ri2 + 1.0*scale to ri2 + 3.0*scale
+    trench = np.clip(1.0 - np.abs(dist - (ri2 + 1.8 * scale)) / (1.2 * scale), 0.0, 1.0)
+    t_a = trench * 110.0
+    # Chamfered bevel: ri2 to ri2 + 1.6*scale
+    chamfer = np.clip(1.0 - np.abs(dist - (ri2 + 0.7 * scale)) / (1.0 * scale), 0.0, 1.0)
+    lit_a = chamfer * (0.35 + 0.65 * lit_w) * 145.0
+    sh_a = chamfer * sh_w * 135.0
+
+    # Composite trench, dark bevel, and lit slate bevel
+    for a_mask, col in [(t_a, (0.0, 0.0, 0.0)), (sh_a, (3.0, 5.0, 11.0)), (lit_a, (136.0, 151.0, 171.0))]:
+        sa = np.clip(a_mask / 255.0, 0.0, 1.0)
+        da = overlay_arr[:, :, 3] / 255.0
+        out_a = sa + da * (1.0 - sa)
+        safe_oa = np.maximum(out_a, 1e-6)
+        for ch in range(3):
+            overlay_arr[:, :, ch] = (col[ch] * sa + overlay_arr[:, :, ch] * da * (1.0 - sa)) / safe_oa
+        overlay_arr[:, :, 3] = out_a * 255.0
+
+hi_dials = Image.fromarray(np.clip(overlay_arr, 0, 255).astype(np.uint8), "RGBA")
 
 dials_450 = hi_dials.resize((450, 450), Image.Resampling.LANCZOS)
 dials_450.save(os.path.join(OUTPUT_DIR, "quad_arc_overlay.png"))
@@ -1113,7 +1132,7 @@ d_dark = ImageDraw.Draw(face_dark_hi)
 for cx_d, cy_d in centers:
     c2x, c2y = int(cx_d * scale), int(cy_d * scale)
     ri2_d = int(r_inner_c * scale) + 2
-    d_dark.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(12, 15, 20, 255))
+    d_dark.ellipse((c2x - ri2_d, c2y - ri2_d, c2x + ri2_d, c2y + ri2_d), fill=(15, 20, 24, 255))
 face_dark_450 = face_dark_hi.resize((450, 450), Image.Resampling.LANCZOS)
 face_dark_450.save(os.path.join(OUTPUT_DIR, "quad_arc_face_dark.png"))
 if os.path.isdir(EXPORT_DIR):
@@ -1197,41 +1216,50 @@ for src_name, dark_out_name, inv_out_name, inv_polarity, contrast_str, base_dark
 
     if kind == 'hex':
         # Exact 30x34 mathematical seamless honeycomb tile sampled from clean interior
-        hex_tile = raw_arr[20:54, 30:60, 3] / 255.0
-        pat_alpha = hex_tile[(Y_2d - 198) % 34, (X_2d - 100) % 30]
+        hex_tile_rgba = raw_arr[20:54, 30:60, :]
+        pat_rgba = hex_tile_rgba[(Y_2d - 198) % 34, (X_2d - 100) % 30]
     else:
         # Pure solar moire sampled from clean interior rows 18..82, cols 10..270
-        moire_clean = raw_arr[:, :, 3] / 255.0
-        pat_alpha = np.zeros((450, 450), dtype=float)
+        pat_rgba = np.zeros((450, 450, 4), dtype=float)
         for (cx_d, cy_d), x_off in zip(centers, [10, 75, 145, 215]):
             dist = np.sqrt((X_2d - cx_d)**2 + (Y_2d - cy_d)**2)
             mask_dial = dist <= r_inner_c + 1.0
             y_idx = np.clip(18 + (Y_2d - (cy_d - 35)), 10, 96).astype(int)
             x_idx = np.clip(x_off + (X_2d - (cx_d - 35)), 10, 300).astype(int)
-            pat_alpha[mask_dial] = moire_clean[y_idx[mask_dial], x_idx[mask_dial]]
+            pat_rgba[mask_dial] = raw_arr[y_idx[mask_dial], x_idx[mask_dial], :]
 
-    dark_pure_op = pat_alpha * dark_scale * arc_mask_450
     dark_arr = np.zeros((450, 450, 4), dtype=np.uint8)
-    dark_arr[:, :, 0] = 255
-    dark_arr[:, :, 1] = 255
-    dark_arr[:, :, 2] = 255
-    dark_arr[:, :, 3] = (dark_pure_op * 255.0).clip(0, 255).astype(np.uint8)
+    dark_arr[:, :, :3] = np.clip(pat_rgba[:, :, :3], 0, 255).astype(np.uint8)
+    dark_arr[:, :, 3] = np.clip(pat_rgba[:, :, 3] * arc_mask_450, 0, 255).astype(np.uint8)
     Image.fromarray(dark_arr).save(os.path.join(OUTPUT_DIR, dark_out_name))
     if os.path.isdir(EXPORT_DIR):
         Image.fromarray(dark_arr).save(os.path.join(EXPORT_DIR, dark_out_name))
 
-    pat_norm = pat_alpha
-    pattern_darkness = (1.0 - pat_norm) if inv_polarity else pat_norm
-    pat_dark_alpha = (base_dark + pattern_darkness * contrast_str) * arc_mask_450
-    comb_tex_alpha = np.clip(1.0 - (1.0 - pat_dark_alpha) * (1.0 - sh_alpha_450), 0.0, 1.0)
-
-    inv_t_arr = np.zeros((450, 450, 4), dtype=np.uint8)
-    inv_t_arr[:, :, 0] = 14
-    inv_t_arr[:, :, 1] = 18
-    inv_t_arr[:, :, 2] = 24
-    inv_t_arr[:, :, 3] = (comb_tex_alpha * 255.0).clip(0, 255).astype(np.uint8)
-    
-    full_inv_tex = Image.alpha_composite(inv_base_450, Image.fromarray(inv_t_arr))
+    # Match inverted arc texture directly to tex_bottom_invert_* clean interior + circular drop shadow
+    bot_inv_name = inv_out_name.replace('tex_arc_', 'tex_bottom_')
+    bot_inv_file = os.path.join(OUTPUT_DIR, bot_inv_name)
+    if os.path.exists(bot_inv_file):
+        bot_arr = np.array(Image.open(bot_inv_file).convert('RGBA')).astype(float)
+        # Clean interior of bottom bay is y=18..44 (height 26), x=80..200 (width 120)
+        tile_inv = bot_arr[18:44, 80:200, :]
+        arc_inv_arr = tile_inv[Y_2d % 26, X_2d % 120].copy()
+        arc_inv_arr[:, :, 3] = arc_inv_arr[:, :, 3] * arc_mask_450
+        base_inv_img = Image.fromarray(np.clip(arc_inv_arr, 0, 255).astype(np.uint8))
+        sh_arr = np.zeros((450, 450, 4), dtype=np.uint8)
+        sh_arr[:, :, :3] = (14, 18, 24)
+        sh_arr[:, :, 3] = np.clip(sh_alpha_450 * arc_mask_450 * 255.0, 0, 255).astype(np.uint8)
+        full_inv_tex = Image.alpha_composite(base_inv_img, Image.fromarray(sh_arr))
+    else:
+        pat_norm = pat_rgba[:, :, 3] / 255.0
+        pattern_darkness = (1.0 - pat_norm) if inv_polarity else pat_norm
+        pat_dark_alpha = (base_dark + pattern_darkness * contrast_str) * arc_mask_450
+        comb_tex_alpha = np.clip(1.0 - (1.0 - pat_dark_alpha) * (1.0 - sh_alpha_450), 0.0, 1.0)
+        inv_t_arr = np.zeros((450, 450, 4), dtype=np.uint8)
+        inv_t_arr[:, :, 0] = 14
+        inv_t_arr[:, :, 1] = 18
+        inv_t_arr[:, :, 2] = 24
+        inv_t_arr[:, :, 3] = (comb_tex_alpha * 255.0).clip(0, 255).astype(np.uint8)
+        full_inv_tex = Image.alpha_composite(inv_base_450, Image.fromarray(inv_t_arr))
     full_inv_tex.save(os.path.join(OUTPUT_DIR, inv_out_name))
     if os.path.isdir(EXPORT_DIR):
         full_inv_tex.save(os.path.join(EXPORT_DIR, inv_out_name))

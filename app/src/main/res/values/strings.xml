@@ -34,7 +34,8 @@
     <string name="bg_camo_desert">Desert Storm Camo</string>
     <string name="bg_camo_zebra">Subtle Zebra Camo</string>
     <string name="bg_carbon_fiber">Carbon Fibre Weave</string>
-    <string name="bg_gloss_black">Gloss Black</string>
+    <string name="bg_gloss_black">Vanta Black</string>
+    <string name="bg_vanta_black">Vanta Black</string>
     <string name="bg_grid">Micro-Grid Carbon</string>
     <string name="bg_tactical_mesh">Tactical Raised Mesh</string>
     <string name="bg_ind_cyan">Industrial Cyan</string>
@@ -45,6 +46,7 @@
     <string name="bg_ind_magenta">Industrial Deep Magenta</string>
     <string name="bg_ind_silver">Industrial Silver</string>
     <string name="bg_ind_black_silver">Industrial Black &amp; Silver</string>
+    <string name="bg_grid_theme">Grid (theme)</string>
 
     <!-- Background Border Mode (Bordered vs Full Bleed to screen edge) -->
     <string name="bg_border_label">Background Border</string>
@@ -64,6 +66,7 @@
     <!-- Screen Texture (Part Behind Main Clock) -->
     <string name="screen_texture_label">Screen Texture</string>
     <string name="screen_tex_default">Default</string>
+    <string name="screen_tex_transparent">Transparent</string>
     <string name="screen_tex_hex_light">Honeycomb Silver</string>
     <string name="screen_tex_hex_dark">Honeycomb Stealth</string>
     <string name="screen_tex_moire_light">Solar Moiré Light</string>
@@ -124,6 +127,7 @@
     <string name="time_color_white">White (Default)</string>
     <string name="time_color_soft_white">Soft White</string>
     <string name="time_color_black">Black</string>
+    <string name="time_color_theme">Theme Color</string>
 
     <!-- Complications & Clock Sub-Dial Background & Text Style -->
     <string name="quad_style_label">Top 4 Complications</string>
@@ -138,6 +142,8 @@
     <string name="bottom_bay_date_sat_mmdd">Date: Sat 01/31</string>
     <string name="bottom_bay_date_sat_ddmm">Date: Sat 31/01</string>
     <string name="bottom_bay_date_ddmmyyyy">Date: 31/01/2026</string>
+    <string name="bottom_bay_date_ddmmmyyyy">Date: 16 Nov 2026</string>
+    <string name="bottom_bay_date_ordinal">Date: Mon 16th June</string>
 
     <!-- Main Analog Hour & Minute Hands (95% Opacity) -->
     <string name="analog_hands_label">Analog Hands</string>
@@ -151,6 +157,9 @@
     <string name="analog_hands_needle_white">Hairline Wire — White</string>
     <string name="analog_hands_chisel_theme">Chisel Rectangle — Theme Color</string>
     <string name="analog_hands_chisel_white">Chisel Rectangle — White Lume</string>
+    <string name="analog_hands_long_center">Long Center-Pivot — Theme Color</string>
+    <string name="analog_hands_bold_diver">Bold Hour / Slim Minute — Theme Color</string>
+    <string name="analog_hands_hollow_theme">Hollow Outline — Theme Color</string>
 
     <!-- Top Bezel Wordmark Logo (Default CASINO + 7 Alternates + Blank) -->
     <string name="top_logo_label">Top Logo</string>

@@ -7,11 +7,11 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "app/src/main/res/drawable")
 EXPORT_DIR = os.path.join(BASE_DIR, "exported_backgrounds_for_photoshop")
 
 cx, cy = 225.0, 225.0
-scx, scy = 352.0, 323.0
-r_outer = 38.0 * 1.3   # 49.4px
-r_inner = 30.5 * 1.3   # 39.65px
+scx, scy = 353.0, 322.0
+r_outer = 38.0 * 1.3 + 1.0   # 50.4px (expanded +2px diameter anchored bottom-left)
+r_inner = 30.5 * 1.3 + 1.0   # 40.65px
 gap_dist = 9.6
-r_cut = r_outer + gap_dist  # 59.0px
+r_cut = r_outer + gap_dist  # 60.0px
 
 scale = 2
 W, H = 450 * scale, 450 * scale
@@ -227,10 +227,13 @@ start_bright_2x = Image.new("RGBA", (W, H), (130, 145, 165, 0))
 start_bright_2x.putalpha(start_a_2x)
 
 # ==============================================================================
-# GENERATE ENHANCED BEZEL BORDER OVERLAY (bg_border_classic.png: EXACT 22..428)
+# GENERATE ENHANCED BEZEL BORDER OVERLAY (bg_border_classic.png)
+# With 14.0px smoothstep circumference fade to black starting at r=201.5px
 # ==============================================================================
-print("Generating enhanced bg_border_classic.png (exact 22..428 / r=203.0px circumference)...")
-R_BORDER_2X = 203.0 * scale  # 406.0px at 2x (exact 22..428 in 450x450 space)
+print("Generating enhanced bg_border_classic.png (circumference fade to black over 14.0px starting at r=201.5px)...")
+R_BORDER_INNER_2X = 201.5 * scale  # 403.0px at 2x (confirmed correct starting radius)
+FADE_WIDTH_2X = 14.0 * scale       # 28.0px at 2x (doubled 14.0px fade length)
+R_BORDER_OUTER_2X = R_BORDER_INNER_2X + FADE_WIDTH_2X  # 431.0px at 2x (215.5px at 1x)
 
 border_bytes = bytearray(W * H * 4)
 for y in range(H):
@@ -248,39 +251,19 @@ for y in range(H):
         if r_s <= ro2 - 0.5:
             continue
 
-        idx = row_off + x * 4
-        if r_c >= R_BORDER_2X - 0.6:
-            # Outer black bezel region (outside 22..428)
-            # 3D directional chamfer strictly on the bezel rim (r_c in 406.0 .. 409.5) so opening circumference is unchanged
-            ldot = (dx_c * (-light_dir_x) + dy_c * (-light_dir_y)) / max(r_c, 1.0)
-            rim_w = math.exp(-((r_c - (R_BORDER_2X + 1.2)) / 1.35) ** 2)
-            if ldot < 0.0:
-                lit = ((-ldot) ** 1.1) * rim_w
-                rv = 36.0 * rim_w + 92.0 * lit
-                gv = 44.0 * rim_w + 108.0 * lit
-                bv = 54.0 * rim_w + 128.0 * lit
+        if r_c >= R_BORDER_INNER_2X:
+            idx = row_off + x * 4
+            if r_c >= R_BORDER_OUTER_2X:
+                a = 1.0
             else:
-                sh = (1.0 - 0.45 * ldot) * rim_w
-                rv = 34.0 * sh
-                gv = 42.0 * sh
-                bv = 52.0 * sh
+                t = (r_c - R_BORDER_INNER_2X) / FADE_WIDTH_2X
+                # Smoothstep (Hermite interpolation)
+                a = t * t * (3.0 - 2.0 * t)
 
-            edge_a = 1.0
-            if r_c < R_BORDER_2X + 0.6:
-                edge_a = max(0.0, min(1.0, (r_c - (R_BORDER_2X - 0.6)) / 1.2))
-
-            border_bytes[idx]   = int(max(0, min(255, rv)))
-            border_bytes[idx+1] = int(max(0, min(255, gv)))
-            border_bytes[idx+2] = int(max(0, min(255, bv)))
-            border_bytes[idx+3] = int(edge_a * 255.0)
-        elif r_c > R_BORDER_2X - 9.0 and r_s > ro2 + 3.0:
-            # Subtle inner bezel recess shadow inside (22..428)
-            ldot = (dx_c * (-light_dir_x) + dy_c * (-light_dir_y)) / max(r_c, 1.0)
-            dist_in = R_BORDER_2X - r_c
-            sh_falloff = max(0.0, min(1.0, (9.0 - dist_in) / 9.0)) ** 1.7
-            dir_boost = 1.0 + 0.35 * ldot
-            sh_alpha = int(min(155.0, sh_falloff * 125.0 * dir_boost))
-            border_bytes[idx+3] = sh_alpha
+            border_bytes[idx]   = 0
+            border_bytes[idx+1] = 0
+            border_bytes[idx+2] = 0
+            border_bytes[idx+3] = int(round(a * 255.0))
 
 border_classic_2x = Image.frombytes("RGBA", (W, H), bytes(border_bytes))
 border_classic_1x = border_classic_2x.resize((450, 450), Image.Resampling.BOX)
@@ -820,48 +803,21 @@ save_bg_from_2x(img_06, "bg_lcd_carbon_fiber.png")
 save_center_chamber_3d(6, floor_rgb=(12, 15, 19), bev_lit_rgb=(152, 174, 200), bev_sh_rgb=(3, 5, 8), honeycomb_gain=0.22, bright_start=False)
 
 # ==============================================================================
-# 7. GLOSS BLACK CERAMIC (bg_lcd_gloss_black.png)
+# 7. VANTA BLACK (bg_lcd_gloss_black.png)
+# Pure pitch black #000000 across the entire face (100% OLED black)
 # ==============================================================================
-gb_bytes = bytearray(W * H * 4)
-for y in range(H):
-    dy_c = y - cy2
-    row_off = y * W
-    for x in range(W):
-        i = row_off + x
-        if inside_disc[i]:
-            dx_c = x - cx2
-            r_c = math.hypot(dx_c, dy_c)
-            t_r = t_rad_map[i]
-            con = conical_map[i]
-            u_diag = (dx_c * 0.65 + dy_c * 0.76) / 450.0
-            softbox = 0.0
-            if u_diag < -0.05:
-                arc_band = math.exp(-((r_c - 345.0) / 52.0) ** 2) * max(0.0, min(1.0, (-u_diag - 0.05) * 2.2))
-                dome_sheen = max(0.0, (-u_diag - 0.05)) ** 1.6 * 0.45
-                softbox = (arc_band * 26.0 + dome_sheen * 24.0)
-            vg = vig_map[i]
-            rv = (7.0 + 8.0 * (1.0 - t_r) + 6.0 * (con ** 2.0) + softbox * 0.88) * vg
-            gv = (9.0 + 10.0 * (1.0 - t_r) + 7.5 * (con ** 2.0) + softbox * 0.96) * vg
-            bv = (12.0 + 13.0 * (1.0 - t_r) + 9.5 * (con ** 2.0) + softbox * 1.08) * vg
-            idx = i * 4
-            gb_bytes[idx]   = int(max(0, min(255, rv)))
-            gb_bytes[idx+1] = int(max(0, min(255, gv)))
-            gb_bytes[idx+2] = int(max(0, min(255, bv)))
-            gb_bytes[idx+3] = 255
-img_07 = Image.frombytes("RGBA", (W, H), bytes(gb_bytes))
-apply_pods_and_subdial_housing_2x(
-    img_07,
-    floor_rgb=(7, 9, 12),
-    bev_lit_rgb=(184, 206, 232),
-    bev_sh_rgb=(2, 3, 5),
-    honeycomb_gain=0.28,
-    sub_base_f=(32.0, 38.0, 48.0),
-    sub_spec_f=(195.0, 212.0, 235.0),
-    well_rgb=(7.0, 9.0, 12.0),
-    gloss_ar=True,
-)
+img_07 = Image.new("RGBA", (W, H), (0, 0, 0, 255))
 save_bg_from_2x(img_07, "bg_lcd_gloss_black.png")
-save_center_chamber_3d(7, floor_rgb=(7, 9, 12), bev_lit_rgb=(184, 206, 232), bev_sh_rgb=(2, 3, 5), honeycomb_gain=0.28, bright_start=True, gloss_ar=True)
+
+# Center chamber overlay for Vanta Black (pure transparent so entire face remains pitch black)
+blank_center_07 = Image.new("RGBA", (354, 122), (0, 0, 0, 0))
+blank_center_07.save(os.path.join(OUTPUT_DIR, "center_chamber_7.png"))
+print("Saved center chamber overlay: center_chamber_7.png (Vanta Black blank)")
+
+# Quad chamber overlay for Vanta Black (pure transparent so entire face remains pitch black)
+blank_quad_07 = Image.new("RGBA", (450, 450), (0, 0, 0, 0))
+blank_quad_07.save(os.path.join(OUTPUT_DIR, "quad_chamber_7.png"))
+print("Saved quad chamber overlay: quad_chamber_7.png (Vanta Black blank)")
 
 # ==============================================================================
 # 8. MICRO-GRID CARBON (bg_lcd_grid.png)
@@ -874,15 +830,15 @@ for py in range(g_pitch):
         dx_g = abs(px - 6)
         dy_g = abs(py - 6)
         if dx_g == 0 or dy_g == 0:
-            grid_cell[py][px] = 18.0
+            grid_cell[py][px] = 26.0
         elif px == 7 or py == 7:
-            grid_cell[py][px] = 8.5
+            grid_cell[py][px] = 12.0
         elif px == 5 or py == 5:
-            grid_cell[py][px] = -6.5
+            grid_cell[py][px] = -8.0
         else:
             u_c = (px - 6) / 6.0
             v_c = (py - 6) / 6.0
-            grid_cell[py][px] = 2.0 * (1.0 - 0.3 * (u_c*u_c + v_c*v_c))
+            grid_cell[py][px] = 3.5 * (1.0 - 0.3 * (u_c*u_c + v_c*v_c))
 
 for y in range(H):
     py = y % g_pitch
@@ -897,9 +853,9 @@ for y in range(H):
             con = conical_map[i]
             macro = (1.16 - 0.30 * t_rad_map[i]) + 0.18 * con
             vg = vig_map[i]
-            rv = (30.0 * macro + g_mod * 0.90) * vg
-            gv = (38.0 * macro + g_mod * 1.00) * vg
-            bv = (44.0 * macro + g_mod * 1.12) * vg
+            rv = (38.0 * macro + g_mod * 1.15) * vg
+            gv = (48.0 * macro + g_mod * 1.25) * vg
+            bv = (56.0 * macro + g_mod * 1.40) * vg
             idx = i * 4
             gr_bytes[idx]   = int(max(0, min(255, rv)))
             gr_bytes[idx+1] = int(max(0, min(255, gv)))
@@ -908,16 +864,16 @@ for y in range(H):
 img_08 = Image.frombytes("RGBA", (W, H), bytes(gr_bytes))
 apply_pods_and_subdial_housing_2x(
     img_08,
-    floor_rgb=(15, 20, 24),
-    bev_lit_rgb=(150, 174, 198),
+    floor_rgb=(20, 26, 32),
+    bev_lit_rgb=(154, 178, 204),
     bev_sh_rgb=(4, 6, 9),
     honeycomb_gain=0.22,
-    sub_base_f=(35.0, 42.0, 50.0),
+    sub_base_f=(36.0, 43.0, 52.0),
     sub_spec_f=(168.0, 186.0, 210.0),
-    well_rgb=(14.0, 19.0, 23.0),
+    well_rgb=(18.0, 24.0, 29.0),
 )
 save_bg_from_2x(img_08, "bg_lcd_grid.png")
-save_center_chamber_3d(8, floor_rgb=(15, 20, 24), bev_lit_rgb=(150, 174, 198), bev_sh_rgb=(4, 6, 9), honeycomb_gain=0.22, bright_start=False)
+save_center_chamber_3d(8, floor_rgb=(20, 26, 32), bev_lit_rgb=(154, 178, 204), bev_sh_rgb=(4, 6, 9), honeycomb_gain=0.22, bright_start=False)
 
 # ==============================================================================
 # PRECOMPUTE 3D MICRO-WAFFLE MESH TILES (for 9: Tactical Mesh + 10..16: Industrial)

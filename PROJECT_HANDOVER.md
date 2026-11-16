@@ -114,7 +114,7 @@ Configured in `res/values/strings.xml` and exposed in the Wear OS companion app 
    - `2`: Woodland Camo (Tactical green/brown/black splotches)
    - `3`: Urban Arctic Camo (High-contrast grey/slate/white geometric camouflage)
    - `4`: Carbon Fiber (2x2 twill weave)
-   - `5`: Gloss Black (Top-lit reflective sheen)
+   - `5`: Vanta Black (Pure 100% OLED pitch black)
    - `6`: Tactical Grid (Cross-hatch grid lines)
    - `7`: Tactical Raised Mesh (Photo-realistic normal-mapped molded waffle)
 

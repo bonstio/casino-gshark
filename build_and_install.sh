@@ -2,6 +2,9 @@
 set -euo pipefail
 
 SDK_DIR="${ANDROID_HOME:-$HOME/Android/Sdk}"
+if [[ ! -d "$SDK_DIR" && -d "/opt/android-sdk" ]]; then
+  SDK_DIR="/opt/android-sdk"
+fi
 BUILD_TOOLS="$SDK_DIR/build-tools/36.0.0"
 AAPT2="$BUILD_TOOLS/aapt2"
 ZIPALIGN="$BUILD_TOOLS/zipalign"
@@ -86,7 +89,7 @@ if [[ -f "$BUNDLETOOL_JAR" ]]; then
   mkdir -p "$BUILD_DIR/base_module/manifest"
   unzip -q "$BUILD_DIR/proto.apk" -d "$BUILD_DIR/base_module"
   mv "$BUILD_DIR/base_module/AndroidManifest.xml" "$BUILD_DIR/base_module/manifest/AndroidManifest.xml"
-  (cd "$BUILD_DIR/base_module" && zip -q -r "$BUILD_DIR/base.zip" .)
+  python3 -c "import os, zipfile; z = zipfile.ZipFile('$BUILD_DIR/base.zip', 'w', zipfile.ZIP_DEFLATED); [z.write(os.path.join(r, f), os.path.relpath(os.path.join(r, f), '$BUILD_DIR/base_module')) for r, d, fs in os.walk('$BUILD_DIR/base_module') for f in fs]; z.close()"
   java -jar "$BUNDLETOOL_JAR" build-bundle --modules="$BUILD_DIR/base.zip" --output="$BUILD_DIR/gshark-watchface.aab"
   jarsigner -keystore "$KEYSTORE" -storepass "$KEY_PASS" -keypass "$KEY_PASS" -sigalg SHA256withRSA -digestalg SHA-256 "$BUILD_DIR/gshark-watchface.aab" "$KEY_ALIAS" >/dev/null
   java -jar "$BUNDLETOOL_JAR" validate --bundle="$BUILD_DIR/gshark-watchface.aab"
