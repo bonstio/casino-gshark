@@ -1702,123 +1702,123 @@
             <Image resource="tex_invert_moire_dark" />
         </PartImage>
 
-        <!-- Hours Ghost 88 Background (White & Soft White Modes, x=82, y=151, w=110, h=126, size=120) -->
-        <PartText x="82" y="151" width="110" height="126" alpha="36" name="HoursGhost">
+        <!-- Hours Ghost 88 Background (White & Soft White Modes, x=72, y=151, w=130, h=126, size=120) -->
+        <PartText x="72" y="151" width="130" height="126" alpha="36" name="HoursGhost">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 ? 36 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">88</Font>
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">88</Font>
             </Text>
         </PartText>
 
         <!-- Hours Active Digits (White Mode: timeColor == 0, Hidden in Ambient) -->
-        <PartText x="82" y="151" width="110" height="126" name="HoursDisplay">
+        <PartText x="72" y="151" width="130" height="126" name="HoursDisplay">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">
                     <Template>%s<Parameter expression="[IS_24_HOUR_MODE]&gt;0?[HOUR_0_23_Z]:[HOUR_1_12_Z]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Hours Active Digits (Soft White Mode: timeColor == 1, Hidden in Ambient) -->
-        <PartText x="82" y="151" width="110" height="126" name="HoursDisplaySoftWhite">
+        <PartText x="72" y="151" width="130" height="126" name="HoursDisplaySoftWhite">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#D4D4D4">
+                <Font family="gshark_seg7" size="120" color="#D4D4D4">
                     <Template>%s<Parameter expression="[IS_24_HOUR_MODE]&gt;0?[HOUR_0_23_Z]:[HOUR_1_12_Z]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Hours Active Digits (Theme Color Mode: timeColor == 3, Hidden in Ambient) -->
-        <PartText x="82" y="151" width="110" height="126" tintColor="[CONFIGURATION.themeColor.0]" name="HoursDisplayTheme">
+        <PartText x="72" y="151" width="130" height="126" tintColor="[CONFIGURATION.themeColor.0]" name="HoursDisplayTheme">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 3 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">
                     <Template>%s<Parameter expression="[IS_24_HOUR_MODE]&gt;0?[HOUR_0_23_Z]:[HOUR_1_12_Z]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Active Colon (White Mode: timeColor == 0, Hidden in Ambient) -->
-        <PartText x="194" y="151" width="15" height="126" name="TimeColon">
+        <PartText x="192" y="151" width="19" height="126" name="TimeColon">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">:</Font>
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">:</Font>
             </Text>
         </PartText>
 
         <!-- Active Colon (Soft White Mode: timeColor == 1, Hidden in Ambient) -->
-        <PartText x="194" y="151" width="15" height="126" name="TimeColonSoftWhite">
+        <PartText x="192" y="151" width="19" height="126" name="TimeColonSoftWhite">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#D4D4D4">:</Font>
+                <Font family="gshark_seg7" size="120" color="#D4D4D4">:</Font>
             </Text>
         </PartText>
 
         <!-- Active Colon (Theme Color Mode: timeColor == 3, Hidden in Ambient) -->
-        <PartText x="194" y="151" width="15" height="126" tintColor="[CONFIGURATION.themeColor.0]" name="TimeColonTheme">
+        <PartText x="192" y="151" width="19" height="126" tintColor="[CONFIGURATION.themeColor.0]" name="TimeColonTheme">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 3 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">:</Font>
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">:</Font>
             </Text>
         </PartText>
 
-        <!-- Minutes Ghost 88 Background (White & Soft White Modes, x=211, y=151, w=110, h=126, size=120) -->
-        <PartText x="211" y="151" width="110" height="126" alpha="36" name="MinutesGhost">
+        <!-- Minutes Ghost 88 Background (White & Soft White Modes, x=201, y=151, w=130, h=126, size=120) -->
+        <PartText x="201" y="151" width="130" height="126" alpha="36" name="MinutesGhost">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] != 2 ? 36 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">88</Font>
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">88</Font>
             </Text>
         </PartText>
 
         <!-- Minutes Active Digits (White Mode: timeColor == 0, Hidden in Ambient) -->
-        <PartText x="211" y="151" width="110" height="126" name="MinutesDisplay">
+        <PartText x="201" y="151" width="130" height="126" name="MinutesDisplay">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 0 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">
                     <Template>%s<Parameter expression="[MINUTE_Z]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Minutes Active Digits (Soft White Mode: timeColor == 1, Hidden in Ambient) -->
-        <PartText x="211" y="151" width="110" height="126" name="MinutesDisplaySoftWhite">
+        <PartText x="201" y="151" width="130" height="126" name="MinutesDisplaySoftWhite">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 1 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#D4D4D4">
+                <Font family="gshark_seg7" size="120" color="#D4D4D4">
                     <Template>%s<Parameter expression="[MINUTE_Z]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Minutes Active Digits (Theme Color Mode: timeColor == 3, Hidden in Ambient) -->
-        <PartText x="211" y="151" width="110" height="126" tintColor="[CONFIGURATION.themeColor.0]" name="MinutesDisplayTheme">
+        <PartText x="201" y="151" width="130" height="126" tintColor="[CONFIGURATION.themeColor.0]" name="MinutesDisplayTheme">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.timeColor] == 3 ? 255 : 0" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="120" color="#FFFFFF">
+                <Font family="gshark_seg7" size="120" color="#FFFFFF">
                     <Template>%s<Parameter expression="[MINUTE_Z]" /></Template>
                 </Font>
             </Text>
@@ -1841,386 +1841,386 @@
             <Image resource="logo_wear_os" />
         </PartImage>
 
-        <!-- Inset Seconds (Default "Same as clock" or Independently Tinted, Hidden in Ambient, x=330, y=206, w=42, h=42, size=43) -->
-        <Group x="330" y="206" width="42" height="42" name="SecondsBox">
+        <!-- Inset Seconds (Default "Same as clock" or Independently Tinted, Hidden in Ambient, x=327, y=206, w=48, h=42, size=43) -->
+        <Group x="327" y="206" width="48" height="42" name="SecondsBox">
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 ? 255 : 0" />
 
             <!-- White (#FFFFFF): Same as clock (timeColor==0) or Stealth White (secColor==8) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="36" name="SecondsGhostWhite">
+            <PartText x="0" y="0" width="48" height="42" alpha="36" name="SecondsGhostWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 0) ? 36 : ([CONFIGURATION.secColor] == 8 ? 43 : 0)" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FFFFFF">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#FFFFFF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplayWhite">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplayWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 0) || [CONFIGURATION.secColor] == 8) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FFFFFF">
+                    <Font family="gshark_seg7" size="43" color="#FFFFFF">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- Black (#0A0D10): Same as clock (timeColor==2) or Black (secColor==19) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="28" name="SecondsGhostBlack">
+            <PartText x="0" y="0" width="48" height="42" alpha="28" name="SecondsGhostBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2) || [CONFIGURATION.secColor] == 19) ? 28 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#0A0D10">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#0A0D10">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplayBlack">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplayBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2) || [CONFIGURATION.secColor] == 19) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#0A0D10">
+                    <Font family="gshark_seg7" size="43" color="#0A0D10">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- Soft White (#D4D4D4): Same as clock (timeColor==1) or Soft White (secColor==18) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="36" name="SecondsGhostSoftWhite">
+            <PartText x="0" y="0" width="48" height="42" alpha="36" name="SecondsGhostSoftWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 1) || [CONFIGURATION.secColor] == 18) ? 36 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#D4D4D4">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#D4D4D4">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplaySoftWhite">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplaySoftWhite">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="(([CONFIGURATION.secColor] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 1) || [CONFIGURATION.secColor] == 18) ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#D4D4D4">
+                    <Font family="gshark_seg7" size="43" color="#D4D4D4">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 1: Theme Color (Matches active themeColor) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhostTheme">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhostTheme">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 1 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="[CONFIGURATION.themeColor.0]">88</Font>
+                    <Font family="gshark_seg7" size="43" color="[CONFIGURATION.themeColor.0]">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplayTheme">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplayTheme">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 1 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="[CONFIGURATION.themeColor.0]">
+                    <Font family="gshark_seg7" size="43" color="[CONFIGURATION.themeColor.0]">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 2: Volt Lime (#BAFA08) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost2">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost2">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#BAFA08">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#BAFA08">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay2">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay2">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 2 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#BAFA08">
+                    <Font family="gshark_seg7" size="43" color="#BAFA08">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 3: Bright Lime Green (#39FF14) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost3">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost3">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#39FF14">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#39FF14">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay3">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay3">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 3 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#39FF14">
+                    <Font family="gshark_seg7" size="43" color="#39FF14">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 4: Ocean Shark Cyan (#0EDBFF) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost4">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost4">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#0EDBFF">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#0EDBFF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay4">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay4">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 4 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#0EDBFF">
+                    <Font family="gshark_seg7" size="43" color="#0EDBFF">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 5: Tactical Orange (#FF660A) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost5">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost5">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FF660A">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#FF660A">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay5">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay5">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 5 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FF660A">
+                    <Font family="gshark_seg7" size="43" color="#FF660A">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 6: Crimson Red (#FF1E38) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost6">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost6">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FF1E38">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#FF1E38">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay6">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay6">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 6 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FF1E38">
+                    <Font family="gshark_seg7" size="43" color="#FF1E38">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 7: Amber Gold (#FFC400) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost7">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost7">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FFC400">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#FFC400">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay7">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay7">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 7 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#FFC400">
+                    <Font family="gshark_seg7" size="43" color="#FFC400">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 9: Vibrant Blue (#147EFF) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost9">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost9">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#147EFF">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#147EFF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay9">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay9">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 9 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#147EFF">
+                    <Font family="gshark_seg7" size="43" color="#147EFF">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 10: Deep Violet (#B040FF) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost10">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost10">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#B040FF">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#B040FF">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay10">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay10">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 10 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#B040FF">
+                    <Font family="gshark_seg7" size="43" color="#B040FF">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 11: Neon Magenta (#F514C8) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost11">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost11">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#F514C8">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#F514C8">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay11">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay11">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 11 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#F514C8">
+                    <Font family="gshark_seg7" size="43" color="#F514C8">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 12: Coyote Tan (#D2B48C) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost12">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost12">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#D2B48C">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#D2B48C">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay12">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay12">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 12 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#D2B48C">
+                    <Font family="gshark_seg7" size="43" color="#D2B48C">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 13: Earth Khaki (#9A8A62) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost13">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost13">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#9A8A62">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#9A8A62">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay13">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay13">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 13 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#9A8A62">
+                    <Font family="gshark_seg7" size="43" color="#9A8A62">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 14: Mocha Brown (#A76D43) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost14">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost14">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#A76D43">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#A76D43">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay14">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay14">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 14 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#A76D43">
+                    <Font family="gshark_seg7" size="43" color="#A76D43">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 15: Steel Grey (#94A3B8) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost15">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost15">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#94A3B8">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#94A3B8">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay15">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay15">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 15 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#94A3B8">
+                    <Font family="gshark_seg7" size="43" color="#94A3B8">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 16: Slate Charcoal (#64748B) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost16">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost16">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#64748B">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#64748B">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay16">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay16">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 16 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#64748B">
+                    <Font family="gshark_seg7" size="43" color="#64748B">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- 17: Titanium Silver (#CED8E2) -->
-            <PartText x="0" y="0" width="42" height="42" alpha="43" name="SecondsGhost17">
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost17">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 43 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#CED8E2">88</Font>
+                    <Font family="gshark_seg7" size="43" color="#CED8E2">88</Font>
                 </Text>
             </PartText>
-            <PartText x="0" y="0" width="42" height="42" name="SecondsDisplay17">
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay17">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 17 ? 255 : 0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="43" color="#CED8E2">
+                    <Font family="gshark_seg7" size="43" color="#CED8E2">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
@@ -2233,51 +2233,51 @@
             <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 &amp;&amp; [CONFIGURATION.timeColor] == 2 ? 255 : 0" />
 
             <!-- Hours Ghost 88 (Black Mode, ~11% opacity alpha=28) -->
-            <PartText x="82" y="151" width="110" height="126" alpha="28" name="HoursGhostBlack">
+            <PartText x="72" y="151" width="130" height="126" alpha="28" name="HoursGhostBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="28" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="120" color="#0A0D10">88</Font>
+                    <Font family="gshark_seg7" size="120" color="#0A0D10">88</Font>
                 </Text>
             </PartText>
 
             <!-- Hours Active Digits (Black Mode) -->
-            <PartText x="82" y="151" width="110" height="126" name="HoursDisplayBlack">
+            <PartText x="72" y="151" width="130" height="126" name="HoursDisplayBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="120" color="#0A0D10">
+                    <Font family="gshark_seg7" size="120" color="#0A0D10">
                         <Template>%s<Parameter expression="[IS_24_HOUR_MODE]&gt;0?[HOUR_0_23_Z]:[HOUR_1_12_Z]" /></Template>
                     </Font>
                 </Text>
             </PartText>
 
             <!-- Active Colon (Black Mode) -->
-            <PartText x="194" y="151" width="15" height="126" name="TimeColonBlack">
+            <PartText x="192" y="151" width="19" height="126" name="TimeColonBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="120" color="#0A0D10">:</Font>
+                    <Font family="gshark_seg7" size="120" color="#0A0D10">:</Font>
                 </Text>
             </PartText>
 
             <!-- Minutes Ghost 88 (Black Mode, ~11% opacity alpha=28) -->
-            <PartText x="211" y="151" width="110" height="126" alpha="28" name="MinutesGhostBlack">
+            <PartText x="201" y="151" width="130" height="126" alpha="28" name="MinutesGhostBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="28" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="120" color="#0A0D10">88</Font>
+                    <Font family="gshark_seg7" size="120" color="#0A0D10">88</Font>
                 </Text>
             </PartText>
 
             <!-- Minutes Active Digits (Black Mode) -->
-            <PartText x="211" y="151" width="110" height="126" name="MinutesDisplayBlack">
+            <PartText x="201" y="151" width="130" height="126" name="MinutesDisplayBlack">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
-                    <Font family="digital7" size="120" color="#0A0D10">
+                    <Font family="gshark_seg7" size="120" color="#0A0D10">
                         <Template>%s<Parameter expression="[MINUTE_Z]" /></Template>
                     </Font>
                 </Text>
@@ -2293,21 +2293,21 @@
         <Group x="0" y="0" width="450" height="450" name="AmbientDigitalClockGroup">
             <Transform target="alpha" value="[CONFIGURATION.analogHands] == 0 ? 255 : 0" />
         <!-- Ambient Hours Ghost 88 Background (size=168, alpha=36) -->
-        <PartText x="55" y="126" width="160" height="176" alpha="0" name="AmbientHoursGhost">
+        <PartText x="45" y="126" width="180" height="176" alpha="0" name="AmbientHoursGhost">
             <Variant mode="AMBIENT" target="alpha" value="36" />
-            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 29 : 55" />
+            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 19 : 45" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="168" color="#D0D0D0">88</Font>
+                <Font family="gshark_seg7" size="168" color="#D0D0D0">88</Font>
             </Text>
         </PartText>
 
-        <PartText x="55" y="126" width="160" height="176" alpha="0" name="AmbientHoursDisplay">
+        <PartText x="45" y="126" width="180" height="176" alpha="0" name="AmbientHoursDisplay">
             <Variant mode="AMBIENT" target="alpha" value="255" />
-            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 29 : 55" />
+            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 19 : 45" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="168" color="#D0D0D0">
+                <Font family="gshark_seg7" size="168" color="#D0D0D0">
                     <Template>%s<Parameter expression="[IS_24_HOUR_MODE]&gt;0?[HOUR_0_23_Z]:[HOUR_1_12_Z]" /></Template>
                 </Font>
             </Text>
@@ -2318,26 +2318,26 @@
             <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 186 : 212" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="168" color="#D0D0D0">:</Font>
+                <Font family="gshark_seg7" size="168" color="#D0D0D0">:</Font>
             </Text>
         </PartText>
 
         <!-- Ambient Minutes Ghost 88 Background (size=168, alpha=36) -->
-        <PartText x="235" y="126" width="160" height="176" alpha="0" name="AmbientMinutesGhost">
+        <PartText x="225" y="126" width="180" height="176" alpha="0" name="AmbientMinutesGhost">
             <Variant mode="AMBIENT" target="alpha" value="36" />
-            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 209 : 235" />
+            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 199 : 225" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="168" color="#D0D0D0">88</Font>
+                <Font family="gshark_seg7" size="168" color="#D0D0D0">88</Font>
             </Text>
         </PartText>
 
-        <PartText x="235" y="126" width="160" height="176" alpha="0" name="AmbientMinutesDisplay">
+        <PartText x="225" y="126" width="180" height="176" alpha="0" name="AmbientMinutesDisplay">
             <Variant mode="AMBIENT" target="alpha" value="255" />
-            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 209 : 235" />
+            <Transform target="x" value="([IS_24_HOUR_MODE] &gt; 0 ? ([HOUR_0_23] &gt;= 10 &amp;&amp; [HOUR_0_23] &lt; 20) : ([HOUR_1_12] &gt;= 10)) ? 199 : 225" />
             <Localization calendar="GREGORIAN" />
             <Text align="CENTER">
-                <Font family="digital7" size="168" color="#D0D0D0">
+                <Font family="gshark_seg7" size="168" color="#D0D0D0">
                     <Template>%s<Parameter expression="[MINUTE_Z]" /></Template>
                 </Font>
             </Text>

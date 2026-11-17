@@ -16,7 +16,7 @@ os.makedirs(BUILD_DIR, exist_ok=True)
 ICON_SIZE = 96
 
 # Fonts
-DIGITAL7_PATH = os.path.join(FONT_DIR, "digital7.ttf")
+DIGITAL7_PATH = os.path.join(FONT_DIR, "gshark_seg7.ttf")  # GShark Seg7: DSEG7-derived, Digital-7 Mono Italic proportions
 WEAR_GS_PATH = os.path.join(BASE_DIR, "tools_fonts", "Wear-GoogleSans-Regular.ttf")
 if os.path.exists(WEAR_GS_PATH):
     ROB_BOLD_PATH = (WEAR_GS_PATH, 700)

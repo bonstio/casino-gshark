@@ -26,7 +26,7 @@ gshark-watchface/
 │           └── res/
 │               ├── drawable/                # Generated 450x450 backgrounds, split textures, sub-dial assets
 │               ├── font/
-│               │   └── digital7.ttf         # High-precision authentic 7-segment digital LCD font
+│               │   └── gshark_seg7.ttf      # GShark Seg7 Italic: DSEG7 Classic Italic reshaped to Digital-7 proportions (OFL; build_gshark_seg7_font.py, licenses/DSEG-LICENSE.txt)
 │               ├── raw/
 │               │   └── watchface.xml        # Master declarative Watch Face Format layout & logic
 │               └── values/
@@ -53,7 +53,7 @@ gshark-watchface/
 | **Upper Quad Pod 3** | `232 .. 298` | `90 .. 168` | `66×78` (cx=265) | Slot 3: Date / Calendar (`SHORT_TEXT`, `SMALL_IMAGE`) |
 | **Upper Quad Pod 4** | `312 .. 378` | `90 .. 168` | `66×78` (cx=345) | Slot 4: Sunrise / World Clock (`SHORT_TEXT`, `SMALL_IMAGE`) |
 | **Main Clock Chamber** | `70 .. 380` | `178 .. 284` | `310×106` | Lower-right corner curved concentrically around sub-dial |
-| **Time Readout (HH:mm)** | `82 .. 321` | `151 .. 277` | `239×126` | Anchored top-right at `(321, 195)`, `size="120"`, `digital7.ttf` |
+| **Time Readout (HH:mm)** | `82 .. 321` | `151 .. 277` | `239×126` | Anchored top-right at `(321, 195)`, `size="120"`, `gshark_seg7.ttf` |
 | **Seconds Readout (ss)** | `332 .. 374` | `206 .. 248` | `42×42` | Moved down 20px, left 2px, 20% larger (`size="43"`) |
 | **Sub-Dial Housing** | `302 .. 402` | `273 .. 373` | `100×100` (scx=352, scy=323) | 30% larger GA-100 housing (`r_outer=49.4, r_inner=39.65`) |
 | **Lower Complication (Slot 5)** | `70 .. 305` | `302 .. 358` | `235×56` | Right edge curves concentrically around sub-dial at `gap_dist=9.6` |
