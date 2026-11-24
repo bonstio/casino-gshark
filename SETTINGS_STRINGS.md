@@ -16,6 +16,7 @@ color_shark_blue = Ocean Shark Cyan
 color_tactical_orange = Tactical Orange
 color_crimson_red = Crimson Red
 color_amber_gold = Amber Gold
+color_pure_yellow = Pure Yellow
 color_stealth_white = Stealth White
 color_toxic_green = Toxic Green
 color_deep_violet = Deep Violet
@@ -51,6 +52,7 @@ bg_ind_lime = Industrial Volt Lime
 bg_ind_blue = Industrial Vibrant Blue
 bg_ind_red = Industrial Red
 bg_ind_orange = Industrial Orange
+bg_ind_yellow = Industrial Yellow
 bg_ind_magenta = Industrial Deep Magenta
 bg_ind_silver = Industrial Silver
 

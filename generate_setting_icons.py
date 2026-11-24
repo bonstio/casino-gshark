@@ -114,6 +114,8 @@ BG_TEXTURES = [
     "bg_lcd_ind_magenta",
     "bg_lcd_ind_silver",
     "bg_lcd_ind_black_silver",
+    None,  # 18: Grid (theme) handled dynamically
+    "bg_lcd_ind_yellow",
 ]
 
 THEME_COLORS = [
@@ -133,6 +135,7 @@ THEME_COLORS = [
     "#94A3B8",  # 13: Steel Grey
     "#64748B",  # 14: Slate Charcoal
     "#CED8E2",  # 15: Titanium Silver
+    "#FFEA00",  # 16: Pure Yellow (Kill Bill Yellow)
 ]
 
 SEC_COLORS = {
@@ -155,6 +158,7 @@ SEC_COLORS = {
     16: "#CED8E2",
     17: "#D4D4D4",  # Soft White
     18: "#0A0D10",  # Black
+    19: "#FFEA00",  # Pure Yellow (Kill Bill Yellow)
 }
 
 TOP_LOGOS = [
@@ -709,9 +713,9 @@ def generate_all_icons():
         icon_img.save(icon_path, optimize=True)
         generated[(setting_id, str(opt_id))] = (res_name, icon_img)
 
-    # 1. bgTexture (19 options: 0..18) - Top-left bezel & textured plate
+    # 1. bgTexture (20 options: 0..19) - Top-left bezel & textured plate
     crop_bg_tex = (28, 28, 178, 178)
-    for i in range(19):
+    for i in range(20):
         wf = render_watchface(bg_texture=i, bg_border=0)
         save_icon("bgTexture", i, wf, crop_bg_tex)
 
@@ -721,21 +725,21 @@ def generate_all_icons():
         wf = render_watchface(bg_texture=10, bg_border=i)
         save_icon("bgBorder", i, wf, crop_bg_border)
 
-    # 3. themeColor (16 options: 0..15) - GA-100 circular sub-dial with theme-tinted battery segments
+    # 3. themeColor (17 options: 0..16) - GA-100 circular sub-dial with theme-tinted battery segments
     crop_theme_color = (299, 268, 407, 376)
-    for i in range(16):
+    for i in range(17):
         wf = render_watchface(theme_color=i, sub_dial_mode=0)
         save_icon("themeColor", i, wf, crop_theme_color)
 
-    # 4. logoColor (16 options: 0..15) - Bottom G-SHARK wordmark logo
+    # 4. logoColor (17 options: 0..16) - Bottom G-SHARK wordmark logo
     crop_logo_color = (105, 275, 345, 515)
-    for i in range(16):
+    for i in range(17):
         wf = render_watchface(logo_color=i, bottom_logo=0)
         save_icon("logoColor", i, wf, crop_logo_color)
 
-    # 5. secColor (19 options: 0..18) - Digital seconds readout "04" in right LCD chamber
+    # 5. secColor (20 options: 0..19) - Digital seconds readout "04" in right LCD chamber
     crop_sec_color = (298, 172, 402, 276)
-    for i in range(19):
+    for i in range(20):
         # For option 18 (Black), show on inverted light LCD (time_color=2) so black digits are crisp
         tc = 2 if i == 18 else 0
         wf = render_watchface(sec_color=i, time_color=tc)
@@ -812,11 +816,11 @@ def generate_all_icons():
 
 def build_contact_sheet(generated):
     settings_order = [
-        ("bgTexture", 19),
+        ("bgTexture", 20),
         ("bgBorder", 2),
-        ("themeColor", 16),
-        ("logoColor", 16),
-        ("secColor", 19),
+        ("themeColor", 17),
+        ("logoColor", 17),
+        ("secColor", 20),
         ("timeColor", 4),
         ("screenTexture", 6),
         ("quadStyle", 2),

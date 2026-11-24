@@ -3,7 +3,7 @@
     <string name="app_name">G-Shark Watch Face</string>
     <string name="watch_face_name">Casino G-Shark</string>
 
-    <!-- Theme Accent Colors (16 Options: High-Contrast Neon + Subtle Greys & Browns) -->
+    <!-- Theme Accent Colors (17 Options: High-Contrast Neon + Subtle Greys & Browns) -->
     <string name="theme_color_label">Theme Color</string>
     <string name="logo_color_label">Logo Color</string>
     <string name="seconds_color_label">Hint Color</string>
@@ -14,6 +14,7 @@
     <string name="color_tactical_orange">Tactical Orange</string>
     <string name="color_crimson_red">Crimson Red</string>
     <string name="color_amber_gold">Amber Gold</string>
+    <string name="color_pure_yellow">Pure Yellow</string>
     <string name="color_stealth_white">Stealth White</string>
     <string name="color_toxic_green">Vibrant Blue</string>
     <string name="color_deep_violet">Deep Violet</string>
@@ -43,6 +44,7 @@
     <string name="bg_ind_blue">Industrial Vibrant Blue</string>
     <string name="bg_ind_red">Industrial Red</string>
     <string name="bg_ind_orange">Industrial Orange</string>
+    <string name="bg_ind_yellow">Industrial Yellow</string>
     <string name="bg_ind_magenta">Industrial Deep Magenta</string>
     <string name="bg_ind_silver">Industrial Silver</string>
     <string name="bg_ind_black_silver">Industrial Black &amp; Silver</string>

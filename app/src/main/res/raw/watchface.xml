@@ -181,6 +181,7 @@
             <ListOption id="12" displayName="bg_ind_blue" icon="ic_cfg_bgtexture_12" />
             <ListOption id="13" displayName="bg_ind_red" icon="ic_cfg_bgtexture_13" />
             <ListOption id="14" displayName="bg_ind_orange" icon="ic_cfg_bgtexture_14" />
+            <ListOption id="19" displayName="bg_ind_yellow" icon="ic_cfg_bgtexture_19" />
             <ListOption id="15" displayName="bg_ind_magenta" icon="ic_cfg_bgtexture_15" />
             <ListOption id="16" displayName="bg_ind_silver" icon="ic_cfg_bgtexture_16" />
             <ListOption id="17" displayName="bg_ind_black_silver" icon="ic_cfg_bgtexture_17" />
@@ -193,7 +194,7 @@
             <ListOption id="1" displayName="bg_border_full_bleed" icon="ic_cfg_bgborder_1" />
         </ListConfiguration>
 
-        <!-- XML Pos 12 (TreeMap #3): Theme Accent Colors (16 Options: Matched to Industrial Backgrounds + Tactical Classics) -->
+        <!-- XML Pos 12 (TreeMap #3): Theme Accent Colors (17 Options: Matched to Industrial Backgrounds + Tactical Classics) -->
         <ColorConfiguration id="themeColor" displayName="theme_color_label" defaultValue="0" icon="ic_cfg_themecolor_0">
             <ColorOption id="0" displayName="color_cyber_lime" icon="ic_cfg_themecolor_0"
                 colors="#BAFA08 #9099A6 #1B1E24" />
@@ -207,6 +208,8 @@
                 colors="#FF1E38 #9099A6 #1B1E24" />
             <ColorOption id="5" displayName="color_amber_gold" icon="ic_cfg_themecolor_5"
                 colors="#FFC400 #9099A6 #1B1E24" />
+            <ColorOption id="16" displayName="color_pure_yellow" icon="ic_cfg_themecolor_16"
+                colors="#FFEA00 #9099A6 #1B1E24" />
             <ColorOption id="6" displayName="color_stealth_white" icon="ic_cfg_themecolor_6"
                 colors="#FFFFFF #9099A6 #1B1E24" />
             <ColorOption id="7" displayName="color_toxic_green" icon="ic_cfg_themecolor_7"
@@ -229,7 +232,7 @@
                 colors="#CED8E2 #9099A6 #1B1E24" />
         </ColorConfiguration>
 
-        <!-- XML Pos 13 (TreeMap #4): Logo Color (0 = Theme Color [Default], 1..16 = Independent palette colors) -->
+        <!-- XML Pos 13 (TreeMap #4): Logo Color (0 = Theme Color [Default], 1..17 = Independent palette colors) -->
         <ListConfiguration id="logoColor" displayName="logo_color_label" defaultValue="0" icon="ic_cfg_themecolor_0">
             <ListOption id="0" displayName="theme_color_label" icon="ic_cfg_themecolor_0" />
             <ListOption id="1" displayName="color_cyber_lime" icon="ic_cfg_logocolor_0" />
@@ -238,6 +241,7 @@
             <ListOption id="4" displayName="color_tactical_orange" icon="ic_cfg_logocolor_3" />
             <ListOption id="5" displayName="color_crimson_red" icon="ic_cfg_logocolor_4" />
             <ListOption id="6" displayName="color_amber_gold" icon="ic_cfg_logocolor_5" />
+            <ListOption id="17" displayName="color_pure_yellow" icon="ic_cfg_logocolor_16" />
             <ListOption id="7" displayName="color_stealth_white" icon="ic_cfg_logocolor_6" />
             <ListOption id="8" displayName="color_toxic_green" icon="ic_cfg_logocolor_7" />
             <ListOption id="9" displayName="color_deep_violet" icon="ic_cfg_logocolor_8" />
@@ -250,7 +254,7 @@
             <ListOption id="16" displayName="color_titanium_silver" icon="ic_cfg_logocolor_15" />
         </ListConfiguration>
 
-        <!-- XML Pos 14 (TreeMap #5): Seconds Color (0 = Same as clock [Default], 1 = Theme Color, 2..19 = Independent palette colors) -->
+        <!-- XML Pos 14 (TreeMap #5): Seconds Color (0 = Same as clock [Default], 1 = Theme Color, 2..20 = Independent palette colors) -->
         <ListConfiguration id="secColor" displayName="seconds_color_label" defaultValue="0" icon="ic_cfg_seccolor_0">
             <ListOption id="0" displayName="sec_color_same_as_clock" icon="ic_cfg_seccolor_0" />
             <ListOption id="1" displayName="theme_color_label" icon="ic_cfg_themecolor_0" />
@@ -260,6 +264,7 @@
             <ListOption id="5" displayName="color_tactical_orange" icon="ic_cfg_seccolor_4" />
             <ListOption id="6" displayName="color_crimson_red" icon="ic_cfg_seccolor_5" />
             <ListOption id="7" displayName="color_amber_gold" icon="ic_cfg_seccolor_6" />
+            <ListOption id="20" displayName="color_pure_yellow" icon="ic_cfg_seccolor_19" />
             <ListOption id="8" displayName="color_stealth_white" icon="ic_cfg_seccolor_7" />
             <ListOption id="9" displayName="color_toxic_green" icon="ic_cfg_seccolor_8" />
             <ListOption id="10" displayName="color_deep_violet" icon="ic_cfg_seccolor_9" />
@@ -401,6 +406,13 @@
             <Variant mode="AMBIENT" target="alpha" value="0" />
             <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 14 ? 255 : 0" />
             <Image resource="bg_lcd_ind_orange" />
+        </PartImage>
+
+        <!-- Option 19: Industrial Yellow (Pure / Kill Bill Yellow) -->
+        <PartImage x="0" y="0" width="450" height="450" name="BgIndYellow">
+            <Variant mode="AMBIENT" target="alpha" value="0" />
+            <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 19 ? 255 : 0" />
+            <Image resource="bg_lcd_ind_yellow" />
         </PartImage>
 
         <!-- Option 16: Industrial Deep Magenta -->
@@ -601,6 +613,11 @@
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 18 ? 255 : 0" />
                 <Image resource="quad_chamber_1" />
+            </PartImage>
+            <PartImage x="0" y="0" width="450" height="450" name="QuadChamber19">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 19 ? 255 : 0" />
+                <Image resource="quad_chamber_19" />
             </PartImage>
         </Group>
 
@@ -874,6 +891,11 @@
                 <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
                 <Image resource="logo_gshark" />
             </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSharkLogo_17" tintColor="#FFEA00">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 17 ? 255 : 0" />
+                <Image resource="logo_gshark" />
+            </PartImage>
         </Group>
         <!-- Option 1: GSPOT -->
         <PartImage x="111" y="368" width="228" height="53" name="GSpotOutline">
@@ -968,6 +990,11 @@
             <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_16" tintColor="#CED8E2">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gspot" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSpotLogo_17" tintColor="#FFEA00">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 17 ? 255 : 0" />
                 <Image resource="logo_gspot" />
             </PartImage>
         </Group>
@@ -1066,6 +1093,11 @@
                 <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
                 <Image resource="logo_gsnack" />
             </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnackLogo_17" tintColor="#FFEA00">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 17 ? 255 : 0" />
+                <Image resource="logo_gsnack" />
+            </PartImage>
         </Group>
         <!-- Option 3: GSNOOZE -->
         <PartImage x="111" y="368" width="228" height="53" name="GSnoozeOutline">
@@ -1160,6 +1192,11 @@
             <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_16" tintColor="#CED8E2">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gsnooze" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSnoozeLogo_17" tintColor="#FFEA00">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 17 ? 255 : 0" />
                 <Image resource="logo_gsnooze" />
             </PartImage>
         </Group>
@@ -1258,6 +1295,11 @@
                 <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
                 <Image resource="logo_gsquawk" />
             </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSquawkLogo_17" tintColor="#FFEA00">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 17 ? 255 : 0" />
+                <Image resource="logo_gsquawk" />
+            </PartImage>
         </Group>
         <!-- Option 5: GSLOTH -->
         <PartImage x="111" y="368" width="228" height="53" name="GSlothOutline">
@@ -1352,6 +1394,11 @@
             <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_16" tintColor="#CED8E2">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.logoColor] == 16 ? 255 : 0" />
+                <Image resource="logo_gsloth" />
+            </PartImage>
+            <PartImage x="0" y="0" width="220" height="45" name="GSlothLogo_17" tintColor="#FFEA00">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.logoColor] == 17 ? 255 : 0" />
                 <Image resource="logo_gsloth" />
             </PartImage>
         </Group>
@@ -1643,6 +1690,11 @@
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 18 ? 255 : 0" />
                 <Image resource="center_chamber_1" />
+            </PartImage>
+            <PartImage x="68" y="164" width="354" height="122" name="CenterChamber19">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.bgTexture] == 19 ? 255 : 0" />
+                <Image resource="center_chamber_19" />
             </PartImage>
             </Group>
 
@@ -2221,6 +2273,26 @@
                 <Localization calendar="GREGORIAN" />
                 <Text align="CENTER">
                     <Font family="gshark_seg7" size="43" color="#CED8E2">
+                        <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
+                    </Font>
+                </Text>
+            </PartText>
+
+            <!-- 20: Pure Yellow (#FFEA00) -->
+            <PartText x="0" y="0" width="48" height="42" alpha="43" name="SecondsGhost20">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 20 ? 43 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="CENTER">
+                    <Font family="gshark_seg7" size="43" color="#FFEA00">88</Font>
+                </Text>
+            </PartText>
+            <PartText x="0" y="0" width="48" height="42" name="SecondsDisplay20">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 20 ? 255 : 0" />
+                <Localization calendar="GREGORIAN" />
+                <Text align="CENTER">
+                    <Font family="gshark_seg7" size="43" color="#FFEA00">
                         <Template>%s<Parameter expression="[SECOND_Z]" /></Template>
                     </Font>
                 </Text>
@@ -5401,6 +5473,11 @@
             <PartImage x="205" y="205" width="40" height="40" tintColor="#0A0D10" name="MainPinionRing_Black">
                 <Variant mode="AMBIENT" target="alpha" value="0" />
                 <Transform target="alpha" value="[CONFIGURATION.secColor] == 19 ? 255 : 0" />
+                <Image resource="main_pinion_ring" />
+            </PartImage>
+            <PartImage x="205" y="205" width="40" height="40" tintColor="#FFEA00" name="MainPinionRing_PureYellow">
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+                <Transform target="alpha" value="[CONFIGURATION.secColor] == 20 ? 255 : 0" />
                 <Image resource="main_pinion_ring" />
             </PartImage>
         </Group>

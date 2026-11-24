@@ -10,8 +10,8 @@ android {
         applicationId = "net.bonstio.watchface.gshark"
         minSdk = 34
         targetSdk = 35
-        versionCode = 55
-        versionName = "5.5"
+        versionCode = 56
+        versionName = "5.6"
     }
 
     buildTypes {
